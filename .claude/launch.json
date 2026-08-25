@@ -5,7 +5,7 @@
       "name": "dms-parts",
       "runtimeExecutable": "python3",
       "runtimeArgs": [
-        "/Users/bigboi/Documents/Claude Code Projects/Diggers : Parts/tools/serve.py",
+        "tools/serve.py",
         "8777"
       ],
       "port": 8777
