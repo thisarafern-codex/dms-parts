@@ -1,0 +1,4370 @@
+{
+ "brands": [
+  {
+   "name": "Kubota",
+   "sort": 0
+  },
+  {
+   "name": "Hitachi",
+   "sort": 1
+  },
+  {
+   "name": "Komatsu",
+   "sort": 2
+  },
+  {
+   "name": "Yanmar",
+   "sort": 3
+  },
+  {
+   "name": "Kobelco",
+   "sort": 4
+  },
+  {
+   "name": "Caterpillar",
+   "sort": 5
+  },
+  {
+   "name": "Doosan",
+   "sort": 6
+  },
+  {
+   "name": "Eurocomach",
+   "sort": 7
+  },
+  {
+   "name": "Sunward",
+   "sort": 8
+  },
+  {
+   "name": "Sumitomo",
+   "sort": 9
+  },
+  {
+   "name": "JCB",
+   "sort": 10
+  },
+  {
+   "name": "Behringer",
+   "sort": 11
+  },
+  {
+   "name": "Kioti",
+   "sort": 12
+  },
+  {
+   "name": "Sany",
+   "sort": 13
+  },
+  {
+   "name": "Bobcat",
+   "sort": 14
+  },
+  {
+   "name": "ASV",
+   "sort": 15
+  },
+  {
+   "name": "Takeuchi",
+   "sort": 16
+  },
+  {
+   "name": "Toro",
+   "sort": 17
+  },
+  {
+   "name": "Cosen",
+   "sort": 18
+  },
+  {
+   "name": "Hyundai",
+   "sort": 19
+  },
+  {
+   "name": "John Deere",
+   "sort": 20
+  },
+  {
+   "name": "Mitsubishi",
+   "sort": 21
+  },
+  {
+   "name": "Unassigned",
+   "sort": 22
+  }
+ ],
+ "generated_at": "2026-08-25T22:40:20",
+ "models": [
+  {
+   "aliases": [
+    "Invoice for U55-4",
+    "U 55- 4",
+    "U 55-4",
+    "U55- 4",
+    "U55-4",
+    "U55-4 Kubota",
+    "U55-4Kubota"
+   ],
+   "brand": "Kubota",
+   "display": "U55-4",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 117,
+   "key": "U554",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2026-08-24",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 82
+      },
+      {
+       "last_used_at": "2026-08-24",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 81
+      },
+      {
+       "last_used_at": "2025-09-20",
+       "qty": 1,
+       "slot": "Air filter",
+       "use_count": 6
+      },
+      {
+       "last_used_at": "2026-08-10",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 19
+      },
+      {
+       "last_used_at": "2025-04-15",
+       "qty": 1,
+       "slot": "Air filter \u2014 inner",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2026-08-10",
+       "qty": 1,
+       "slot": "Cab / air-con filter",
+       "use_count": 19
+      },
+      {
+       "last_used_at": "2026-08-10",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 39
+      },
+      {
+       "last_used_at": "2026-08-10",
+       "qty": 1,
+       "slot": "Pilot filter",
+       "use_count": 25
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 26
+  },
+  {
+   "aliases": [
+    "Invoice for KXO18-4",
+    "KXO18-4"
+   ],
+   "brand": "Kubota",
+   "display": "KXO18-4",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 19,
+   "key": "KXO184",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-12-19",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 8
+      },
+      {
+       "last_used_at": "2025-12-19",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 8
+      },
+      {
+       "last_used_at": "2025-12-19",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 5
+      },
+      {
+       "last_used_at": "2025-12-19",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 8
+      },
+      {
+       "last_used_at": "2023-06-25",
+       "qty": 1,
+       "slot": "Hydraulic suction filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 10
+  },
+  {
+   "aliases": [
+    "U35-4",
+    "U35-4 Non Cab"
+   ],
+   "brand": "Kubota",
+   "display": "U35-4",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 19,
+   "key": "U354",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-12-18",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 8
+      },
+      {
+       "last_used_at": "2025-12-18",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 8
+      },
+      {
+       "last_used_at": "2023-07-01",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 inline",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-09-12",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-09-12",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 4
+      },
+      {
+       "last_used_at": "2022-06-23",
+       "qty": 1,
+       "slot": "Hydraulic inline filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-09-12",
+       "qty": 1,
+       "slot": "Pilot filter",
+       "use_count": 2
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 4
+  },
+  {
+   "aliases": [
+    "Komatsu PC35MR-5",
+    "PC35MR-5"
+   ],
+   "brand": "Komatsu",
+   "display": "PC35MR-5",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 18,
+   "key": "PC35MR5",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2026-07-16",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 13
+      },
+      {
+       "last_used_at": "2026-07-16",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 13
+      },
+      {
+       "last_used_at": "2026-07-16",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 4
+      },
+      {
+       "last_used_at": "2026-07-16",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 8
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 3
+  },
+  {
+   "aliases": [
+    "U48-4"
+   ],
+   "brand": "Kubota",
+   "display": "U48-4",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 15,
+   "key": "U484",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2026-07-22",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 7
+      },
+      {
+       "last_used_at": "2026-07-22",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 7
+      },
+      {
+       "last_used_at": "2026-07-22",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 3
+      },
+      {
+       "last_used_at": "2026-07-22",
+       "qty": 1,
+       "slot": "Air filter \u2014 inner",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2026-07-22",
+       "qty": 1,
+       "slot": "Cab / air-con filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2026-07-22",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 6
+      },
+      {
+       "last_used_at": "2026-07-22",
+       "qty": 1,
+       "slot": "Pilot filter",
+       "use_count": 3
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 3
+  },
+  {
+   "aliases": [
+    "U17-3"
+   ],
+   "brand": "Kubota",
+   "display": "U17-3",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 14,
+   "key": "U173",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2026-02-09",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 10
+      },
+      {
+       "last_used_at": "2026-02-09",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 9
+      },
+      {
+       "last_used_at": "2026-02-09",
+       "qty": 1,
+       "slot": "Air filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2023-12-14",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2026-02-09",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 6
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 5
+  },
+  {
+   "aliases": [
+    "SK20SR",
+    "SK20SR Kobelco"
+   ],
+   "brand": "Kobelco",
+   "display": "SK20SR",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 14,
+   "key": "SK20SR",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2026-07-08",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 10
+      },
+      {
+       "last_used_at": "2026-07-08",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 10
+      },
+      {
+       "last_used_at": "2026-05-04",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 3
+      },
+      {
+       "last_used_at": "2026-05-04",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 5
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 3
+  },
+  {
+   "aliases": [
+    "U17-4",
+    "U17-4 Kubota"
+   ],
+   "brand": "Kubota",
+   "display": "U17-4",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 9,
+   "key": "U174",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-02-03",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 6
+      },
+      {
+       "last_used_at": "2025-02-03",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 6
+      },
+      {
+       "last_used_at": "2025-02-03",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-02-03",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 4
+      },
+      {
+       "last_used_at": "2025-02-03",
+       "qty": 1,
+       "slot": "Pilot filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 7
+  },
+  {
+   "aliases": [
+    "Hitachi ZX55U-5A",
+    "ZX55U-5A"
+   ],
+   "brand": "Hitachi",
+   "display": "ZX55U-5A",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 9,
+   "key": "ZX55U5A",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2026-03-02",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 3
+      },
+      {
+       "last_used_at": "2026-03-02",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 3
+      },
+      {
+       "last_used_at": "2026-03-02",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 5
+  },
+  {
+   "aliases": [
+    "KXO80-3"
+   ],
+   "brand": "Kubota",
+   "display": "KXO80-3",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 9,
+   "key": "KXO803",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2026-03-02",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 3
+      },
+      {
+       "last_used_at": "2026-03-02",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 3
+      },
+      {
+       "last_used_at": "2026-03-02",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-05-28",
+       "qty": 1,
+       "slot": "Air filter \u2014 inner",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2026-03-02",
+       "qty": 1,
+       "slot": "Cab / air-con filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2026-03-02",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 4
+      },
+      {
+       "last_used_at": "2026-03-02",
+       "qty": 1,
+       "slot": "Pilot filter",
+       "use_count": 2
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Hitachi ZX110",
+    "ZX110",
+    "ZX110 Hitachi"
+   ],
+   "brand": "Hitachi",
+   "display": "ZX110",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 8,
+   "key": "ZX110",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2026-02-03",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 5
+      },
+      {
+       "last_used_at": "2026-02-03",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 3
+      },
+      {
+       "last_used_at": "2023-06-28",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2026-02-03",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary",
+       "use_count": 5
+      },
+      {
+       "last_used_at": "2026-02-03",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 3
+      },
+      {
+       "last_used_at": "2022-11-23",
+       "qty": 1,
+       "slot": "Air filter \u2014 inner",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2026-02-03",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 5
+      },
+      {
+       "last_used_at": "2026-02-03",
+       "qty": 1,
+       "slot": "Pilot filter",
+       "use_count": 2
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 5
+  },
+  {
+   "aliases": [
+    "VIO30"
+   ],
+   "brand": "Yanmar",
+   "display": "VIO30",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 5,
+   "key": "VIO30",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-06-13",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 4
+      },
+      {
+       "last_used_at": "2025-06-13",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 4
+      },
+      {
+       "last_used_at": "2025-06-13",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2025-06-13",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 3
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 3
+  },
+  {
+   "aliases": [
+    "BEHRINGER HBP 530",
+    "BEHRINGER HBP530"
+   ],
+   "brand": "Behringer",
+   "display": "HBP530",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 5,
+   "key": "HBP530",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "U25-3"
+   ],
+   "brand": "Kubota",
+   "display": "U25-3",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 5,
+   "key": "U253",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2026-06-23",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 4
+      },
+      {
+       "last_used_at": "2026-06-23",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 4
+      },
+      {
+       "last_used_at": "2024-11-08",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 2
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "U27-4"
+   ],
+   "brand": "Kubota",
+   "display": "U27-4",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 5,
+   "key": "U274",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-08-12",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 4
+      },
+      {
+       "last_used_at": "2025-08-12",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 4
+      },
+      {
+       "last_used_at": "2023-12-05",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2023-12-05",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2023-12-05",
+       "qty": 1,
+       "slot": "Pilot filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "DOOSAN DX225LC",
+    "DX225LC",
+    "DX225LC Doosan",
+    "Doosan DX225LC"
+   ],
+   "brand": "Doosan",
+   "display": "DX225LC",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 4,
+   "key": "DX225LC",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-11-08",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-11-08",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-11-08",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-11-08",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-11-08",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-11-08",
+       "qty": 1,
+       "slot": "Pilot filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 4
+  },
+  {
+   "aliases": [
+    "VIO20-6",
+    "VIO20-6 Yanmar"
+   ],
+   "brand": "Yanmar",
+   "display": "VIO20-6",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 4,
+   "key": "VIO206",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2023-12-10",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 4
+      },
+      {
+       "last_used_at": "2023-12-10",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 4
+      },
+      {
+       "last_used_at": "2023-11-29",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 2
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 3
+  },
+  {
+   "aliases": [
+    "Fixing ZD1221",
+    "ZD1221"
+   ],
+   "brand": "Kubota",
+   "display": "ZD1221",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 4,
+   "key": "ZD1221",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2026-05-20",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 3
+      },
+      {
+       "last_used_at": "2026-05-20",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2025-05-26",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 inline",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-05-26",
+       "qty": 1,
+       "slot": "HST filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-05-26",
+       "qty": 1,
+       "slot": "Transmission filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 3
+  },
+  {
+   "aliases": [
+    "F3690",
+    "Kubota F3690"
+   ],
+   "brand": "Kubota",
+   "display": "F3690",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 4,
+   "key": "F3690",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-10-29",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-10-29",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-10-29",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-10-29",
+       "qty": 1,
+       "slot": "Air filter \u2014 inner",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-10-29",
+       "qty": 1,
+       "slot": "HST filter",
+       "use_count": 2
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "VIO20",
+    "Yanmar VIO20"
+   ],
+   "brand": "Yanmar",
+   "display": "VIO20",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 4,
+   "key": "VIO20",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2022-08-30",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2023-07-18",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2022-08-30",
+       "qty": 1,
+       "slot": "Air filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2023-07-18",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2023-07-18",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 2
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "VIO 30-6",
+    "VIO30-6"
+   ],
+   "brand": "Yanmar",
+   "display": "VIO30-6",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 4,
+   "key": "VIO306",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-11-27",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-11-27",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 2
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "CAT302.7"
+   ],
+   "brand": "Caterpillar",
+   "display": "302.7",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 4,
+   "key": "3027",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2023-10-16",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2023-10-16",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2023-10-16",
+       "qty": 1,
+       "slot": "Air filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2022-04-07",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2023-10-16",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "S130 Bobcat"
+   ],
+   "brand": "Bobcat",
+   "display": "S130",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 4,
+   "key": "S130",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-06-23",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-07-01",
+       "qty": 1,
+       "slot": "Hydraulic inline filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-07-01",
+       "qty": 1,
+       "slot": "Hydraulic filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "T2290"
+   ],
+   "brand": "Kubota",
+   "display": "T2290",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 4,
+   "key": "T2290",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-04-19",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-04-19",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "DX140LCR",
+    "DX140LCR Doosan"
+   ],
+   "brand": "Doosan",
+   "display": "DX140LCR",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 3,
+   "key": "DX140LCR",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-09-03",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-09-03",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-02-07",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-09-03",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-09-03",
+       "qty": 1,
+       "slot": "Cab / air-con filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-09-03",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-09-03",
+       "qty": 1,
+       "slot": "Pilot filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 3
+  },
+  {
+   "aliases": [
+    "CAT 302.07"
+   ],
+   "brand": "Caterpillar",
+   "display": "302.07",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 3,
+   "key": "30207",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2026-03-23",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 3
+      },
+      {
+       "last_used_at": "2025-06-26",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2025-06-26",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-06-26",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "PC35",
+    "PC35 Komatsu"
+   ],
+   "brand": "Komatsu",
+   "display": "PC35",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 3,
+   "key": "PC35",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2026-05-06",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 3
+      },
+      {
+       "last_used_at": "2026-05-06",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 3
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "PC35-5"
+   ],
+   "brand": "Komatsu",
+   "display": "PC35-5",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 3,
+   "key": "PC355",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-01-13",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-01-13",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-11-19",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 2
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "SH130LC-5",
+    "SH130LC-5 Sumitomo"
+   ],
+   "brand": "Sumitomo",
+   "display": "SH130LC-5",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 3,
+   "key": "SH130LC5",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-02-12",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-02-12",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-02-12",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-02-12",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-02-12",
+       "qty": 1,
+       "slot": "Air filter \u2014 inner",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "U17"
+   ],
+   "brand": "Kubota",
+   "display": "U17",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 3,
+   "key": "U17",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-05-13",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-05-13",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-05-13",
+       "qty": 1,
+       "slot": "Air filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-05-13",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "ZX38U-5A"
+   ],
+   "brand": "Hitachi",
+   "display": "ZX38U-5A",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 3,
+   "key": "ZX38U5A",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-08-31",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-08-31",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-08-31",
+       "qty": 1,
+       "slot": "Air filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-08-31",
+       "qty": 1,
+       "slot": "Cab / air-con filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-08-31",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-08-31",
+       "qty": 1,
+       "slot": "Pilot filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "Sunward 40UB"
+   ],
+   "brand": "Sunward",
+   "display": "40UB",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 3,
+   "key": "40UB",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2023-05-23",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2023-05-23",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "ES95TR"
+   ],
+   "brand": "Eurocomach",
+   "display": "ES95TR",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 3,
+   "key": "ES95TR",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-07-12",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-07-12",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-07-12",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "KX41-3"
+   ],
+   "brand": "Kubota",
+   "display": "KX41-3",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 3,
+   "key": "KX413",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2022-04-08",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2022-04-08",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2022-04-08",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2022-04-08",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "RTV500"
+   ],
+   "brand": "Kubota",
+   "display": "RTV500",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 3,
+   "key": "RTV500",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-07-22",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-02-09",
+       "qty": 1,
+       "slot": "Hydraulic suction filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-07-22",
+       "qty": 1,
+       "slot": "HST filter",
+       "use_count": 2
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "SY18C SANY"
+   ],
+   "brand": "Sany",
+   "display": "SY18C",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 3,
+   "key": "SY18C",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-01-29",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-01-29",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-01-29",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-01-29",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Toro TX1000"
+   ],
+   "brand": "Toro",
+   "display": "TX1000",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 3,
+   "key": "TX1000",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2026-05-14",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "CAT 305E2",
+    "CAT305E2"
+   ],
+   "brand": "Caterpillar",
+   "display": "305E2",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "305E2",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2026-01-24",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2026-01-24",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-05-13",
+       "qty": 1,
+       "slot": "Air filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-05-13",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "BX2370",
+    "Great Barrier Island Lawn Mower Repairs- BX2370"
+   ],
+   "brand": "Kubota",
+   "display": "BX2370",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "BX2370",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-11-27",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-11-27",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-11-27",
+       "qty": 1,
+       "slot": "Air filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-11-27",
+       "qty": 1,
+       "slot": "HST filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "ES18ZT",
+    "Model ES18ZT"
+   ],
+   "brand": "Eurocomach",
+   "display": "ES18ZT",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "ES18ZT",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2022-08-15",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2022-08-15",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2022-08-15",
+       "qty": 1,
+       "slot": "Air filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2022-08-15",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "G5200H",
+    "Kubota G5200H"
+   ],
+   "brand": "Kubota",
+   "display": "G5200H",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "G5200H",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2022-04-12",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2022-04-12",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 4
+      },
+      {
+       "last_used_at": "2022-04-12",
+       "qty": 1,
+       "slot": "Air filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2022-04-12",
+       "qty": 1,
+       "slot": "HST filter",
+       "use_count": 2
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "KXO18"
+   ],
+   "brand": "Kubota",
+   "display": "KXO18",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "KXO18",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2023-10-28",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2023-10-28",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "KXO80"
+   ],
+   "brand": "Kubota",
+   "display": "KXO80",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "KXO80",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-01-05",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-01-05",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-01-05",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "LWE 40U Digger",
+    "LWE40U Digger"
+   ],
+   "brand": "Sunward",
+   "display": "LWE40U",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "LWE40U",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "PC35MR"
+   ],
+   "brand": "Komatsu",
+   "display": "PC35MR",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "PC35MR",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-10-18",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-10-18",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2023-01-15",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "Kobelco SK140",
+    "SK140"
+   ],
+   "brand": "Kobelco",
+   "display": "SK140",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "SK140",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-12-19",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2025-12-19",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2025-12-19",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2025-12-19",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-09-19",
+       "qty": 1,
+       "slot": "Pilot filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-09-19",
+       "qty": 1,
+       "slot": "Breather filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "SK20SR-6",
+    "SK20SR-6 KOBELCO"
+   ],
+   "brand": "Kobelco",
+   "display": "SK20SR-6",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "SK20SR6",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-07-09",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-07-09",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-07-09",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-07-09",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "TB016"
+   ],
+   "brand": "Takeuchi",
+   "display": "TB016",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "TB016",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2022-09-09",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2022-09-09",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2022-09-09",
+       "qty": 1,
+       "slot": "Air filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "Hitachi ZX130LCN-3",
+    "ZX130LCN-3"
+   ],
+   "brand": "Hitachi",
+   "display": "ZX130LCN-3",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "ZX130LCN3",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2023-06-28",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2023-06-28",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2023-06-28",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2022-11-23",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2022-11-23",
+       "qty": 1,
+       "slot": "Air filter \u2014 inner",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2023-06-28",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2023-06-28",
+       "qty": 1,
+       "slot": "Pilot filter",
+       "use_count": 2
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "ZX17U",
+    "ZX17U HITACHI"
+   ],
+   "brand": "Hitachi",
+   "display": "ZX17U",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "ZX17U",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-08-31",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-08-31",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 2
+  },
+  {
+   "aliases": [
+    "CAT 313FL"
+   ],
+   "brand": "Caterpillar",
+   "display": "313FL",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "313FL",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-05-10",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-05-10",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-05-10",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2023-08-17",
+       "qty": 1,
+       "slot": "Hydraulic case-drain filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2023-08-17",
+       "qty": 1,
+       "slot": "Pilot filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "BS-300HAS"
+   ],
+   "brand": "Unassigned",
+   "display": "BS-300HAS",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "BS300HAS",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "COCCN"
+   ],
+   "brand": "Unassigned",
+   "display": "COCCN",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "COCCN",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "CS2610KIOTI Tractor"
+   ],
+   "brand": "Kioti",
+   "display": "CS2610",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "CS2610",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "DX140"
+   ],
+   "brand": "Doosan",
+   "display": "DX140",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "DX140",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-03-19",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2026-02-03",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2026-02-03",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 water separator",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2025-03-19",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-03-19",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "ES60TR"
+   ],
+   "brand": "Eurocomach",
+   "display": "ES60TR",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "ES60TR",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-07-12",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-07-12",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-07-12",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "KXO40-4"
+   ],
+   "brand": "Kubota",
+   "display": "KXO40-4",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "KXO404",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2023-04-05",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "L3800 Tractor"
+   ],
+   "brand": "Kubota",
+   "display": "L3800",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "L3800",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-07-22",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-07-22",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-07-22",
+       "qty": 1,
+       "slot": "Transmission filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "PC18MR-3"
+   ],
+   "brand": "Komatsu",
+   "display": "PC18MR-3",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "PC18MR3",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "PC55MR-3"
+   ],
+   "brand": "Komatsu",
+   "display": "PC55MR-3",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "PC55MR3",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2023-03-24",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2023-03-24",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2023-03-24",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2023-03-24",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Hitachi U55"
+   ],
+   "brand": "Hitachi",
+   "display": "U55",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "U55",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2023-01-07",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "VIO17-1 Yanmar"
+   ],
+   "brand": "Yanmar",
+   "display": "VIO17-1",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "VIO171",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-09-19",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2025-09-19",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-07-05",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "ZX130"
+   ],
+   "brand": "Hitachi",
+   "display": "ZX130",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 2,
+   "key": "ZX130",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-10-21",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-02-03",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-10-21",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-10-21",
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary",
+       "use_count": 2
+      },
+      {
+       "last_used_at": "2024-02-03",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-02-03",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "17U-5A"
+   ],
+   "brand": "Hitachi",
+   "display": "17U-5A",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "17U5A",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Yanmar 2.5 Digger"
+   ],
+   "brand": "Yanmar",
+   "display": "2.5",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "25",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2022-04-06",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2022-04-06",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "ASV 30"
+   ],
+   "brand": "ASV",
+   "display": "30",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "30",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Model - CAT 302"
+   ],
+   "brand": "Caterpillar",
+   "display": "302",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "302",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "304CR"
+   ],
+   "brand": "Caterpillar",
+   "display": "304CR",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "304CR",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "CAT 305.5E"
+   ],
+   "brand": "Caterpillar",
+   "display": "305.5E",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "3055E",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-01-16",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-01-16",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-01-16",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-01-16",
+       "qty": 1,
+       "slot": "Cab / air-con filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-01-16",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "305.5E2"
+   ],
+   "brand": "Caterpillar",
+   "display": "305.5E2",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "3055E2",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-05-10",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-05-10",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-05-10",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "JCB 55"
+   ],
+   "brand": "JCB",
+   "display": "55",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "55",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "JCB 55 Z-1"
+   ],
+   "brand": "JCB",
+   "display": "55 Z-1",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "55Z1",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-05-31",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-05-31",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-05-31",
+       "qty": 1,
+       "slot": "Air filter \u2014 inner",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-05-31",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Hyundai 55-3"
+   ],
+   "brand": "Hyundai",
+   "display": "55-3",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "553",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2023-04-01",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2023-04-01",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "JCB 552"
+   ],
+   "brand": "JCB",
+   "display": "552",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "552",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-02-12",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-02-12",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "JCB 55Z"
+   ],
+   "brand": "JCB",
+   "display": "55Z",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "55Z",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-11-08",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "ASV30"
+   ],
+   "brand": "ASV",
+   "display": "ASV30",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "ASV30",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "B2601"
+   ],
+   "brand": "Kubota",
+   "display": "B2601",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "B2601",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-05-22",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-05-22",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-05-22",
+       "qty": 1,
+       "slot": "Hydraulic suction filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "CAT BC24 Compact Roller"
+   ],
+   "brand": "Caterpillar",
+   "display": "BC24",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "BC24",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Daedong DK40"
+   ],
+   "brand": "Kioti",
+   "display": "DK40",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "DK40",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2026-08-10",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2026-08-10",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2026-08-10",
+       "qty": 1,
+       "slot": "Transmission filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Doosan DX140LC-3"
+   ],
+   "brand": "Doosan",
+   "display": "DX140LC-3",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "DX140LC3",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "ES18ZE Hydrocomac"
+   ],
+   "brand": "Eurocomach",
+   "display": "ES18ZE",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "ES18ZE",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "ES60 Eurocomak"
+   ],
+   "brand": "Eurocomach",
+   "display": "ES60",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "ES60",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "EX135USR-5 Hitachi"
+   ],
+   "brand": "Hitachi",
+   "display": "EX135USR-5",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "EX135USR5",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Mitsubishi Fuso"
+   ],
+   "brand": "Mitsubishi",
+   "display": "Fuso",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "FUSO",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2023-10-20",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "GR2120"
+   ],
+   "brand": "Kubota",
+   "display": "GR2120",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "GR2120",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2026-06-18",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2026-06-18",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2026-06-18",
+       "qty": 1,
+       "slot": "HST filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Cosen HYDR"
+   ],
+   "brand": "Cosen",
+   "display": "HYDR",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "HYDR",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "KIOTI"
+   ],
+   "brand": "Kioti",
+   "display": "Kioti (model not recorded)",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "KIOTIUNSPEC",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2023-11-08",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "KX91-3"
+   ],
+   "brand": "Kubota",
+   "display": "KX91-3",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "KX913",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-09-02",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-09-02",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-09-02",
+       "qty": 1,
+       "slot": "Pilot filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "KXO18-3"
+   ],
+   "brand": "Kubota",
+   "display": "KXO18-3",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "KXO183",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2023-10-07",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2023-10-07",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "KXO40"
+   ],
+   "brand": "Kubota",
+   "display": "KXO40",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "KXO40",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "L5740"
+   ],
+   "brand": "Kubota",
+   "display": "L5740",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "L5740",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-06-18",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-06-18",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-06-18",
+       "qty": 1,
+       "slot": "HST filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-06-18",
+       "qty": 1,
+       "slot": "Transmission filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "MDC-COCCN"
+   ],
+   "brand": "Unassigned",
+   "display": "MDC-COCCN",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "MDCCOCCN",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "MDL-SY18C"
+   ],
+   "brand": "Sany",
+   "display": "MDL-SY18C",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "MDLSY18C",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2023-11-27",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "MEGA H-400GA"
+   ],
+   "brand": "Unassigned",
+   "display": "MEGA H-400GA",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "MEGAH400GA",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "PC35-5A Komatsu"
+   ],
+   "brand": "Komatsu",
+   "display": "PC35-5A",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "PC355A",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2023-11-29",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2023-11-29",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2023-11-29",
+       "qty": 1,
+       "slot": "Air filter \u2014 outer",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "PC55-3 Komatsu"
+   ],
+   "brand": "Komatsu",
+   "display": "PC55-3",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "PC553",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-01-30",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-01-30",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "PCMR35-5"
+   ],
+   "brand": "Komatsu",
+   "display": "PCMR35-5",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "PCMR355",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "PL35MR"
+   ],
+   "brand": "Komatsu",
+   "display": "PL35MR",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "PL35MR",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-08-13",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-08-13",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "SH-1300"
+   ],
+   "brand": "Sumitomo",
+   "display": "SH-1300",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "SH1300",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Sumitomo SH130"
+   ],
+   "brand": "Sumitomo",
+   "display": "SH130",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "SH130",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "SK30SR"
+   ],
+   "brand": "Kobelco",
+   "display": "SK30SR",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "SK30SR",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "SR20SR Kobelco"
+   ],
+   "brand": "Kobelco",
+   "display": "SR20SR",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "SR20SR",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-09-16",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "SWE40UB"
+   ],
+   "brand": "Sunward",
+   "display": "SWE40UB",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "SWE40UB",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "U-35"
+   ],
+   "brand": "Kubota",
+   "display": "U-35",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "U35",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "U25"
+   ],
+   "brand": "Kubota",
+   "display": "U25",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "U25",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-05-13",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-05-13",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-05-13",
+       "qty": 1,
+       "slot": "Air filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-05-13",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-05-13",
+       "qty": 1,
+       "slot": "Pilot filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Sanward Digger U40"
+   ],
+   "brand": "Sunward",
+   "display": "U40",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "U40",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "U48"
+   ],
+   "brand": "Kubota",
+   "display": "U48",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "U48",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2022-07-10",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2022-07-10",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2022-07-10",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Yanmar V107"
+   ],
+   "brand": "Yanmar",
+   "display": "V107",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "V107",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "VIO 15-2"
+   ],
+   "brand": "Yanmar",
+   "display": "VIO 15-2",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "VIO152",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "VIO25-6"
+   ],
+   "brand": "Yanmar",
+   "display": "VIO25-6",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "VIO256",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2025-07-12",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-07-12",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2025-07-12",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "VIO25-6A"
+   ],
+   "brand": "Yanmar",
+   "display": "VIO25-6A",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "VIO256A",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-08-28",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-08-28",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Gator XUV 850D"
+   ],
+   "brand": "John Deere",
+   "display": "XUV 850D",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "XUV850D",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Yanmar"
+   ],
+   "brand": "Yanmar",
+   "display": "Yanmar (model not recorded)",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "YANMARUNSPEC",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2024-11-22",
+       "qty": 1,
+       "slot": "Engine oil filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-11-22",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-11-22",
+       "qty": 1,
+       "slot": "Air filter",
+       "use_count": 1
+      },
+      {
+       "last_used_at": "2024-11-22",
+       "qty": 1,
+       "slot": "Hydraulic return filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "ZX17U-5A"
+   ],
+   "brand": "Hitachi",
+   "display": "ZX17U-5A",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "ZX17U5A",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "ZX38U HITACHI"
+   ],
+   "brand": "Hitachi",
+   "display": "ZX38U",
+   "hidden": false,
+   "hidden_reason": null,
+   "invoice_count": 1,
+   "key": "ZX38U",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [
+      {
+       "last_used_at": "2022-04-07",
+       "qty": 1,
+       "slot": "Fuel filter",
+       "use_count": 1
+      }
+     ],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Assist to pulled out the engine"
+   ],
+   "brand": "Unassigned",
+   "display": "Assist to pulled out the engine",
+   "hidden": true,
+   "hidden_reason": "looks like invoice wording, not a machine",
+   "invoice_count": 0,
+   "key": "ASSISTTOPULLEDOUTTHEENGINE",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  },
+  {
+   "aliases": [
+    "Coolant leak on S130 Travel Issue KXO18-4"
+   ],
+   "brand": "Unassigned",
+   "display": "Coolant leak on S130 Travel Issue KXO18-4",
+   "hidden": true,
+   "hidden_reason": "looks like invoice wording, not a machine",
+   "invoice_count": 0,
+   "key": "COOLANTLEAKONS130TRAVELISSUEKXO184",
+   "kits": [
+    {
+     "interval_hours": null,
+     "label": "Standard service",
+     "lines": [],
+     "sort": 0
+    }
+   ],
+   "machine_count": 1
+  }
+ ],
+ "seed_version": "20260825224020"
+}

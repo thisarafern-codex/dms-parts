@@ -1,0 +1,249 @@
+/* DMS Parts — large-text UI.
+   Every size is in rem off the root, so Android's system font-scale setting is
+   honoured. The in-app A/A+/A++ control scales the root on top of that. */
+
+:root {
+  --bg:        #ffffff;
+  --surface:   #f2f5f8;
+  --surface-2: #e6ebf1;
+  --text:      #0e1216;   /* 18.9:1 on --bg */
+  --muted:     #3b444e;   /*  9.4:1 on --bg */
+  --accent:    #0a548f;   /*  7.4:1 on --bg */
+  --accent-bg: #e4eefa;
+  --border:    #b9c4cf;
+  --danger:    #96201a;   /*  7.1:1 on --bg */
+  --ok:        #1c5f2b;
+  --oem:       #0a548f;
+  --after:     #6a3d00;
+
+  --fs-sm: 1.125rem;      /* 18px — the floor for ANY text */
+  --tap:  3.5rem;         /* 56px at base — above Android's 48px floor */
+  --pad:  1rem;
+  --radius: 0.75rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #0d1117;
+    --surface:   #161d26;
+    --surface-2: #222c38;
+    --text:      #f2f6fa;
+    --muted:     #c2ccd6;
+    --accent:    #7cb8f5;
+    --accent-bg: #16283d;
+    --border:    #3a4550;
+    --danger:    #ff9d94;
+    --ok:        #7ee092;
+    --oem:       #7cb8f5;
+    --after:     #f0b76a;
+  }
+}
+
+/* Text-size control. 100% = whatever the phone's own font scale already is. */
+html          { font-size: 100%; -webkit-text-size-adjust: 100%; }
+html.size-2   { font-size: 115%; }
+html.size-3   { font-size: 132%; }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.3125rem;      /* 21px at default scale */
+  line-height: 1.5;
+  font-weight: 450;
+  padding-bottom: 4rem;
+  overscroll-behavior-y: contain;
+}
+
+/* Part numbers are the one thing he is actually squinting at, so they get a
+   face that keeps 0/O and 1/I/l apart and never reflows between rows. */
+.pn {
+  font-family: "DejaVu Sans Mono", "Roboto Mono", "Noto Sans Mono", ui-monospace,
+               "SF Mono", Menlo, Consolas, monospace;
+  font-variant-numeric: slashed-zero tabular-nums;
+  font-feature-settings: "zero" 1, "ss01" 1;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  word-break: break-all;
+}
+
+/* ---------- header ---------- */
+header {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--surface);
+  border-bottom: 2px solid var(--border);
+  padding: 0.5rem var(--pad);
+  display: flex; align-items: center; gap: 0.5rem;
+}
+header h1 { font-size: 1.35rem; margin: 0; flex: 1; min-width: 0; font-weight: 700;
+            line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+header .sub { display: block; font-size: var(--fs-sm); font-weight: 500; color: var(--muted);
+              white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.iconbtn {
+  min-width: var(--tap); min-height: var(--tap);
+  display: inline-flex; align-items: center; justify-content: center;
+  background: none; border: 2px solid transparent; border-radius: var(--radius);
+  color: var(--text); font-size: 1.4rem; font-weight: 700; cursor: pointer;
+  font-family: inherit;
+}
+.iconbtn:active { background: var(--surface-2); }
+.iconbtn:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--accent); outline-offset: 2px;
+}
+
+.sizebtns { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.sizebtns button {
+  flex: 1; min-height: var(--tap); padding: 0 0.4rem;
+  border: 2px solid var(--border); border-radius: var(--radius);
+  background: var(--bg); color: var(--text); font-family: inherit; font-weight: 700;
+  cursor: pointer;
+}
+.sizebtns button[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.sizebtns button:nth-child(1) { font-size: 1rem; }
+.sizebtns button:nth-child(2) { font-size: 1.35rem; }
+.sizebtns button:nth-child(3) { font-size: 1.75rem; }
+
+main { padding: var(--pad); max-width: 46rem; margin: 0 auto; }
+h2 { font-size: 1.6rem; margin: 0 0 0.75rem; line-height: 1.25; }
+h3 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--muted);
+     text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; }
+p  { margin: 0 0 1rem; }
+.muted { color: var(--muted); }
+.small { font-size: var(--fs-sm); }
+
+/* ---------- lists ---------- */
+.list { list-style: none; margin: 0 0 1rem; padding: 0; display: grid; gap: 0.6rem; }
+.row {
+  display: flex; align-items: center; gap: 0.75rem;
+  min-height: var(--tap); padding: 0.75rem var(--pad);
+  background: var(--surface); border: 2px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text); text-decoration: none; width: 100%;
+  font-family: inherit; font-size: var(--fs-sm); text-align: left; cursor: pointer;
+}
+.row:active { background: var(--surface-2); }
+.row .grow { flex: 1; min-width: 0; }
+.row .title { font-weight: 700; font-size: 1.15rem; display: block; }
+.row .meta  { color: var(--muted); font-size: var(--fs-sm); display: block; margin-top: 0.15rem; }
+.row .chev  { color: var(--muted); font-size: 1.5rem; font-weight: 700; flex: none; }
+.row .count {
+  flex: none; background: var(--accent-bg); color: var(--accent);
+  border-radius: 999px; padding: 0.2rem 0.7rem; font-weight: 700; font-size: var(--fs-sm);
+}
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); gap: 0.6rem; }
+.tile {
+  display: flex; flex-direction: column; justify-content: center; gap: 0.2rem;
+  min-height: 5.5rem; padding: 0.9rem; text-align: left;
+  background: var(--surface); border: 2px solid var(--border);
+  border-radius: var(--radius); color: var(--text); text-decoration: none;
+  font-family: inherit; cursor: pointer;
+}
+.tile:active { background: var(--surface-2); }
+.tile b { font-size: 1.2rem; line-height: 1.2; }
+.tile span { color: var(--muted); font-size: var(--fs-sm); }
+
+/* ---------- kit slots ---------- */
+.slot {
+  background: var(--surface); border: 2px solid var(--border);
+  border-radius: var(--radius); padding: 0.9rem var(--pad); margin-bottom: 0.75rem;
+}
+.slot > .name { font-size: 1.2rem; font-weight: 700; display: block; margin-bottom: 0.1rem; }
+.slot > .hint { color: var(--muted); font-size: var(--fs-sm); display: block; margin-bottom: 0.6rem; }
+
+.part {
+  padding: 0.7rem; margin-top: 0.5rem; border-radius: 0.6rem;
+  background: var(--bg); border: 2px solid var(--border);
+}
+/* Number on its own line, everything else on a second line under it. */
+.partmeta { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.partacts { display: flex; gap: 0.4rem; margin-left: auto; flex: none; }
+.partmeta .partsub { flex: 1 1 100%; overflow-wrap: anywhere; }
+/* The number is a button (tap to copy) but must not look like one. */
+.part .num {
+  /* A part number must NEVER wrap: 'HH164-324 / 30' across two lines is how a
+     number gets misread at a counter. It stays on one line, sized to fit the
+     phone's width, and scrolls sideways in its own box if it is very long. */
+  font-size: min(2rem, 8.5vw);              /* ~32px on a 375px phone */
+  flex: 1 1 100%;
+  background: none; border: none; padding: 0.1rem 0;
+  text-align: left; font-family: inherit; cursor: pointer;
+  min-height: 2.75rem; width: 100%;
+  white-space: nowrap; word-break: normal; overflow-x: auto;
+}
+.part .num:active { opacity: 0.6; }
+.part .num.pn { font-family: "DejaVu Sans Mono", "Roboto Mono", "Noto Sans Mono",
+                ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+.part .num.oem   { color: var(--oem); }
+.part .num.after { color: var(--after); }
+.tag {
+  font-size: var(--fs-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+  padding: 0.15rem 0.5rem; border-radius: 0.4rem; border: 2px solid currentColor;
+}
+.tag.oem   { color: var(--oem); }
+.tag.after { color: var(--after); }
+.tag.unverified { color: var(--danger); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: var(--tap); padding: 0.6rem 1.1rem;
+  border-radius: var(--radius); border: 2px solid var(--accent);
+  background: var(--accent); color: var(--bg);
+  font-family: inherit; font-size: var(--fs-sm); font-weight: 700;
+  cursor: pointer; text-decoration: none;
+}
+.btn.ghost { background: var(--bg); color: var(--accent); }
+.btn.danger { background: var(--bg); color: var(--danger); border-color: var(--danger); }
+.btn.wide { width: 100%; }
+.btn:active { filter: brightness(0.92); }
+.btnrow { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1rem; }
+
+/* ---------- forms ---------- */
+label { display: block; font-weight: 700; margin: 1rem 0 0.35rem; font-size: 1.15rem; }
+input, select, textarea {
+  width: 100%; min-height: var(--tap); padding: 0.6rem 0.75rem;
+  font-family: inherit; font-size: 1.15rem;
+  background: var(--bg); color: var(--text);
+  border: 2px solid var(--border); border-radius: var(--radius);
+}
+input.pn { font-size: 1.7rem; }
+.seg { display: flex; gap: 0.5rem; }
+.seg button {
+  flex: 1; min-height: var(--tap); border-radius: var(--radius);
+  border: 2px solid var(--border); background: var(--bg); color: var(--text);
+  font-family: inherit; font-size: var(--fs-sm); font-weight: 700; cursor: pointer;
+}
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+.note {
+  border-left: 6px solid var(--accent); background: var(--accent-bg);
+  padding: 0.75rem var(--pad); border-radius: 0 var(--radius) var(--radius) 0;
+  margin-bottom: 1rem; font-size: var(--fs-sm);
+}
+.note.warn { border-color: var(--danger); background: transparent; }
+
+.empty { text-align: center; color: var(--muted); padding: 2rem 1rem; }
+
+/* ---------- toast ---------- */
+#toast {
+  position: fixed; left: 50%; bottom: 1.25rem; transform: translateX(-50%);
+  background: var(--text); color: var(--bg);
+  padding: 0.8rem 1.25rem; border-radius: var(--radius);
+  font-weight: 700; font-size: 1.15rem; max-width: 90vw; text-align: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 50;
+}
+#toast.show { opacity: 1; }
+
+.offline-badge {
+  display: none; background: var(--danger); color: var(--bg);
+  text-align: center; padding: 0.4rem; font-weight: 700; font-size: var(--fs-sm);
+}
+body.offline .offline-badge { display: block; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

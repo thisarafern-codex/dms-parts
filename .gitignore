@@ -1,0 +1,13 @@
+# Real business data derived from the invoicing app's live database.
+# Machine models are fine to commit; client names and serials are not.
+seed/owners.json
+
+# Never bring the production database into this repo.
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+
+__pycache__/
+*.pyc
+.DS_Store
