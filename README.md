@@ -22,6 +22,9 @@ together, big enough to read in a badly-lit shed.
   position with its part numbers. Tap a number to copy it.
 - **Add a number** — tap *Add part number* on any position. Mark it genuine or
   aftermarket. Both can sit on the same position: that *is* the cross-reference.
+- **Add anything from anywhere** — the **+** in the header, on every screen,
+  adds a new machine, a new brand, a new service kit, or a new part number
+  without having to first find your way to the right page.
 - **Got a number, need the machine?** — *Search a part number* on the home
   screen works backwards: type the number in your hand, see every machine that
   takes it.

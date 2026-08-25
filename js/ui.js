@@ -504,6 +504,136 @@
   var go = UI.go, fail = UI.fail, plural = UI.plural;
   var app = document.getElementById('app');
 
+  // ---------------------------------------------------------- quick add
+  // Reachable from the "+" in the header on every screen, because dad needs
+  // to add a machine, brand, kit or part number from wherever he happens to
+  // be, not just from the one page that "obviously" owns that action.
+
+  function nextBrandSort(brands) {
+    return brands.reduce(function (m, b) { return Math.max(m, b.sort || 0); }, 0) + 1;
+  }
+
+  function findBrand(name) {
+    var key = name.trim().toLowerCase();
+    return DB.all('brands').then(function (brands) {
+      return brands.filter(function (b) { return b.name.toLowerCase() === key; })[0] || null;
+    });
+  }
+
+  /* Reuses an existing brand (any case) rather than creating a look-alike
+     duplicate — 'kubota' typed against an existing 'Kubota' must not fork it. */
+  function ensureBrand(name) {
+    return findBrand(name).then(function (existing) {
+      if (existing) return existing.name;
+      return DB.all('brands').then(function (brands) {
+        return DB.put('brands', { name: name, sort: nextBrandSort(brands) });
+      }).then(function () { return name; });
+    });
+  }
+
+  function addKitFlow(modelId) {
+    var hours = prompt('Service interval in hours? e.g. 500\n\nLeave blank to just name it.');
+    if (hours === null) return;
+    var n = parseInt(String(hours).replace(/[^0-9]/g, ''), 10);
+    var label = n ? n + ' hour service' : (prompt('Name for this kit?') || 'Service');
+    DB.byIndex('kits', 'model_id', modelId).then(function (kits) {
+      return DB.put('kits', { model_id: modelId, label: label,
+                              interval_hours: n || null, sort: kits.length });
+    }).then(function (id) { go('#/kit/' + id); }).catch(fail);
+  }
+
+  function screenQuickAdd() {
+    setHead('Add', '', true);
+    render('<ul class="list">' +
+      row('#/addmachine', 'Add a machine', 'A digger under a brand you already have') +
+      row('#/addbrand', 'Add a brand', 'For a make you have not serviced before') +
+      row('#/pickmachine/kit', 'Add a service kit', 'Another interval for a machine you have') +
+      row('#/pickmachine/part', 'Add a part number', 'A filter number for a machine you have') +
+      '</ul>');
+    function row(href, title, meta) {
+      return '<li><a class="row" href="' + href + '"><span class="grow">' +
+        '<span class="title">' + title + '</span><span class="meta">' + meta + '</span></span>' +
+        '<span class="chev">&rsaquo;</span></a></li>';
+    }
+  }
+
+  function screenAddBrand() {
+    setHead('Add a brand', 'New brand', true);
+    render('<label for="brandname">Brand name</label>' +
+      '<input id="brandname" type="text" autocomplete="off" autocapitalize="words" ' +
+      'enterkeyhint="done" placeholder="e.g. Kubota">' +
+      '<div class="btnrow" style="margin-top:1.25rem">' +
+      '<button class="btn" data-act="save-brand">Save</button>' +
+      '<button class="btn ghost" data-act="cancel">Cancel</button></div>');
+    document.getElementById('brandname').focus();
+  }
+
+  function screenAddMachine() {
+    setHead('Add a machine', 'New machine', true);
+    return DB.all('brands').then(function (brands) {
+      brands.sort(function (a, b) { return a.name.localeCompare(b.name); });
+      var prefill = window.__prefillBrand || '';
+      window.__prefillBrand = null;
+      var options = brands.map(function (b) {
+        return '<option value="' + esc(b.name) + '">';
+      }).join('');
+      render('<label for="mbrand">Brand</label>' +
+        '<input id="mbrand" list="brandlist" type="text" autocomplete="off" ' +
+        'autocapitalize="words" placeholder="e.g. Kubota" value="' + esc(prefill) + '">' +
+        '<datalist id="brandlist">' + options + '</datalist>' +
+        '<p class="muted small">Pick an existing brand, or type a new one.</p>' +
+        '<label for="mname">Machine model</label>' +
+        '<input id="mname" type="text" autocomplete="off" autocapitalize="characters" ' +
+        'enterkeyhint="done" placeholder="e.g. U55-4">' +
+        '<div class="btnrow" style="margin-top:1.25rem">' +
+        '<button class="btn" data-act="save-machine">Save</button>' +
+        '<button class="btn ghost" data-act="cancel">Cancel</button></div>');
+      document.getElementById(prefill ? 'mname' : 'mbrand').focus();
+    });
+  }
+
+  /* intent: 'kit' lands straight on the "which interval" prompt; 'part' lands
+     on the machine's kit (or, if it has more than one, its model page to pick
+     which kit) so the existing "+ Add part number" buttons finish the job. */
+  function screenPickMachine(intent) {
+    setHead(intent === 'kit' ? 'Add a service kit' : 'Add a part number',
+            'Pick a machine', true);
+    return DB.all('models').then(function (models) {
+      var live = models.filter(function (m) { return !m.hidden; });
+      live.sort(function (a, b) {
+        return (b.invoice_count - a.invoice_count) || a.display.localeCompare(b.display);
+      });
+
+      function pickRow(m) {
+        var bits = [m.brand];
+        if (m.invoice_count) bits.push(plural(m.invoice_count, 'invoice'));
+        return '<li><button class="row" data-act="pick-machine" data-intent="' + intent +
+          '" data-model="' + m.id + '"><span class="grow"><span class="title">' +
+          esc(m.display) + '</span><span class="meta">' + esc(bits.join(' \u00b7 ')) +
+          '</span></span><span class="chev">&rsaquo;</span></button></li>';
+      }
+
+      render('<label for="pmfilter">Find a machine</label>' +
+        '<input id="pmfilter" type="search" placeholder="e.g. U55" autocomplete="off" ' +
+        'autocapitalize="characters" enterkeyhint="search">' +
+        '<ul class="list" id="pmlist">' + live.map(pickRow).join('') + '</ul>' +
+        '<p class="muted small">Machine not listed? ' +
+        '<a href="#/addmachine">Add it first</a>.</p>');
+
+      var input = document.getElementById('pmfilter');
+      input.addEventListener('input', function () {
+        var q = Seed.partKey(input.value);
+        var list = document.getElementById('pmlist');
+        list.innerHTML = live.filter(function (m) {
+          if (!q) return true;
+          if (m.key.indexOf(q) !== -1) return true;
+          return (m.aliases || []).some(function (a) { return Seed.partKey(a).indexOf(q) !== -1; });
+        }).map(pickRow).join('') ||
+          '<li class="empty">Nothing matches &ldquo;' + esc(input.value) + '&rdquo;.</li>';
+      });
+    });
+  }
+
   // -------------------------------------------------------------- cleanup
   function screenCleanup() {
     setHead('Tidy up', 'Fix names and brands', true);
@@ -672,6 +802,7 @@
       '<h3>Go to</h3>' +
       '<ul class="list">' +
       row('#/', 'Machines', 'Browse by brand') +
+      row('#/quickadd', 'Add', 'New machine, brand, kit or part number') +
       row('#/search', 'Find a part number', 'Search everything saved') +
       row('#/cleanup', 'Tidy up', 'Fix names, brands and duplicates') +
       row('#/backup', 'Backup', 'Save or restore your part numbers') +
@@ -708,6 +839,67 @@
       DB.del('kit_line_parts', Number(el.getAttribute('data-link')))
         .then(function () { toast('Removed'); route(); }).catch(fail);
     },
+    'save-brand': function () {
+      var input = document.getElementById('brandname');
+      var name = (input.value || '').trim();
+      if (!name) { toast('Type a brand name first.'); return; }
+      findBrand(name).then(function (existing) {
+        if (existing) {
+          toast('You already have that brand.');
+          go('#/brand/' + encodeURIComponent(existing.name));
+          return null;
+        }
+        return DB.all('brands').then(function (brands) {
+          return DB.put('brands', { name: name, sort: nextBrandSort(brands) });
+        }).then(function () {
+          toast('Added ' + name);
+          // Straight on to its first machine — an empty brand with nothing
+          // under it is a dead end he'd have to remember to come back to.
+          window.__prefillBrand = name;
+          go('#/addmachine');
+        });
+      }).catch(fail);
+    },
+    'save-machine': function () {
+      var brandName = (document.getElementById('mbrand').value || '').trim() || 'Unassigned';
+      var display = (document.getElementById('mname').value || '').trim();
+      if (!display) { toast('Type the machine model.'); return; }
+      var key = Seed.partKey(display);
+      if (!key) { toast('Type the machine model.'); return; }
+      DB.oneByIndex('models', 'key', key).then(function (existing) {
+        if (existing) {
+          toast('That machine is already on file.');
+          go('#/model/' + encodeURIComponent(existing.key));
+          return;
+        }
+        return ensureBrand(brandName).then(function (brand) {
+          return DB.put('models', {
+            key: key, brand: brand, display: display, aliases: [display],
+            machine_count: 0, invoice_count: 0, hidden: 0, hidden_reason: null,
+            brand_locked: 1, source: 'manual'
+          });
+        }).then(function (modelId) {
+          // A blank kit so the model page has somewhere to hang filters,
+          // matching what a seeded machine looks like on day one.
+          return DB.put('kits', { model_id: modelId, label: 'Standard service',
+                                  interval_hours: null, sort: 0 });
+        }).then(function () {
+          toast('Added ' + display);
+          go('#/model/' + encodeURIComponent(key));
+        });
+      }).catch(fail);
+    },
+    'pick-machine': function (el) {
+      var intent = el.getAttribute('data-intent');
+      var modelId = Number(el.getAttribute('data-model'));
+      if (intent === 'kit') { addKitFlow(modelId); return; }
+      DB.byIndex('kits', 'model_id', modelId).then(function (kits) {
+        if (kits.length === 1) { go('#/kit/' + kits[0].id); return; }
+        return DB.get('models', modelId).then(function (m) {
+          go('#/model/' + encodeURIComponent(m.key));
+        });
+      }).catch(fail);
+    },
     'add-slot': function (el) {
       var kitId = Number(el.getAttribute('data-kit'));
       var name = prompt('Which filter position? e.g. Engine oil filter');
@@ -732,17 +924,7 @@
           .then(function () { toast('Removed'); route(); });
       }).catch(fail);
     },
-    'add-kit': function (el) {
-      var modelId = Number(el.getAttribute('data-model'));
-      var hours = prompt('Service interval in hours? e.g. 500\n\nLeave blank to just name it.');
-      if (hours === null) return;
-      var n = parseInt(String(hours).replace(/[^0-9]/g, ''), 10);
-      var label = n ? n + ' hour service' : (prompt('Name for this kit?') || 'Service');
-      DB.byIndex('kits', 'model_id', modelId).then(function (kits) {
-        return DB.put('kits', { model_id: modelId, label: label,
-                                interval_hours: n || null, sort: kits.length });
-      }).then(function (id) { go('#/kit/' + id); }).catch(fail);
-    },
+    'add-kit': function (el) { addKitFlow(Number(el.getAttribute('data-model'))); },
     'del-kit': function (el) {
       var kitId = Number(el.getAttribute('data-kit'));
       if (!confirm('Delete this whole kit and its filter positions?')) return;
@@ -942,12 +1124,17 @@
     else if (p[0] === 'backup')    run = screenBackup();
     else if (p[0] === 'menu')      run = screenMenu();
     else if (p[0] === 'copy')      run = screenCopy(p[1]);
+    else if (p[0] === 'quickadd')  run = screenQuickAdd();
+    else if (p[0] === 'addbrand')  run = screenAddBrand();
+    else if (p[0] === 'addmachine') run = screenAddMachine();
+    else if (p[0] === 'pickmachine') run = screenPickMachine(p[1]);
     else                           run = UI.screenBrands();
     Promise.resolve(run).catch(fail);
   }
 
   window.addEventListener('hashchange', route);
   document.getElementById('back').addEventListener('click', function () { history.back(); });
+  document.getElementById('quickadd').addEventListener('click', function () { go('#/quickadd'); });
   document.getElementById('menu').addEventListener('click', function () { go('#/menu'); });
 
   // ----------------------------------------------------------------- init

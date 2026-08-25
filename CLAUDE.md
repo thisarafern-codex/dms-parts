@@ -134,6 +134,18 @@ numbers are the entire point. A slot the target lacks is created with its
 numbers; a slot it has but hasn't filled gets them; a slot already holding
 numbers is left alone.
 
+**The "+" in the header is global, on every screen, by design.** It opens
+`#/quickadd`, which fans out to add-machine, add-brand, add-kit and add-part
+flows. Adding a brand hands straight off to add-machine with the new brand
+prefilled (`window.__prefillBrand`), because an empty brand with nothing under
+it is a dead end. Adding a kit or a part first asks *which machine* via
+`screenPickMachine`, a flat search across every brand (not scoped to "wherever
+you started"), since the whole point is not having to navigate there first.
+`findBrand`/`ensureBrand` do case-insensitive brand matching so typing
+`kubota` against an existing `Kubota` reuses it rather than forking a
+look-alike duplicate — the `brands.name` index is unique, so this also avoids
+an `IDBConstraintError` on the exact-duplicate case.
+
 **Two part numbers on the same `kit_line` ARE the cross-reference.** There is no
 separate equivalence table: sharing a position is what "genuine plus aftermarket
 alternative" means, and the reverse lookup through `kit_line_parts` answers
