@@ -36,19 +36,6 @@
            ';--tile-bg-dark:' + c.bgD + ';--tile-fg-dark:' + c.fgD + '"';
   }
 
-  // One plain digger silhouette, reused on every brand tile — an actual
-  // manufacturer photo would be a licensing problem on a public page, and a
-  // logo-per-brand is more upkeep than 14-odd hand-sourced marks are worth.
-  // Renders in currentColor, so it always matches that tile's own (already
-  // contrast-checked) text colour with no extra work.
-  var DIGGER_SVG = '<svg class="tile-icon" viewBox="0 0 140 90" aria-hidden="true">' +
-    '<rect x="10" y="66" width="86" height="13" rx="6.5"/>' +
-    '<rect x="24" y="42" width="52" height="26" rx="5"/>' +
-    '<path d="M28 42 L28 22 L50 22 L50 34 L58 42 Z"/>' +
-    '<path d="M56 46 L94 18 L104 24 L68 52 Z"/>' +
-    '<path d="M94 18 L120 34 L114 42 L88 26 Z"/>' +
-    '<path d="M112 30 L134 40 L130 54 L108 50 L106 36 Z"/>' +
-    '</svg>';
 
   // ---------------------------------------------------------------- helpers
   function esc(s) {
@@ -102,7 +89,7 @@
   function brandTile(b) {
     return '<a class="tile"' + brandTileStyle(b.name) +
       ' href="#/brand/' + encodeURIComponent(b.name) + '">' +
-      DIGGER_SVG + '<b>' + esc(b.name) + '</b></a>';
+      '<b>' + esc(b.name) + '</b></a>';
   }
 
   function screenBrands() {

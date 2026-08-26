@@ -146,12 +146,14 @@ or white without this adjustment, so don't drop a fresh brand colour straight
 into the map — add its sourced hex to `tools/brand_colors.py` and run it;
 copy the printed line into `BRAND_COLORS`.
 
-The tile itself renders `DIGGER_SVG` — one small original excavator
-silhouette, reused on every tile in `currentColor` (so it always matches that
-tile's own contrast-checked text colour for free). This is deliberate, not a
-placeholder: a real manufacturer photo would be a copyright problem on a
-public page, and one licensed logo per brand is a lot of ongoing sourcing
-work for a 23-brand list that keeps growing as dad adds machines.
+No per-brand imagery on the tile (colour only) — an earlier version added a
+generic digger-silhouette icon to every tile, but it was dropped at dad's
+request. Don't add manufacturer photos here either: this repo is **public**
+(GitHub Pages needs that), so real press/catalogue photography would be a
+genuine copyright problem regardless of how few people actually visit the
+site. A photo dad or the user personally took of an actual job-site machine
+would be fine to add per brand — that's the one path that's actually open,
+should it come up again.
 
 ## Things that will bite you
 

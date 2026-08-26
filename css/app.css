@@ -140,7 +140,7 @@ p  { margin: 0 0 1rem; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); gap: 0.6rem; }
 .tile {
   display: flex; flex-direction: column; justify-content: center; gap: 0.3rem;
-  min-height: 6.5rem; padding: 0.9rem; text-align: left;
+  min-height: 5.5rem; padding: 0.9rem; text-align: left;
   /* A brand tile sets --tile-bg-light/dark + --tile-fg-light/dark inline;
      tiles with no known brand colour (including Unassigned) just fall back
      to the app's normal surface/text tokens. */
@@ -161,7 +161,6 @@ p  { margin: 0 0 1rem; }
 .tile:active { filter: brightness(0.87); }
 .tile b { font-size: 1.2rem; line-height: 1.2; }
 .tile span { color: var(--muted); font-size: var(--fs-sm); }
-.tile-icon { width: 3.6rem; height: auto; fill: currentColor; flex: none; }
 
 /* ---------- kit slots ---------- */
 .slot {
