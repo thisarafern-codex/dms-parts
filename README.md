@@ -21,18 +21,21 @@ together, big enough to read in a badly-lit shed.
   brand names. Brands and machines are both listed alphabetically throughout.
 - **Find a machine** — tap the brand, then the machine. The search box also
   matches old spellings, so typing `u 55` finds `U55-4`.
-- **See the filters** — each machine has service kits; a kit lists every filter
-  position with its part numbers. Tap a number to copy it.
-- **Add a number** — tap *Add part number* on any position. Mark it genuine or
-  aftermarket. Both can sit on the same position: that *is* the cross-reference.
+- **See the filters** — each machine has four service kits (250, 500, 750,
+  1000 hours). A kit is a list of positions — Engine oil filter, Air filter,
+  and so on. Tap a position to see its part numbers, or add one.
+- **Add a number** — on a filter position, tap *Add part number*. Mark it
+  genuine or aftermarket. Genuine always means the machine's own brand — you
+  don't pick that. Aftermarket is a pick list (Sakura, Donaldson, HIFI to
+  start); *+ Add a new brand* saves it for every future part, not just this
+  one. Genuine and aftermarket can both sit on the same position: that *is*
+  the cross-reference.
+- **A position with a few options?** Once a filter position has more than a
+  handful of part numbers on it, a filter box appears so you can narrow it
+  down by number, brand, or supplier.
 - **Add anything from anywhere** — the **+** in the header, on every screen,
   adds a new machine, a new brand, or a new part number without having to
-  first find your way to the right page. Every machine comes with four fixed
-  service kits — 250, 500, 750 and 1000 hours — so there's nothing to set up,
-  just numbers to fill in.
-- **Got a number, need the machine?** — *Search a part number* on the home
-  screen works backwards: type the number in your hand, see every machine that
-  takes it.
+  first find your way to the right page.
 - **Text too small?** — Menu → **Text size**. It stacks on top of the phone's
   own text size setting.
 

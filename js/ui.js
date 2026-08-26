@@ -113,9 +113,7 @@
         render('<label for="bfilter">Find a brand</label>' +
           '<input id="bfilter" type="search" placeholder="e.g. Kubota" autocomplete="off" ' +
           'autocapitalize="words" enterkeyhint="search">' +
-          '<div class="btnrow" style="margin-top:.75rem">' +
-          '<a class="btn ghost" href="#/search">Search a part number</a></div>' +
-          '<div class="grid" id="bgrid">' + known.map(brandTile).join('') + '</div>');
+          '<div class="grid" id="bgrid" style="margin-top:.75rem">' + known.map(brandTile).join('') + '</div>');
 
         var input = document.getElementById('bfilter');
         input.addEventListener('input', function () {
@@ -216,6 +214,9 @@
   }
 
   // ------------------------------------------------------------- kit screen
+  /* The kit page is a plain list of categories now (Engine oil filter, Air
+     filter, ...) — tap one to see and add its part numbers. Keeps the kit
+     page itself short even once he's filled most positions in. */
   function screenKit(id) {
     id = Number(id);
     return DB.get('kits', id).then(function (kit) {
@@ -225,18 +226,23 @@
         return DB.byIndex('kit_lines', 'kit_id', id).then(function (lines) {
           lines.sort(function (a, b) { return (a.sort || 0) - (b.sort || 0); });
           return Promise.all(lines.map(function (l) {
-            return partsForLine(l.id).then(function (parts) {
-              return { line: l, parts: parts };
+            return DB.byIndex('kit_line_parts', 'kit_line_id', l.id).then(function (links) {
+              return { line: l, count: links.length };
             });
           })).then(function (rows) {
             var html = '';
             if (!rows.length) {
               html += '<div class="note">No filter positions on this kit yet. ' +
                       'Add the ones this machine takes.</div>';
+            } else {
+              html += '<ul class="list">' + rows.map(function (r) {
+                var state = r.count ? plural(r.count, 'part number') + ' saved' : 'No part number yet';
+                return '<li><a class="row" href="#/slot/' + r.line.id + '">' +
+                  '<span class="grow"><span class="title">' + esc(r.line.slot) + '</span>' +
+                  '<span class="meta">' + esc(state) + '</span></span>' +
+                  '<span class="chev">&rsaquo;</span></a></li>';
+              }).join('') + '</ul>';
             }
-            rows.forEach(function (r) {
-              html += slotHtml(r.line, r.parts);
-            });
             html += '<div class="btnrow">' +
               '<button class="btn ghost" data-act="add-slot" data-kit="' + id + '">+ Add a filter position</button>' +
               '<button class="btn ghost" data-act="copy-kit" data-kit="' + id + '">Copy from another machine</button>' +
@@ -248,51 +254,89 @@
     });
   }
 
-  function slotHtml(line, parts) {
-    var hint = [];
-    if (line.qty && line.qty !== 1) hint.push('qty ' + line.qty);
-    var html = '<section class="slot"><span class="name">' + esc(line.slot) + '</span>';
-    if (hint.length) html += '<span class="hint">' + esc(hint.join(' · ')) + '</span>';
+  function partRowHtml(line, r) {
+    var p = r.part;
+    var meta = [p.manufacturer, p.supplier].filter(Boolean).join(' · ');
+    return '<div class="part">' +
+      '<button class="num pn ' + (p.kind === 'oem' ? 'oem' : 'after') + '" ' +
+        'data-act="copy" data-num="' + esc(p.number_display) + '" ' +
+        'title="Tap to copy">' + esc(p.number_display) + '</button>' +
+      '<div class="partmeta">' +
+        '<span class="tag ' + (p.kind === 'oem' ? 'oem' : 'after') + '">' +
+          (p.kind === 'oem' ? 'Genuine' : 'Aftermarket') + '</span>' +
+        (p.unverified ? '<span class="tag unverified">Unchecked</span>' : '') +
+        // The two buttons wrap as one unit, so they can never end up split
+        // across lines when the text size is turned right up.
+        '<span class="partacts">' +
+          '<button class="iconbtn" data-act="edit-part" data-part="' + p.id + '" ' +
+            'data-line="' + line.id + '" aria-label="Edit ' + esc(p.number_display) + '">&#9998;</button>' +
+          '<button class="iconbtn" data-act="unlink" data-link="' + r.link.id + '" ' +
+            'aria-label="Remove ' + esc(p.number_display) + ' from this position">&times;</button>' +
+        '</span>' +
+        // Supplier detail gets its own line: at the largest text size it has
+        // nowhere near enough room beside the tag and the two buttons.
+        (meta ? '<span class="muted small partsub">' + esc(meta) + '</span>' : '') +
+      '</div></div>';
+  }
+
+  function partsListHtml(line, parts, hasAny) {
     if (!parts.length) {
-      html += '<p class="muted small" style="margin:0 0 .6rem">No part number yet.</p>';
+      return '<p class="muted small">' +
+        (hasAny ? 'Nothing matches that.' : 'No part number yet.') + '</p>';
     }
-    parts.forEach(function (r) {
-      var p = r.part;
-      var meta = [p.manufacturer, p.supplier].filter(Boolean).join(' · ');
-      html += '<div class="part">' +
-        '<button class="num pn ' + (p.kind === 'oem' ? 'oem' : 'after') + '" ' +
-          'data-act="copy" data-num="' + esc(p.number_display) + '" ' +
-          'title="Tap to copy">' + esc(p.number_display) + '</button>' +
-        '<div class="partmeta">' +
-          '<span class="tag ' + (p.kind === 'oem' ? 'oem' : 'after') + '">' +
-            (p.kind === 'oem' ? 'Genuine' : 'Aftermarket') + '</span>' +
-          (p.unverified ? '<span class="tag unverified">Unchecked</span>' : '') +
-          // The two buttons wrap as one unit, so they can never end up split
-          // across lines when the text size is turned right up.
-          '<span class="partacts">' +
-            '<button class="iconbtn" data-act="edit-part" data-part="' + p.id + '" ' +
-              'data-line="' + line.id + '" aria-label="Edit ' + esc(p.number_display) + '">&#9998;</button>' +
-            '<button class="iconbtn" data-act="unlink" data-link="' + r.link.id + '" ' +
-              'aria-label="Remove ' + esc(p.number_display) + ' from this position">&times;</button>' +
-          '</span>' +
-          // Supplier detail gets its own line: at the largest text size it has
-          // nowhere near enough room beside the tag and the two buttons.
-          (meta ? '<span class="muted small partsub">' + esc(meta) + '</span>' : '') +
-        '</div></div>';
+    return parts.map(function (r) { return partRowHtml(line, r); }).join('');
+  }
+
+  /* One filter position's own page: every genuine/aftermarket number saved
+     for it, with a filter box once there are enough to be worth narrowing —
+     he's expecting several aftermarket options per position over time. */
+  function screenSlot(lineId) {
+    lineId = Number(lineId);
+    return DB.get('kit_lines', lineId).then(function (line) {
+      if (!line) return render('<p class="empty">That filter position is gone.</p>');
+      return DB.get('kits', line.kit_id).then(function (kit) {
+        return DB.get('models', kit ? kit.model_id : null).then(function (model) {
+          setHead(line.slot, model && kit ? model.display + ' · ' + kitName(kit) : '', true);
+          return partsForLine(lineId).then(function (parts) {
+            var html = '';
+            if (parts.length > 4) {
+              html += '<label for="pfilter">Filter these part numbers</label>' +
+                '<input id="pfilter" type="search" autocomplete="off" ' +
+                'autocapitalize="characters" placeholder="Number, brand or supplier">';
+            }
+            html += '<div id="partlist">' + partsListHtml(line, parts, false) + '</div>' +
+              '<div class="btnrow" style="margin-top:.6rem">' +
+              '<button class="btn" data-act="add-part" data-line="' + lineId + '">+ Add part number</button>' +
+              '</div><div class="btnrow">' +
+              '<button class="btn danger" data-act="del-slot" data-line="' + lineId + '">' +
+              'Remove this filter position</button></div>';
+            render(html);
+
+            var input = document.getElementById('pfilter');
+            if (input) {
+              input.addEventListener('input', function () {
+                var q = input.value.trim().toLowerCase();
+                var filtered = !q ? parts : parts.filter(function (r) {
+                  var p = r.part;
+                  return (p.number_display || '').toLowerCase().indexOf(q) !== -1 ||
+                    (p.manufacturer || '').toLowerCase().indexOf(q) !== -1 ||
+                    (p.supplier || '').toLowerCase().indexOf(q) !== -1 ||
+                    (p.kind === 'oem' ? 'genuine' : 'aftermarket').indexOf(q) !== -1;
+                });
+                document.getElementById('partlist').innerHTML = partsListHtml(line, filtered, true);
+              });
+            }
+          });
+        });
+      });
     });
-    html += '<div class="btnrow" style="margin:.6rem 0 0">' +
-      '<button class="btn" data-act="add-part" data-line="' + line.id + '">+ Add part number</button>' +
-      '<button class="iconbtn" data-act="del-slot" data-line="' + line.id + '" ' +
-        'aria-label="Remove the ' + esc(line.slot) + ' position">&#128465;</button>' +
-      '</div></section>';
-    return html;
   }
 
   window.UI = { esc: esc, render: render, setHead: setHead, toast: toast, go: go,
                 fail: fail, plural: plural, partsForLine: partsForLine,
-                kitName: kitName, screenKit: screenKit, screenBrands: screenBrands,
-                screenBrand: screenBrand, screenModel: screenModel,
-                slotHtml: slotHtml, modelRow: modelRow };
+                kitName: kitName, screenKit: screenKit, screenSlot: screenSlot,
+                screenBrands: screenBrands, screenBrand: screenBrand,
+                screenModel: screenModel, modelRow: modelRow };
 })();
 
 /* ---- part entry, search, cleanup, backup, routing ---------------------- */
@@ -312,81 +356,167 @@
     return isNaN(n) ? null : Math.round(n * 100);
   }
 
+  // Aftermarket filter-brand names (Sakura, Donaldson, ...) picked on the
+  // part form rather than typed. Genuine doesn't need this store at all —
+  // its brand is always just the machine's own, never a stored choice.
+  function findAftermarketBrand(name) {
+    var key = name.trim().toLowerCase();
+    return DB.all('aftermarket_brands').then(function (brands) {
+      return brands.filter(function (b) { return b.name.toLowerCase() === key; })[0] || null;
+    });
+  }
+
+  /* Reuses an existing brand (any case) rather than creating a look-alike
+     duplicate, same as the machine-brand version of this. */
+  function ensureAftermarketBrand(name) {
+    name = name.trim();
+    return findAftermarketBrand(name).then(function (existing) {
+      if (existing) return existing.name;
+      return DB.put('aftermarket_brands', { name: name }).then(function () { return name; });
+    });
+  }
+
+  /* Starting options so the picker isn't empty on a fresh install. Whatever
+     dad adds from here on sticks around for every future part, not just the
+     one he was adding when he added it. */
+  function ensureDefaultAftermarketBrands() {
+    return DB.count('aftermarket_brands').then(function (n) {
+      if (n) return null;
+      return ['Sakura', 'Donaldson', 'HIFI'].reduce(function (chain, name) {
+        return chain.then(function () { return ensureAftermarketBrand(name); });
+      }, Promise.resolve());
+    });
+  }
+
   // ------------------------------------------------------------ part form
   function screenPart(lineId, partId) {
     lineId = Number(lineId);
     return DB.get('kit_lines', lineId).then(function (line) {
       if (!line) return render('<p class="empty">That filter position is gone.</p>');
-      var loadPart = partId ? DB.get('parts', Number(partId)) : Promise.resolve(null);
-      return Promise.all([loadPart, DB.all('parts')]).then(function (res) {
-        var part = res[0], allParts = res[1];
-        setHead(line.slot, part ? 'Edit part number' : 'Add a part number', true);
+      return DB.get('kits', line.kit_id).then(function (kit) {
+        return DB.get('models', kit ? kit.model_id : null).then(function (model) {
+          var loadPart = partId ? DB.get('parts', Number(partId)) : Promise.resolve(null);
+          return Promise.all([loadPart, DB.all('parts'), DB.all('aftermarket_brands')])
+              .then(function (res) {
+            var part = res[0], allParts = res[1], aftBrands = res[2];
+            setHead(line.slot, part ? 'Edit part number' : 'Add a part number', true);
 
-        var kind = part ? part.kind : 'oem';
-        var html = '<label for="num">Part number</label>' +
-          '<input id="num" class="pn" type="text" autocomplete="off" ' +
-          'autocapitalize="characters" spellcheck="false" enterkeyhint="done" ' +
-          'value="' + esc(part ? part.number_display : '') + '" ' +
-          'placeholder="e.g. HH164-32430">' +
-          '<div id="dupe"></div>' +
-          '<label>Genuine or aftermarket?</label>' +
-          '<div class="seg" id="kind">' +
-            '<button type="button" data-kind="oem" aria-pressed="' + (kind === 'oem') + '">Genuine</button>' +
-            '<button type="button" data-kind="aftermarket" aria-pressed="' + (kind !== 'oem') + '">Aftermarket</button>' +
-          '</div>' +
-          '<label for="mfr">Make <span class="muted small">(optional)</span></label>' +
-          '<input id="mfr" type="text" autocomplete="off" value="' + esc(part ? part.manufacturer : '') + '" placeholder="Kubota, Donaldson…">' +
-          '<label for="sup">Where from <span class="muted small">(optional)</span></label>' +
-          '<input id="sup" type="text" autocomplete="off" value="' + esc(part ? part.supplier : '') + '" placeholder="Norwood, Repco…">' +
-          '<label for="price">Price each <span class="muted small">(optional)</span></label>' +
-          '<input id="price" type="text" inputmode="decimal" value="' + esc(part ? money(part.price_cents) : '') + '" placeholder="$0.00">' +
-          '<label for="notes">Notes <span class="muted small">(optional)</span></label>' +
-          '<textarea id="notes" rows="2">' + esc(part ? part.notes : '') + '</textarea>';
+            var kind = part ? part.kind : 'oem';
+            var machineBrand = model ? model.brand : 'this machine';
 
-        if (part && part.unverified) {
-          html += '<div class="note warn small">This number came from a note and ' +
-                  'has not been checked yet. Saving marks it checked.</div>';
-        }
-        html += '<div class="btnrow" style="margin-top:1.25rem">' +
-          '<button class="btn" data-act="save-part" data-line="' + lineId + '" ' +
-            'data-part="' + (part ? part.id : '') + '">Save</button>' +
-          '<button class="btn ghost" data-act="cancel">Cancel</button></div>';
+            aftBrands.sort(function (a, b) { return a.name.localeCompare(b.name); });
+            var aftNames = aftBrands.map(function (b) { return b.name; });
+            // Editing a part whose brand predates the picker (or otherwise
+            // isn't in the list) — keep it selectable rather than losing it.
+            var currentAft = (part && part.kind === 'aftermarket') ? part.manufacturer : '';
+            if (currentAft && aftNames.indexOf(currentAft) === -1) aftNames.unshift(currentAft);
 
-        if (!part && allParts.length) {
-          html += '<h3>Or reuse a number you already have</h3>' +
-            '<p class="muted small">The same filter often fits several machines &mdash; ' +
-            'no need to type it twice.</p>' +
-            '<label for="reuse" class="small">Search saved numbers</label>' +
-            '<input id="reuse" type="search" autocomplete="off" placeholder="Type any part of a number">' +
-            '<ul class="list" id="reuselist"></ul>';
-        }
-        render(html);
+            var html = '<label for="num">Part number</label>' +
+              '<input id="num" class="pn" type="text" autocomplete="off" ' +
+              'autocapitalize="characters" spellcheck="false" enterkeyhint="done" ' +
+              'value="' + esc(part ? part.number_display : '') + '" ' +
+              'placeholder="e.g. HH164-32430">' +
+              '<div id="dupe"></div>' +
+              '<label>Genuine or aftermarket?</label>' +
+              '<div class="seg" id="kind">' +
+                '<button type="button" data-kind="oem" aria-pressed="' + (kind === 'oem') + '">Genuine</button>' +
+                '<button type="button" data-kind="aftermarket" aria-pressed="' + (kind !== 'oem') + '">Aftermarket</button>' +
+              '</div>' +
+              '<div id="oemBrand"' + (kind === 'oem' ? '' : ' hidden') + '>' +
+                '<div class="note small" style="margin-top:.75rem">Genuine parts are ' +
+                '<b>' + esc(machineBrand) + '</b> brand — the machine’s own.</div>' +
+              '</div>' +
+              '<div id="aftBrand"' + (kind === 'oem' ? ' hidden' : '') + '>' +
+                '<label for="aftmfr">Brand</label>' +
+                '<select id="aftmfr">' +
+                  aftNames.map(function (n) {
+                    return '<option' + (n === currentAft ? ' selected' : '') + '>' + esc(n) + '</option>';
+                  }).join('') +
+                  '<option value="__add__">+ Add a new brand…</option>' +
+                '</select>' +
+              '</div>' +
+              '<label for="sup">Where from <span class="muted small">(optional)</span></label>' +
+              '<input id="sup" type="text" autocomplete="off" value="' + esc(part ? part.supplier : '') + '" placeholder="Norwood, Repco…">' +
+              '<label for="price">Price each <span class="muted small">(optional)</span></label>' +
+              '<input id="price" type="text" inputmode="decimal" value="' + esc(part ? money(part.price_cents) : '') + '" placeholder="$0.00">' +
+              '<label for="notes">Notes <span class="muted small">(optional)</span></label>' +
+              '<textarea id="notes" rows="2">' + esc(part ? part.notes : '') + '</textarea>';
 
-        var num = document.getElementById('num');
-        num.addEventListener('input', function () { checkDupe(num.value, part); });
-        if (!part) num.focus();
-        checkDupe(num.value, part);
+            if (part && part.unverified) {
+              html += '<div class="note warn small">This number came from a note and ' +
+                      'has not been checked yet. Saving marks it checked.</div>';
+            }
+            html += '<div class="btnrow" style="margin-top:1.25rem">' +
+              '<button class="btn" data-act="save-part" data-line="' + lineId + '" ' +
+                'data-part="' + (part ? part.id : '') + '">Save</button>' +
+              '<button class="btn ghost" data-act="cancel">Cancel</button></div>';
 
-        var reuse = document.getElementById('reuse');
-        if (reuse) {
-          allParts.sort(function (a, b) { return a.number_key.localeCompare(b.number_key); });
-          reuse.addEventListener('input', function () {
-            var q = Seed.partKey(reuse.value);
-            var list = document.getElementById('reuselist');
-            if (!q) { list.innerHTML = ''; return; }
-            var hits = allParts.filter(function (p) {
-              return p.number_key.indexOf(q) !== -1;
-            }).slice(0, 12);
-            list.innerHTML = hits.length ? hits.map(function (p) {
-              return '<li><button class="row" data-act="link-existing" data-part="' + p.id +
-                '" data-line="' + lineId + '"><span class="grow">' +
-                '<span class="title pn">' + esc(p.number_display) + '</span>' +
-                '<span class="meta">' + esc([p.kind === 'oem' ? 'Genuine' : 'Aftermarket',
-                  p.manufacturer].filter(Boolean).join(' · ')) + '</span></span>' +
-                '<span class="chev">+</span></button></li>';
-            }).join('') : '<li class="empty small">No saved number matches that.</li>';
+            if (!part && allParts.length) {
+              html += '<h3>Or reuse a number you already have</h3>' +
+                '<p class="muted small">The same filter often fits several machines &mdash; ' +
+                'no need to type it twice.</p>' +
+                '<label for="reuse" class="small">Search saved numbers</label>' +
+                '<input id="reuse" type="search" autocomplete="off" placeholder="Type any part of a number">' +
+                '<ul class="list" id="reuselist"></ul>';
+            }
+            render(html);
+
+            var num = document.getElementById('num');
+            num.addEventListener('input', function () { checkDupe(num.value, part); });
+            if (!part) num.focus();
+            checkDupe(num.value, part);
+
+            document.getElementById('kind').addEventListener('click', function (e) {
+              var btn = e.target.closest('button');
+              if (!btn) return;
+              var isOem = btn.getAttribute('data-kind') === 'oem';
+              document.getElementById('oemBrand').hidden = !isOem;
+              document.getElementById('aftBrand').hidden = isOem;
+            });
+
+            var aftSelect = document.getElementById('aftmfr');
+            var lastRealValue = aftSelect.value === '__add__' ? '' : aftSelect.value;
+            aftSelect.addEventListener('change', function () {
+              if (aftSelect.value !== '__add__') { lastRealValue = aftSelect.value; return; }
+              var name = (prompt('New aftermarket brand name?') || '').trim();
+              if (!name) { aftSelect.value = lastRealValue; return; }
+              ensureAftermarketBrand(name).then(function (saved) {
+                var already = Array.prototype.some.call(aftSelect.options, function (o) {
+                  return o.value === saved;
+                });
+                if (!already) {
+                  var opt = document.createElement('option');
+                  opt.textContent = saved;
+                  aftSelect.insertBefore(opt, aftSelect.lastElementChild);
+                }
+                aftSelect.value = saved;
+                lastRealValue = saved;
+                toast('Added ' + saved);
+              }).catch(function (e) { aftSelect.value = lastRealValue; fail(e); });
+            });
+
+            var reuse = document.getElementById('reuse');
+            if (reuse) {
+              allParts.sort(function (a, b) { return a.number_key.localeCompare(b.number_key); });
+              reuse.addEventListener('input', function () {
+                var q = Seed.partKey(reuse.value);
+                var list = document.getElementById('reuselist');
+                if (!q) { list.innerHTML = ''; return; }
+                var hits = allParts.filter(function (p) {
+                  return p.number_key.indexOf(q) !== -1;
+                }).slice(0, 12);
+                list.innerHTML = hits.length ? hits.map(function (p) {
+                  return '<li><button class="row" data-act="link-existing" data-part="' + p.id +
+                    '" data-line="' + lineId + '"><span class="grow">' +
+                    '<span class="title pn">' + esc(p.number_display) + '</span>' +
+                    '<span class="meta">' + esc([p.kind === 'oem' ? 'Genuine' : 'Aftermarket',
+                      p.manufacturer].filter(Boolean).join(' · ')) + '</span></span>' +
+                    '<span class="chev">+</span></button></li>';
+                }).join('') : '<li class="empty small">No saved number matches that.</li>';
+              });
+            }
           });
-        }
+        });
       });
     });
   }
@@ -406,37 +536,57 @@
     });
   }
 
+  /* Genuine's brand is never a stored choice — it's always whatever machine
+     this kit belongs to, read fresh rather than trusted from the form. */
+  function resolveManufacturer(lineId, kind) {
+    if (kind === 'aftermarket') {
+      var sel = document.getElementById('aftmfr');
+      return Promise.resolve(sel ? sel.value : '');
+    }
+    return DB.get('kit_lines', Number(lineId)).then(function (line) {
+      return DB.get('kits', line.kit_id);
+    }).then(function (kit) {
+      return DB.get('models', kit.model_id);
+    }).then(function (model) {
+      return model ? model.brand : '';
+    });
+  }
+
   function saveParticular(lineId, partId) {
     var display = document.getElementById('num').value.trim();
     if (!display) { toast('Type a part number first.'); return Promise.resolve(); }
     var key = Seed.partKey(display);
     var pressed = document.querySelector('#kind button[aria-pressed="true"]');
-    var fields = {
-      number_display: display,
-      number_key: key,
-      kind: pressed ? pressed.getAttribute('data-kind') : 'oem',
-      manufacturer: document.getElementById('mfr').value.trim(),
-      supplier: document.getElementById('sup').value.trim(),
-      price_cents: toCents(document.getElementById('price').value),
-      notes: document.getElementById('notes').value.trim(),
-      unverified: 0,
-      updated_at: new Date().toISOString()
-    };
+    var kind = pressed ? pressed.getAttribute('data-kind') : 'oem';
 
-    return DB.oneByIndex('parts', 'number_key', key).then(function (existing) {
-      // Editing this record, or merging onto one that already holds the number.
-      var target = null;
-      if (partId) target = Number(partId);
-      if (existing && (!target || existing.id !== target)) target = existing.id;
+    return resolveManufacturer(lineId, kind).then(function (manufacturer) {
+      var fields = {
+        number_display: display,
+        number_key: key,
+        kind: kind,
+        manufacturer: manufacturer,
+        supplier: document.getElementById('sup').value.trim(),
+        price_cents: toCents(document.getElementById('price').value),
+        notes: document.getElementById('notes').value.trim(),
+        unverified: 0,
+        updated_at: new Date().toISOString()
+      };
 
-      if (target) {
-        return DB.get('parts', target).then(function (row) {
-          Object.keys(fields).forEach(function (k) { row[k] = fields[k]; });
-          return DB.put('parts', row).then(function () { return target; });
-        });
-      }
-      fields.created_at = new Date().toISOString();
-      return DB.put('parts', fields);
+      return DB.oneByIndex('parts', 'number_key', key).then(function (existing) {
+        // Editing this record, or merging onto one that already holds the number.
+        var target = null;
+        if (partId) target = Number(partId);
+        if (existing && (!target || existing.id !== target)) target = existing.id;
+
+        if (target) {
+          return DB.get('parts', target).then(function (row) {
+            Object.keys(fields).forEach(function (k) { row[k] = fields[k]; });
+            return DB.put('parts', row).then(function () { return target; });
+          });
+        }
+        fields.created_at = new Date().toISOString();
+        return DB.put('parts', fields);
+      });
     }).then(function (pid) {
       return link(lineId, pid).then(function () {
         toast('Saved ' + display);
@@ -453,73 +603,9 @@
     });
   }
 
-  // --------------------------------------------------------------- search
-  function screenSearch() {
-    setHead('Find a part', 'Search every machine', true);
-    render('<label for="q">Part number</label>' +
-      '<input id="q" class="pn" type="search" autocomplete="off" ' +
-      'autocapitalize="characters" spellcheck="false" placeholder="Type the number in your hand">' +
-      '<div id="results"><p class="muted">Type a few characters to see which ' +
-      'machines take that filter.</p></div>');
-    var q = document.getElementById('q');
-    q.focus();
-    q.addEventListener('input', function () {
-      var key = Seed.partKey(q.value);
-      var box = document.getElementById('results');
-      if (key.length < 2) {
-        box.innerHTML = '<p class="muted">Type a few characters to see which ' +
-                        'machines take that filter.</p>';
-        return;
-      }
-      DB.all('parts').then(function (parts) {
-        var hits = parts.filter(function (p) { return p.number_key.indexOf(key) !== -1; });
-        if (!hits.length) {
-          box.innerHTML = '<p class="empty">Nothing saved matches that number yet.</p>';
-          return;
-        }
-        Promise.all(hits.slice(0, 25).map(whereUsed)).then(function (rows) {
-          box.innerHTML = rows.map(function (r) {
-            var uses = r.uses.length
-              ? r.uses.map(function (u) {
-                  return '<li><a class="row" href="#/kit/' + u.kitId + '">' +
-                    '<span class="grow"><span class="title">' + esc(u.model) + '</span>' +
-                    '<span class="meta">' + esc(u.kit + ' · ' + u.slot) + '</span></span>' +
-                    '<span class="chev">&rsaquo;</span></a></li>';
-                }).join('')
-              : '<li class="empty small">Not attached to any machine.</li>';
-            return '<section class="slot"><span class="name pn">' + esc(r.part.number_display) +
-              '</span><span class="hint">' +
-              esc([r.part.kind === 'oem' ? 'Genuine' : 'Aftermarket', r.part.manufacturer,
-                   r.part.supplier, money(r.part.price_cents)].filter(Boolean).join(' · ')) +
-              '</span><ul class="list">' + uses + '</ul></section>';
-          }).join('');
-        });
-      });
-    });
-  }
-
-  function whereUsed(part) {
-    return DB.byIndex('kit_line_parts', 'part_id', part.id).then(function (links) {
-      return Promise.all(links.map(function (l) {
-        return DB.get('kit_lines', l.kit_line_id).then(function (line) {
-          if (!line) return null;
-          return DB.get('kits', line.kit_id).then(function (kit) {
-            if (!kit) return null;
-            return DB.get('models', kit.model_id).then(function (model) {
-              return model ? { kitId: kit.id, model: model.display,
-                               kit: UI.kitName(kit), slot: line.slot } : null;
-            });
-          });
-        });
-      })).then(function (uses) {
-        return { part: part, uses: uses.filter(Boolean) };
-      });
-    });
-  }
-
-  window.UI2 = { screenPart: screenPart, screenSearch: screenSearch,
-                 saveParticular: saveParticular, link: link, money: money,
-                 toCents: toCents, whereUsed: whereUsed };
+  window.UI2 = { screenPart: screenPart, saveParticular: saveParticular,
+                 link: link, money: money, toCents: toCents,
+                 ensureDefaultAftermarketBrands: ensureDefaultAftermarketBrands };
 })();
 
 /* ---- cleanup, backup, menu, actions, router --------------------------- */
@@ -941,7 +1027,6 @@
       '<ul class="list">' +
       row('#/', 'Machines', 'Browse by brand') +
       row('#/quickadd', 'Add', 'New machine, brand, kit or part number') +
-      row('#/search', 'Find a part number', 'Search everything saved') +
       row('#/cleanup', 'Tidy up', 'Fix names, brands and duplicates') +
       row('#/backup', 'Backup', 'Save or restore your part numbers') +
       '</ul>' +
@@ -1055,17 +1140,23 @@
     },
     'del-slot': function (el) {
       var lineId = Number(el.getAttribute('data-line'));
-      UI.partsForLine(lineId).then(function (parts) {
-        var warn = parts.length
-          ? 'This position holds ' + plural(parts.length, 'part number') + '. Remove it anyway?'
-          : 'Remove this filter position?';
-        if (!confirm(warn)) return null;
-        return DB.byIndex('kit_line_parts', 'kit_line_id', lineId).then(function (links) {
-          return links.reduce(function (c, l) {
-            return c.then(function () { return DB.del('kit_line_parts', l.id); });
-          }, Promise.resolve());
-        }).then(function () { return DB.del('kit_lines', lineId); })
-          .then(function () { toast('Removed'); route(); });
+      DB.get('kit_lines', lineId).then(function (line) {
+        var kitId = line ? line.kit_id : null;
+        return UI.partsForLine(lineId).then(function (parts) {
+          var warn = parts.length
+            ? 'This position holds ' + plural(parts.length, 'part number') + '. Remove it anyway?'
+            : 'Remove this filter position?';
+          if (!confirm(warn)) return null;
+          return DB.byIndex('kit_line_parts', 'kit_line_id', lineId).then(function (links) {
+            return links.reduce(function (c, l) {
+              return c.then(function () { return DB.del('kit_line_parts', l.id); });
+            }, Promise.resolve());
+          }).then(function () { return DB.del('kit_lines', lineId); })
+            // The page we were showing (this position) no longer exists —
+            // route() would try to re-render it, so go back to the kit's
+            // category list instead.
+            .then(function () { toast('Removed'); go('#/kit/' + kitId); });
+        });
       }).catch(fail);
     },
 
@@ -1257,8 +1348,8 @@
   // flow), so they read as "Home" here — matches how a tab bar normally
   // behaves elsewhere (e.g. a video reached from Home keeps Home lit up).
   var TAB_ROUTES = {
-    '': 'home', brand: 'home', model: 'home', kit: 'home', part: 'home', copy: 'home',
-    search: 'search',
+    '': 'home', brand: 'home', model: 'home', kit: 'home', slot: 'home',
+    part: 'home', copy: 'home',
     quickadd: 'add', addbrand: 'add', addmachine: 'add', pickmachine: 'add'
   };
 
@@ -1278,8 +1369,8 @@
     else if (p[0] === 'brand')     run = UI.screenBrand(decodeURIComponent(p[1] || ''));
     else if (p[0] === 'model')     run = UI.screenModel(decodeURIComponent(p[1] || ''));
     else if (p[0] === 'kit')       run = UI.screenKit(p[1]);
+    else if (p[0] === 'slot')      run = UI.screenSlot(p[1]);
     else if (p[0] === 'part')      run = UI2.screenPart(p[1], p[2]);
-    else if (p[0] === 'search')    run = UI2.screenSearch();
     else if (p[0] === 'cleanup')   run = screenCleanup();
     else if (p[0] === 'editmodel') run = screenEditModel(p[1]);
     else if (p[0] === 'backup')    run = screenBackup();
@@ -1334,6 +1425,7 @@
   }
 
   render('<p class="empty">Getting the machine list ready&hellip;</p>');
+  UI2.ensureDefaultAftermarketBrands().catch(function (e) { console.warn('aftermarket brand seed failed:', e); });
   Seed.ensure(function (msg) { render('<p class="empty">' + esc(msg) + '</p>'); })
     .then(route)
     .catch(function (e) {

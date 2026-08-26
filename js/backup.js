@@ -6,7 +6,7 @@
   'use strict';
 
   var STORES = ['brands', 'models', 'kits', 'kit_lines', 'parts',
-                'kit_line_parts', 'clients', 'machines', 'meta'];
+                'kit_line_parts', 'clients', 'machines', 'aftermarket_brands', 'meta'];
 
   function exportAll() {
     return Promise.all(STORES.map(function (s) { return DB.all(s); }))

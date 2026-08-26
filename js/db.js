@@ -4,21 +4,25 @@
   'use strict';
 
   var NAME = 'dms-parts';
-  var VERSION = 1;
+  var VERSION = 2;
   var _db = null;
 
   // store -> { keyPath, indexes: { name: [keyPath, unique] } }
   var SCHEMA = {
-    brands:         { indexes: { name: ['name', true] } },
-    models:         { indexes: { key: ['key', true], brand: ['brand', false] } },
-    kits:           { indexes: { model_id: ['model_id', false] } },
-    kit_lines:      { indexes: { kit_id: ['kit_id', false] } },
-    parts:          { indexes: { number_key: ['number_key', true] } },
-    kit_line_parts: { indexes: { kit_line_id: ['kit_line_id', false],
-                                 part_id: ['part_id', false] } },
-    clients:        { indexes: {} },
-    machines:       { indexes: { model_key: ['model_key', false] } },
-    meta:           { keyPath: 'k', indexes: {} }
+    brands:              { indexes: { name: ['name', true] } },
+    models:              { indexes: { key: ['key', true], brand: ['brand', false] } },
+    kits:                { indexes: { model_id: ['model_id', false] } },
+    kit_lines:           { indexes: { kit_id: ['kit_id', false] } },
+    parts:               { indexes: { number_key: ['number_key', true] } },
+    kit_line_parts:      { indexes: { kit_line_id: ['kit_line_id', false],
+                                      part_id: ['part_id', false] } },
+    clients:             { indexes: {} },
+    machines:            { indexes: { model_key: ['model_key', false] } },
+    // Aftermarket manufacturer names (Sakura, Donaldson, HIFI, ...), picked
+    // rather than typed on the part form. Genuine parts don't need this —
+    // their brand is always just the machine's own brand.
+    aftermarket_brands:  { indexes: { name: ['name', true] } },
+    meta:                { keyPath: 'k', indexes: {} }
   };
 
   function open() {
@@ -43,6 +47,13 @@
       };
       req.onsuccess = function () { _db = req.result; resolve(_db); };
       req.onerror = function () { reject(req.error); };
+      // A schema-version bump (a new store) can't proceed while another tab
+      // still has the old version open — indexedDB just hangs silently
+      // rather than erroring. Reject instead, so the app can say something
+      // useful ("close other tabs") rather than sitting on a blank screen.
+      req.onblocked = function () {
+        reject(new Error('Another open tab is holding this up — close other DMS Parts tabs and reload.'));
+      };
     });
   }
 

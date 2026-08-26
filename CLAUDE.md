@@ -125,6 +125,71 @@ Wrong brand guesses are **expected and cheap** — the Tidy-up screen reassigns
 them, and setting a brand by hand sets `brand_locked` so a later re-seed won't
 overwrite the correction.
 
+## No part-number search — removed at dad's request
+
+He said flat out he'd never use it, so the reverse lookup (type a number,
+see every machine that takes it) is gone entirely — `#/search`,
+`screenSearch`, `whereUsed`, the bottom-tab-bar Search button, the Menu row,
+all deleted rather than just hidden. The bottom tab bar is two buttons now
+(Home, Add), not three. If this ever comes back, it's not a revert — the
+data model never needed it to exist in the first place, since a `parts`
+row's genuine/aftermarket siblings already do the equivalent job one slot at
+a time via `kit_line_parts`.
+
+## Kit → category list → one filter position per page
+
+`screenKit` used to render every filter position's full detail (all its
+part numbers, add button, everything) on one long page. It's a plain list of
+positions now — "Engine oil filter", "Fuel filter", each just a row with a
+count — and tapping one goes to `#/slot/<lineId>` (`screenSlot`), which owns
+that position's part numbers on their own page, with a filter box once
+there are more than four (`partsListHtml`/`partRowHtml` are the shared
+rendering, used only by `screenSlot` now). Reflects that dad expects several
+aftermarket options to pile up per position over time, not just one.
+
+`del-slot` had to change because of this: it used to call `route()` to
+re-render wherever you already were, which worked when that was the kit
+page. Now the page you're ON when you delete a position is that position's
+own detail page, which no longer exists afterward — so it explicitly
+navigates to `#/kit/<kitId>` instead. `unlink` (removing one part from a
+position, not the position itself) is untouched — the position still
+exists afterward, so `route()` re-rendering `screenSlot` in place is correct.
+
+## Genuine brand is derived, never typed; aftermarket brand is picked, not typed
+
+A genuine part's brand was never really a free choice — it's always
+whatever machine the kit belongs to. `resolveManufacturer` in `js/ui.js`
+enforces that at save time (fetches line → kit → model fresh, ignores
+whatever might be sitting in a form field), and the genuine side of the part
+form just shows it as read-only text, not an input.
+
+Aftermarket is the opposite problem: dad's expecting to accumulate several
+brands (Sakura, Donaldson, HIFI to start) across many parts, so it's a
+`<select>` sourced from the new `aftermarket_brands` store, not a free-text
+field — picking "+ Add a new brand…" prompts, saves it via
+`ensureAftermarketBrand` (same case-insensitive-reuse shape as `ensureBrand`
+for machine brands, just a separate store — don't conflate the two), and
+from then on it's available on *every* part's form, not just the one being
+added. `ensureDefaultAftermarketBrands()` seeds the three starting names on
+first install; it runs in the app's init sequence directly (not gated behind
+`Seed.ensure()`'s version check), because it has nothing to do with the
+machine-data seed pipeline.
+
+Editing an old part whose brand isn't in that list (predates the picker,
+typo, whatever) doesn't lose it or silently rewrite it — `screenPart`
+injects it as a selectable option for that one edit without persisting it to
+the shared list, so it stays visible and correct without polluting the
+picker for every other part until dad deliberately keeps it.
+
+This added a new object store (`aftermarket_brands`), which meant a schema
+version bump (`js/db.js`'s `VERSION`, now 2) — purely additive, the existing
+generic upgrade loop creates the new store without touching anything already
+there. Also added `db.js`'s `onblocked` handler while touching this: a
+version bump silently hangs forever if another tab still has the old version
+open, which is exactly what happened testing this locally with several dev
+tabs left open from earlier in the session — now it rejects with a
+message instead of hanging.
+
 ## Every machine has exactly four kits — 250 / 500 / 750 / 1000 hours
 
 Not something dad adds one at a time — `tools/build_seed.py`'s
