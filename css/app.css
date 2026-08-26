@@ -39,10 +39,17 @@
   }
 }
 
-/* Text-size control. 100% = whatever the phone's own font scale already is. */
+/* Text-size control. 100% = whatever the phone's own font scale already is.
+   Shifted down a step at dad's request after using the app for real — his
+   call on what's readable beats the starting guess. Kept the same ~14-15%
+   step between tiers, just moved the whole scale smaller. Everything sized
+   in rem (including tap targets, via --tap) scales with this, so the bottom
+   tier is chosen to stay clear of Android's 48px touch-target minimum —
+   verify that's still true if these numbers move again. */
 html          { font-size: 100%; -webkit-text-size-adjust: 100%; }
-html.size-2   { font-size: 115%; }
-html.size-3   { font-size: 132%; }
+html.size-1   { font-size: 88%; }
+html.size-2   { font-size: 100%; }
+html.size-3   { font-size: 115%; }
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
