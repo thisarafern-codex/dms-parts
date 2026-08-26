@@ -38,7 +38,7 @@
   function insertAll(seed, report) {
     report('Setting up the machine list…');
     return DB.bulk('brands', seed.brands.map(function (b) {
-      return { name: b.name, sort: b.sort };
+      return { name: b.name };
     })).then(function () {
       var models = seed.models.map(function (m) {
         return {

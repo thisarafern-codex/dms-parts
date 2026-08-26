@@ -1,99 +1,76 @@
 {
  "brands": [
   {
-   "name": "Kubota",
-   "sort": 0
+   "name": "ASV"
   },
   {
-   "name": "Hitachi",
-   "sort": 1
+   "name": "Behringer"
   },
   {
-   "name": "Komatsu",
-   "sort": 2
+   "name": "Bobcat"
   },
   {
-   "name": "Yanmar",
-   "sort": 3
+   "name": "Caterpillar"
   },
   {
-   "name": "Kobelco",
-   "sort": 4
+   "name": "Cosen"
   },
   {
-   "name": "Caterpillar",
-   "sort": 5
+   "name": "Doosan"
   },
   {
-   "name": "Doosan",
-   "sort": 6
+   "name": "Eurocomach"
   },
   {
-   "name": "Eurocomach",
-   "sort": 7
+   "name": "Hitachi"
   },
   {
-   "name": "Sunward",
-   "sort": 8
+   "name": "Hyundai"
   },
   {
-   "name": "Sumitomo",
-   "sort": 9
+   "name": "JCB"
   },
   {
-   "name": "JCB",
-   "sort": 10
+   "name": "John Deere"
   },
   {
-   "name": "Behringer",
-   "sort": 11
+   "name": "Kioti"
   },
   {
-   "name": "Kioti",
-   "sort": 12
+   "name": "Kobelco"
   },
   {
-   "name": "Sany",
-   "sort": 13
+   "name": "Komatsu"
   },
   {
-   "name": "Bobcat",
-   "sort": 14
+   "name": "Kubota"
   },
   {
-   "name": "ASV",
-   "sort": 15
+   "name": "Mitsubishi"
   },
   {
-   "name": "Takeuchi",
-   "sort": 16
+   "name": "Sany"
   },
   {
-   "name": "Toro",
-   "sort": 17
+   "name": "Sumitomo"
   },
   {
-   "name": "Cosen",
-   "sort": 18
+   "name": "Sunward"
   },
   {
-   "name": "Hyundai",
-   "sort": 19
+   "name": "Takeuchi"
   },
   {
-   "name": "John Deere",
-   "sort": 20
+   "name": "Toro"
   },
   {
-   "name": "Mitsubishi",
-   "sort": 21
+   "name": "Unassigned"
   },
   {
-   "name": "Unassigned",
-   "sort": 22
+   "name": "Yanmar"
   }
  ],
- "generated_at": "2026-08-26T20:04:19",
+ "generated_at": "2026-08-26T20:29:20",
  "models": [
   {
    "aliases": [
@@ -9735,5 +9712,5 @@
    "machine_count": 1
   }
  ],
- "seed_version": "20260826200419"
+ "seed_version": "20260826202920"
 }

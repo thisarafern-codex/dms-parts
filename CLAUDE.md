@@ -130,6 +130,29 @@ This is also why `mergeModels` and `do-copy` (Copy from another machine) both
 match kits by `interval_hours` rather than by array position — a 500-hour kit
 must only ever fold in from another machine's 500-hour kit, never its 250.
 
+## Brand tiles: real colours, no real photos
+
+`BRAND_COLORS` in `js/ui.js` holds hand-sourced manufacturer colours (Kubota
+orange, Caterpillar yellow, and so on) for the brands we could actually
+confirm one for — not a guess for every brand. A brand missing from the map
+just keeps the app's plain neutral tile; that's deliberate, not a bug, so
+don't "fill in" a colour for the rest without a real source.
+
+Every colour in the map is a **verified 7:1 pair** — a light-mode and a
+dark-mode background, each with the higher-contrast of black/white text,
+nudged in HSL lightness only as far as needed to clear WCAG AAA. A raw brand
+hex (Caterpillar yellow especially) will not clear 7:1 against either black
+or white without this adjustment, so don't drop a fresh brand colour straight
+into the map — add its sourced hex to `tools/brand_colors.py` and run it;
+copy the printed line into `BRAND_COLORS`.
+
+The tile itself renders `DIGGER_SVG` — one small original excavator
+silhouette, reused on every tile in `currentColor` (so it always matches that
+tile's own contrast-checked text colour for free). This is deliberate, not a
+placeholder: a real manufacturer photo would be a copyright problem on a
+public page, and one licensed logo per brand is a lot of ongoing sourcing
+work for a 23-brand list that keeps growing as dad adds machines.
+
 ## Things that will bite you
 
 **Part numbers must never wrap.** `.part .num` is `white-space: nowrap` with a

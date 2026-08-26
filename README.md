@@ -16,6 +16,9 @@ together, big enough to read in a badly-lit shed.
 
 ## Using it
 
+- **Find a brand** — the search box on the home screen filters the brand
+  tiles as you type; it doesn't look inside machines or part numbers, just
+  brand names. Brands and machines are both listed alphabetically throughout.
 - **Find a machine** — tap the brand, then the machine. The search box also
   matches old spellings, so typing `u 55` finds `U55-4`.
 - **See the filters** — each machine has service kits; a kit lists every filter

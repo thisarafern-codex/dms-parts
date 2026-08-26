@@ -8,6 +8,48 @@
   var subEl = document.getElementById('subtitle');
   var backBtn = document.getElementById('back');
 
+  // Real manufacturer colours, computed to a verified 7:1 (WCAG AAA) contrast
+  // pair for both light and dark mode. Only brands we could confirm a real
+  // colour for are here — anything else keeps the app's plain neutral tile.
+  // See tools/ — there is no build step for this, the values are hand-baked.
+  var BRAND_COLORS = {
+    'Kubota':      { bgL: '#ff6600', fgL: '#000000', bgD: '#8f3900', fgD: '#ffffff' },
+    'Caterpillar': { bgL: '#ffcd00', fgL: '#000000', bgD: '#b89400', fgD: '#000000' },
+    'Doosan':      { bgL: '#0017a8', fgL: '#ffffff', bgD: '#0017a8', fgD: '#ffffff' },
+    'John Deere':  { bgL: '#295e20', fgL: '#ffffff', bgD: '#295e20', fgD: '#ffffff' },
+    'JCB':         { bgL: '#f9b101', fgL: '#000000', bgD: '#cb9001', fgD: '#000000' },
+    'Takeuchi':    { bgL: '#b10003', fgL: '#ffffff', bgD: '#ad0003', fgD: '#ffffff' },
+    'Hyundai':     { bgL: '#00287a', fgL: '#ffffff', bgD: '#00287a', fgD: '#ffffff' },
+    'Komatsu':     { bgL: '#ffc800', fgL: '#000000', bgD: '#b89000', fgD: '#000000' },
+    'Hitachi':     { bgL: '#f5701b', fgL: '#000000', bgD: '#933d06', fgD: '#ffffff' },
+    'Kobelco':     { bgL: '#00aad2', fgL: '#000000', bgD: '#00aad2', fgD: '#000000' },
+    'Yanmar':      { bgL: '#ab1a14', fgL: '#ffffff', bgD: '#9c1812', fgD: '#ffffff' },
+    'Bobcat':      { bgL: '#f36d49', fgL: '#000000', bgD: '#a22b0b', fgD: '#ffffff' },
+    'Mitsubishi':  { bgL: '#b3000e', fgL: '#ffffff', bgD: '#ad000e', fgD: '#ffffff' },
+    'Toro':        { bgL: '#ad2016', fgL: '#ffffff', bgD: '#9a1d14', fgD: '#ffffff' }
+  };
+
+  function brandTileStyle(name) {
+    var c = BRAND_COLORS[name];
+    if (!c) return '';
+    return ' style="--tile-bg-light:' + c.bgL + ';--tile-fg-light:' + c.fgL +
+           ';--tile-bg-dark:' + c.bgD + ';--tile-fg-dark:' + c.fgD + '"';
+  }
+
+  // One plain digger silhouette, reused on every brand tile — an actual
+  // manufacturer photo would be a licensing problem on a public page, and a
+  // logo-per-brand is more upkeep than 14-odd hand-sourced marks are worth.
+  // Renders in currentColor, so it always matches that tile's own (already
+  // contrast-checked) text colour with no extra work.
+  var DIGGER_SVG = '<svg class="tile-icon" viewBox="0 0 140 90" aria-hidden="true">' +
+    '<rect x="10" y="66" width="86" height="13" rx="6.5"/>' +
+    '<rect x="24" y="42" width="52" height="26" rx="5"/>' +
+    '<path d="M28 42 L28 22 L50 22 L50 34 L58 42 Z"/>' +
+    '<path d="M56 46 L94 18 L104 24 L68 52 Z"/>' +
+    '<path d="M94 18 L120 34 L114 42 L88 26 Z"/>' +
+    '<path d="M112 30 L134 40 L130 54 L108 50 L106 36 Z"/>' +
+    '</svg>';
+
   // ---------------------------------------------------------------- helpers
   function esc(s) {
     return String(s === null || s === undefined ? '' : s)
@@ -57,30 +99,46 @@
 
   // ---------------------------------------------------------------- screens
 
+  function brandTile(b) {
+    return '<a class="tile"' + brandTileStyle(b.name) +
+      ' href="#/brand/' + encodeURIComponent(b.name) + '">' +
+      DIGGER_SVG + '<b>' + esc(b.name) + '</b></a>';
+  }
+
   function screenBrands() {
     setHead('DMS Parts', 'Pick a brand', false);
     return DB.all('models').then(function (models) {
       var live = models.filter(function (m) { return !m.hidden; });
       var counts = {};
-      live.forEach(function (m) {
-        var b = counts[m.brand] || (counts[m.brand] = { n: 0, inv: 0 });
-        b.n += 1; b.inv += m.invoice_count || 0;
-      });
+      live.forEach(function (m) { counts[m.brand] = true; });
       return DB.all('brands').then(function (brands) {
-        brands.sort(function (a, b) { return a.sort - b.sort; });
         var known = brands.filter(function (b) { return counts[b.name]; });
+        // Alphabetical, with Unassigned pinned last — it isn't a real brand
+        // name, so sorting it in among the U's would be misleading.
+        known.sort(function (a, b) {
+          if (a.name === 'Unassigned') return 1;
+          if (b.name === 'Unassigned') return -1;
+          return a.name.localeCompare(b.name);
+        });
         if (!known.length) {
           return render('<p class="empty">No machines yet.</p>');
         }
-        var html = '<div class="btnrow">' +
+        render('<label for="bfilter">Find a brand</label>' +
+          '<input id="bfilter" type="search" placeholder="e.g. Kubota" autocomplete="off" ' +
+          'autocapitalize="words" enterkeyhint="search">' +
+          '<div class="btnrow" style="margin-top:.75rem">' +
           '<a class="btn ghost" href="#/search">Search a part number</a></div>' +
-          '<div class="grid">';
-        known.forEach(function (b) {
-          html += '<a class="tile" href="#/brand/' + encodeURIComponent(b.name) + '">' +
-                  '<b>' + esc(b.name) + '</b></a>';
+          '<div class="grid" id="bgrid">' + known.map(brandTile).join('') + '</div>');
+
+        var input = document.getElementById('bfilter');
+        input.addEventListener('input', function () {
+          var q = input.value.trim().toLowerCase();
+          var grid = document.getElementById('bgrid');
+          grid.innerHTML = known.filter(function (b) {
+            return !q || b.name.toLowerCase().indexOf(q) !== -1;
+          }).map(brandTile).join('') ||
+            '<p class="empty">Nothing matches &ldquo;' + esc(input.value) + '&rdquo;.</p>';
         });
-        html += '</div>';
-        render(html);
       });
     });
   }
@@ -89,11 +147,7 @@
     setHead(name, 'Pick a machine', true);
     return DB.byIndex('models', 'brand', name).then(function (models) {
       var live = models.filter(function (m) { return !m.hidden; });
-      live.sort(function (a, b) {
-        return (b.invoice_count - a.invoice_count) ||
-               (b.machine_count - a.machine_count) ||
-               a.display.localeCompare(b.display);
-      });
+      live.sort(function (a, b) { return a.display.localeCompare(b.display); });
       if (!live.length) return render('<p class="empty">No machines under ' + esc(name) + '.</p>');
 
       var html = '<label for="mfilter">Find a machine</label>' +
@@ -498,10 +552,6 @@
   // adds one at a time. Mirrors the intervals tools/build_seed.py seeds with.
   var SERVICE_INTERVALS = [250, 500, 750, 1000];
 
-  function nextBrandSort(brands) {
-    return brands.reduce(function (m, b) { return Math.max(m, b.sort || 0); }, 0) + 1;
-  }
-
   function findBrand(name) {
     var key = name.trim().toLowerCase();
     return DB.all('brands').then(function (brands) {
@@ -514,9 +564,7 @@
   function ensureBrand(name) {
     return findBrand(name).then(function (existing) {
       if (existing) return existing.name;
-      return DB.all('brands').then(function (brands) {
-        return DB.put('brands', { name: name, sort: nextBrandSort(brands) });
-      }).then(function () { return name; });
+      return DB.put('brands', { name: name }).then(function () { return name; });
     });
   }
 
@@ -910,9 +958,7 @@
           go('#/brand/' + encodeURIComponent(existing.name));
           return null;
         }
-        return DB.all('brands').then(function (brands) {
-          return DB.put('brands', { name: name, sort: nextBrandSort(brands) });
-        }).then(function () {
+        return DB.put('brands', { name: name }).then(function () {
           toast('Added ' + name);
           // Straight on to its first machine — an empty brand with nothing
           // under it is a dead end he'd have to remember to come back to.

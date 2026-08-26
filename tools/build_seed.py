@@ -128,15 +128,11 @@ def build(conn):
     out_models.sort(key=lambda m: (m["hidden"], -m["invoice_count"],
                                    -m["machine_count"], m["display"].lower()))
 
-    # --- brands, ordered by how much work each represents -----------------
-    counts = collections.Counter()
-    for m in out_models:
-        if not m["hidden"]:
-            counts[m["brand"]] += m["invoice_count"] + m["machine_count"]
-    brands = []
-    ordered = sorted(counts.items(), key=lambda kv: (kv[0] == mr.UNASSIGNED, -kv[1], kv[0]))
-    for i, (name, _) in enumerate(ordered):
-        brands.append({"name": name, "sort": i})
+    # --- brands actually represented by a visible model -------------------
+    # Display order is alphabetical, decided in the app itself; no ranking
+    # is baked into the seed.
+    seen = sorted({m["brand"] for m in out_models if not m["hidden"]})
+    brands = [{"name": name} for name in seen]
 
     return {
         "seed_version": datetime.datetime.now().strftime("%Y%m%d%H%M%S"),

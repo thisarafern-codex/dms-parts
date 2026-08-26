@@ -139,15 +139,29 @@ p  { margin: 0 0 1rem; }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); gap: 0.6rem; }
 .tile {
-  display: flex; flex-direction: column; justify-content: center; gap: 0.2rem;
-  min-height: 5.5rem; padding: 0.9rem; text-align: left;
-  background: var(--surface); border: 2px solid var(--border);
-  border-radius: var(--radius); color: var(--text); text-decoration: none;
+  display: flex; flex-direction: column; justify-content: center; gap: 0.3rem;
+  min-height: 6.5rem; padding: 0.9rem; text-align: left;
+  /* A brand tile sets --tile-bg-light/dark + --tile-fg-light/dark inline;
+     tiles with no known brand colour (including Unassigned) just fall back
+     to the app's normal surface/text tokens. */
+  background: var(--tile-bg-light, var(--surface));
+  color: var(--tile-fg-light, var(--text));
+  border: 2px solid var(--border);
+  border-radius: var(--radius); text-decoration: none;
   font-family: inherit; cursor: pointer;
 }
-.tile:active { background: var(--surface-2); }
+@media (prefers-color-scheme: dark) {
+  .tile {
+    background: var(--tile-bg-dark, var(--surface));
+    color: var(--tile-fg-dark, var(--text));
+  }
+}
+/* A plain background swap would flash to the app's neutral grey on a
+   colourful branded tile; dimming in place reads as "pressed" for any tile. */
+.tile:active { filter: brightness(0.87); }
 .tile b { font-size: 1.2rem; line-height: 1.2; }
 .tile span { color: var(--muted); font-size: var(--fs-sm); }
+.tile-icon { width: 3.6rem; height: auto; fill: currentColor; flex: none; }
 
 /* ---------- kit slots ---------- */
 .slot {
