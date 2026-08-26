@@ -55,7 +55,9 @@ body {
   font-size: 1.3125rem;      /* 21px at default scale */
   line-height: 1.5;
   font-weight: 450;
-  padding-bottom: 4rem;
+  /* Clears the fixed tab bar (~4.75rem) plus its own safe-area inset, so the
+     last row of any screen never ends up hidden behind it. */
+  padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
   overscroll-behavior-y: contain;
 }
 
@@ -245,13 +247,31 @@ input.pn { font-size: 1.7rem; }
 
 /* ---------- toast ---------- */
 #toast {
-  position: fixed; left: 50%; bottom: 1.25rem; transform: translateX(-50%);
+  position: fixed; left: 50%; transform: translateX(-50%);
+  /* Sits above the fixed tab bar, not underneath it. */
+  bottom: calc(5.75rem + env(safe-area-inset-bottom, 0px));
   background: var(--text); color: var(--bg);
   padding: 0.8rem 1.25rem; border-radius: var(--radius);
   font-weight: 700; font-size: 1.15rem; max-width: 90vw; text-align: center;
   opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 50;
 }
 #toast.show { opacity: 1; }
+
+/* ---------- bottom tab bar ---------- */
+#tabbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 25;
+  display: flex; background: var(--surface); border-top: 2px solid var(--border);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+#tabbar .tab {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.15rem; min-height: 4.75rem; padding: 0.5rem 0.25rem;
+  color: var(--muted); text-decoration: none; font-family: inherit;
+}
+#tabbar .tab:active { background: var(--surface-2); }
+#tabbar .tab-icon { font-size: 1.7rem; line-height: 1; }
+#tabbar .tab-label { font-size: var(--fs-sm); font-weight: 700; line-height: 1.1; }
+#tabbar .tab[aria-current="page"] { color: var(--accent); }
 
 .offline-badge {
   display: none; background: var(--danger); color: var(--bg);

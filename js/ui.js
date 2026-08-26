@@ -1251,6 +1251,25 @@
   };
 
   // --------------------------------------------------------------- router
+  // Which of the three bottom tabs a route belongs to, for highlighting.
+  // Kit/part/copy screens are always reached by browsing from Home (whether
+  // that browsing started at the brand grid or partway through the Add
+  // flow), so they read as "Home" here — matches how a tab bar normally
+  // behaves elsewhere (e.g. a video reached from Home keeps Home lit up).
+  var TAB_ROUTES = {
+    '': 'home', brand: 'home', model: 'home', kit: 'home', part: 'home', copy: 'home',
+    search: 'search',
+    quickadd: 'add', addbrand: 'add', addmachine: 'add', pickmachine: 'add'
+  };
+
+  function updateTabbar(section) {
+    var tab = TAB_ROUTES[section];
+    Array.prototype.forEach.call(document.querySelectorAll('#tabbar .tab'), function (a) {
+      if (a.getAttribute('data-tab') === tab) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+  }
+
   function route() {
     var hash = location.hash.slice(1) || '/';
     var p = hash.split('/').filter(function (s) { return s !== ''; });
@@ -1271,6 +1290,7 @@
     else if (p[0] === 'addmachine') run = screenAddMachine();
     else if (p[0] === 'pickmachine') run = screenPickMachine();
     else                           run = UI.screenBrands();
+    updateTabbar(p.length ? p[0] : '');
     Promise.resolve(run).catch(fail);
   }
 

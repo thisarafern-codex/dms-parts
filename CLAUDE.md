@@ -167,6 +167,16 @@ poor and he reads this in a badly-lit shed. Sizes are in `rem` off a `100%` root
 so Android's own font-scale setting is respected; the in-app A/A+/A++ control
 scales on top of that. Both light and dark palettes clear WCAG AAA (7:1).
 
+**`#tabbar` (Home/Search/Add) is `position: fixed` at the bottom of every
+screen**, so `body`'s `padding-bottom` and `#toast`'s `bottom` offset are both
+hand-tuned to clear it (plus `env(safe-area-inset-bottom)` for gesture-nav
+Android phones) — if the bar's height ever changes, both need updating too, or
+a screen's last row / the toast ends up hidden behind it. Highlighting which
+tab is "active" is driven by `TAB_ROUTES` in `route()`; kit/part/copy screens
+count as Home regardless of whether that browsing started from the brand grid
+or partway through the Add flow, matching how a tab bar normally behaves
+elsewhere (Home stays lit up on a video reached from Home).
+
 **"Copy from another machine" fills empty positions, it does not just add
 missing ones.** Both machines usually carry the same scaffolded slots from
 history, so matching only on *missing* slots copies nothing useful — and the
