@@ -54,6 +54,16 @@ python3 tools/make_icons.py
 There is no test suite, no linter and no package manifest — this is intentionally
 not an installable package.
 
+## Verify every change yourself, in the browser
+
+Don't call a UI or behaviour change done from reading the code — start
+`tools/serve.py`, open it in the browser tool, and actually drive it: click
+through the screen, check the console, confirm the thing you changed. This
+app has bitten us before on things that only show up live (a merge bug that
+only appeared with real data, a layout that only broke at the largest text
+size, a service-worker quirk invisible in a code read). Don't ask the user to
+check it and report back — check it yourself, then tell them what you saw.
+
 ## The database rule
 
 `../DMS invoicing/app/data/dms.db` is **live production data** — real clients,
@@ -240,3 +250,48 @@ the file can go straight to Drive or email.
 GitHub Pages, because service workers and the Android install prompt both need
 HTTPS. `seed/owners.json` is gitignored and therefore never deployed — correct,
 since the site would be public.
+
+Live at **https://thisarafern-codex.github.io/dms-parts/**, repo
+`thisarafern-codex/dms-parts` (public — same GitHub account and fine-grained
+PAT pattern as the sibling `dms-invoicing` repo; that token had to have its
+repository access expanded to cover this repo too before the first push
+worked). Every commit this project has had so far went straight onto `main`
+and was live within about a minute — no branch, no PR, deliberate: the user
+was testing live with dad in real time, and a review step would have just
+been reviewing our own change before approving our own change. That's fine
+for this project specifically; don't assume it generalises.
+
+## Where things stand
+
+Everything below is shipped and live, not just committed. Built in one long
+session; dad has the app installed and has been testing it live throughout.
+
+- Core app: brand → machine → four fixed kits (250/500/750/1000 hours) → part
+  numbers, genuine/aftermarket side by side. Fully offline after first load.
+- Global add ("+" in the header, and Home/Search/Add in the fixed bottom tab
+  bar) for a new machine, brand, or part number. Kits are no longer something
+  dad adds — every machine gets all four automatically.
+- Delete a machine (Tidy Up list, and the Edit Machine screen) for genuine
+  duplicates, alongside the existing hide/merge.
+- Brand tiles: real, WebSearch-sourced manufacturer colours for the ~14
+  brands we could confirm one for (computed to a verified 7:1 pair for both
+  themes via `tools/brand_colors.py`), alphabetical, with a brand-name-only
+  search box. No icon/photo on the tiles — tried a generic digger silhouette,
+  dad asked for it gone; real manufacturer photos were ruled out entirely as
+  a copyright risk on a public repo. Dad's own job-site photos would still be
+  fine to add later; none supplied yet.
+- Every mention of the invoicing system, and every invoice/machine-count
+  display, is gone from the UI — it's all internal bookkeeping now, never
+  shown. The underlying data (aliases, sort weighting) still exists and is
+  still used, just not displayed.
+- "Check for updates" in the Menu forces an immediate refresh instead of
+  waiting on the passive close-reopen-(sometimes-twice) mechanism.
+- Fixed a real bug where a phone that installed before the four-kit change
+  would never retroactively get the new kits on re-seed (`reconcileKits` in
+  `js/seed.js`) — confirmed dad's phone needed this, but hasn't been
+  confirmed fixed on his actual device yet as of the last session.
+
+**Not done / explicitly deferred:** bulk-importing dad's existing part
+numbers from Samsung Notes (Phase 5 in the original plan) — manual one-at-a-
+time entry is the path for now. No confirmation yet that dad has made an
+actual backup of anything he's typed in.
