@@ -23,8 +23,10 @@ together, big enough to read in a badly-lit shed.
 - **Add a number** — tap *Add part number* on any position. Mark it genuine or
   aftermarket. Both can sit on the same position: that *is* the cross-reference.
 - **Add anything from anywhere** — the **+** in the header, on every screen,
-  adds a new machine, a new brand, a new service kit, or a new part number
-  without having to first find your way to the right page.
+  adds a new machine, a new brand, or a new part number without having to
+  first find your way to the right page. Every machine comes with four fixed
+  service kits — 250, 500, 750 and 1000 hours — so there's nothing to set up,
+  just numbers to fill in.
 - **Got a number, need the machine?** — *Search a part number* on the home
   screen works backwards: type the number in your hand, see every machine that
   takes it.
@@ -42,19 +44,16 @@ restores from a backup file.
 
 ## Where the machine list came from
 
-The 115 machines were taken from four years of invoices in the DMS Invoicing
-app — so the list is the machines actually serviced, not a catalogue of every
-digger ever made. The filter *positions* on each kit come from what was
-genuinely fitted to that model over those years, which is why most kits arrive
-with the right rows already there, waiting for numbers.
-
-That invoicing database is only ever **read**, once, on a computer — never by
-this app, never on the phone, never written to.
+The 115 machines are the ones DMS has actually serviced, not a catalogue of
+every digger ever made, and the filter *positions* on each kit come from what
+has genuinely gone into that model before — which is why most kits arrive with
+the right rows already there, waiting for numbers.
 
 Names get typed differently over the years, so `U55-4`, `U 55-4` and
 `U55-4 Kubota` are folded into one machine. If something looks wrong — a machine
 under the wrong brand, or two entries for one digger — Menu → **Tidy up** fixes
-it, and it only ever changes this app's own copy.
+it (rename, move brand, merge, hide, or delete outright for a genuine
+duplicate), and it only ever changes this app's own copy.
 
 ## For developers
 
@@ -63,5 +62,5 @@ the things that will bite you.
 
 ```bash
 python3 tools/serve.py 8777        # dev server
-python3 tools/build_seed.py        # regenerate seed from the invoicing database
+python3 tools/build_seed.py        # regenerate seed/models.json
 ```

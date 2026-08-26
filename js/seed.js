@@ -64,8 +64,7 @@
           kitOwner.forEach(function (k, i) {
             (k.lines || []).forEach(function (l, j) {
               lines.push({ kit_id: kitIds[i], slot: l.slot, qty: l.qty || 1,
-                           sort: j, use_count: l.use_count || 0,
-                           last_used_at: l.last_used_at || null, notes: null });
+                           sort: j, notes: null });
             });
           });
           return DB.bulk('kit_lines', lines).then(function () {
@@ -122,8 +121,7 @@
               return c2.then(function () {
                 added.lines += 1;
                 return DB.put('kit_lines', { kit_id: kitId, slot: l.slot, qty: l.qty || 1,
-                                             sort: j, use_count: l.use_count || 0,
-                                             last_used_at: l.last_used_at || null, notes: null });
+                                             sort: j, notes: null });
               });
             }, Promise.resolve());
           });
@@ -131,27 +129,32 @@
     }, Promise.resolve());
   }
 
-  /* New history can reveal a filter position we didn't know about. Add it to
-     the model's first kit; never remove a slot, it may hold part numbers. */
+  /* New history can reveal a filter position we didn't know about. Every
+     model's four kits carry the same slot list, so kits[0]'s lines are the
+     canonical set — checked against EACH of the model's existing kits (all
+     four), not just the first. Never removes a slot; it may hold part
+     numbers. */
   function addMissingSlots(modelId, m, added) {
     var seedLines = (m.kits && m.kits[0] && m.kits[0].lines) || [];
     if (!seedLines.length) return Promise.resolve();
     return DB.byIndex('kits', 'model_id', modelId).then(function (kits) {
       if (!kits.length) return addKits(modelId, m, added);
-      var kit = kits[0];
-      return DB.byIndex('kit_lines', 'kit_id', kit.id).then(function (lines) {
-        var have = {};
-        lines.forEach(function (l) { have[l.slot] = true; });
-        var missing = seedLines.filter(function (l) { return !have[l.slot]; });
-        return missing.reduce(function (chain, l, j) {
-          return chain.then(function () {
-            added.lines += 1;
-            return DB.put('kit_lines', { kit_id: kit.id, slot: l.slot, qty: l.qty || 1,
-                                         sort: lines.length + j, use_count: l.use_count || 0,
-                                         last_used_at: l.last_used_at || null, notes: null });
+      return kits.reduce(function (chain, kit) {
+        return chain.then(function () {
+          return DB.byIndex('kit_lines', 'kit_id', kit.id).then(function (lines) {
+            var have = {};
+            lines.forEach(function (l) { have[l.slot] = true; });
+            var missing = seedLines.filter(function (l) { return !have[l.slot]; });
+            return missing.reduce(function (c, l, j) {
+              return c.then(function () {
+                added.lines += 1;
+                return DB.put('kit_lines', { kit_id: kit.id, slot: l.slot, qty: l.qty || 1,
+                                             sort: lines.length + j, notes: null });
+              });
+            }, Promise.resolve());
           });
-        }, Promise.resolve());
-      });
+        });
+      }, Promise.resolve());
     });
   }
 

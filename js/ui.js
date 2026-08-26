@@ -76,10 +76,8 @@
           '<a class="btn ghost" href="#/search">Search a part number</a></div>' +
           '<div class="grid">';
         known.forEach(function (b) {
-          var c = counts[b.name];
           html += '<a class="tile" href="#/brand/' + encodeURIComponent(b.name) + '">' +
-                  '<b>' + esc(b.name) + '</b><span>' +
-                  plural(c.n, 'machine') + '</span></a>';
+                  '<b>' + esc(b.name) + '</b></a>';
         });
         html += '</div>';
         render(html);
@@ -128,12 +126,8 @@
   }
 
   function modelRow(m) {
-    var bits = [];
-    if (m.invoice_count) bits.push(plural(m.invoice_count, 'invoice'));
-    if (m.machine_count) bits.push(plural(m.machine_count, 'machine'));
     return '<li><a class="row" href="#/model/' + encodeURIComponent(m.key) + '">' +
-      '<span class="grow"><span class="title">' + esc(m.display) + '</span>' +
-      '<span class="meta">' + esc(bits.join(' · ')) + '</span></span>' +
+      '<span class="grow"><span class="title">' + esc(m.display) + '</span></span>' +
       '<span class="chev">&rsaquo;</span></a></li>';
   }
 
@@ -158,12 +152,7 @@
             });
           });
         })).then(function (rows) {
-          var html = '';
-          if (model.aliases && model.aliases.length > 1) {
-            html += '<div class="note small">Also written as ' +
-                    esc(model.aliases.slice(0, 6).join(', ')) + '.</div>';
-          }
-          html += '<h3>Service kits</h3><ul class="list">';
+          var html = '<h3>Service kits</h3><ul class="list">';
           rows.forEach(function (r) {
             var state = r.lines === 0 ? 'No filters listed yet'
               : r.filled === r.lines ? 'All ' + r.lines + ' part numbers filled in'
@@ -173,9 +162,7 @@
               '<span class="meta">' + esc(state) + '</span></span>' +
               '<span class="chev">&rsaquo;</span></a></li>';
           });
-          html += '</ul><div class="btnrow">' +
-            '<button class="btn ghost" data-act="add-kit" data-model="' + model.id + '">' +
-            '+ Add a service interval</button></div>';
+          html += '</ul>';
           render(html);
         });
       });
@@ -183,7 +170,7 @@
   }
 
   function kitName(kit) {
-    if (kit.interval_hours) return kit.interval_hours + ' hour service';
+    if (kit.interval_hours) return kit.interval_hours + ' hours';
     return kit.label || 'Service';
   }
 
@@ -212,8 +199,7 @@
             html += '<div class="btnrow">' +
               '<button class="btn ghost" data-act="add-slot" data-kit="' + id + '">+ Add a filter position</button>' +
               '<button class="btn ghost" data-act="copy-kit" data-kit="' + id + '">Copy from another machine</button>' +
-              '</div>' +
-              '<div class="btnrow"><button class="btn danger" data-act="del-kit" data-kit="' + id + '">Delete this kit</button></div>';
+              '</div>';
             render(html);
           });
         });
@@ -223,7 +209,6 @@
 
   function slotHtml(line, parts) {
     var hint = [];
-    if (line.use_count) hint.push('fitted ' + plural(line.use_count, 'time') + ' historically');
     if (line.qty && line.qty !== 1) hint.push('qty ' + line.qty);
     var html = '<section class="slot"><span class="name">' + esc(line.slot) + '</span>';
     if (hint.length) html += '<span class="hint">' + esc(hint.join(' · ')) + '</span>';
@@ -509,6 +494,10 @@
   // to add a machine, brand, kit or part number from wherever he happens to
   // be, not just from the one page that "obviously" owns that action.
 
+  // Every machine gets exactly these four kits — fixed, not something dad
+  // adds one at a time. Mirrors the intervals tools/build_seed.py seeds with.
+  var SERVICE_INTERVALS = [250, 500, 750, 1000];
+
   function nextBrandSort(brands) {
     return brands.reduce(function (m, b) { return Math.max(m, b.sort || 0); }, 0) + 1;
   }
@@ -531,24 +520,12 @@
     });
   }
 
-  function addKitFlow(modelId) {
-    var hours = prompt('Service interval in hours? e.g. 500\n\nLeave blank to just name it.');
-    if (hours === null) return;
-    var n = parseInt(String(hours).replace(/[^0-9]/g, ''), 10);
-    var label = n ? n + ' hour service' : (prompt('Name for this kit?') || 'Service');
-    DB.byIndex('kits', 'model_id', modelId).then(function (kits) {
-      return DB.put('kits', { model_id: modelId, label: label,
-                              interval_hours: n || null, sort: kits.length });
-    }).then(function (id) { go('#/kit/' + id); }).catch(fail);
-  }
-
   function screenQuickAdd() {
     setHead('Add', '', true);
     render('<ul class="list">' +
       row('#/addmachine', 'Add a machine', 'A digger under a brand you already have') +
       row('#/addbrand', 'Add a brand', 'For a make you have not serviced before') +
-      row('#/pickmachine/kit', 'Add a service kit', 'Another interval for a machine you have') +
-      row('#/pickmachine/part', 'Add a part number', 'A filter number for a machine you have') +
+      row('#/pickmachine', 'Add a part number', 'A filter number for a machine you have') +
       '</ul>');
     function row(href, title, meta) {
       return '<li><a class="row" href="' + href + '"><span class="grow">' +
@@ -592,24 +569,19 @@
     });
   }
 
-  /* intent: 'kit' lands straight on the "which interval" prompt; 'part' lands
-     on the machine's kit (or, if it has more than one, its model page to pick
-     which kit) so the existing "+ Add part number" buttons finish the job. */
-  function screenPickMachine(intent) {
-    setHead(intent === 'kit' ? 'Add a service kit' : 'Add a part number',
-            'Pick a machine', true);
+  /* Lands on the machine's kit directly when it only has one (never happens
+     now that every machine gets all four, but harmless if it ever does), or
+     its model page to pick which of the four otherwise. */
+  function screenPickMachine() {
+    setHead('Add a part number', 'Pick a machine', true);
     return DB.all('models').then(function (models) {
       var live = models.filter(function (m) { return !m.hidden; });
-      live.sort(function (a, b) {
-        return (b.invoice_count - a.invoice_count) || a.display.localeCompare(b.display);
-      });
+      live.sort(function (a, b) { return a.display.localeCompare(b.display); });
 
       function pickRow(m) {
-        var bits = [m.brand];
-        if (m.invoice_count) bits.push(plural(m.invoice_count, 'invoice'));
-        return '<li><button class="row" data-act="pick-machine" data-intent="' + intent +
-          '" data-model="' + m.id + '"><span class="grow"><span class="title">' +
-          esc(m.display) + '</span><span class="meta">' + esc(bits.join(' \u00b7 ')) +
+        return '<li><button class="row" data-act="pick-machine" ' +
+          'data-model="' + m.id + '"><span class="grow"><span class="title">' +
+          esc(m.display) + '</span><span class="meta">' + esc(m.brand) +
           '</span></span><span class="chev">&rsaquo;</span></button></li>';
       }
 
@@ -645,19 +617,17 @@
       var live = models.filter(function (m) { return !m.hidden; })
         .sort(function (a, b) { return a.display.localeCompare(b.display); });
 
-      var html = '<div class="note small">Nothing here touches the invoicing ' +
-        'app&rsquo;s database &mdash; these are this app&rsquo;s own copies.</div>';
+      var html = '<div class="note small">Changes here only affect this app.</div>';
 
       html += '<h3>Machines with no brand (' + unassigned.length + ')</h3>';
       html += unassigned.length ? '<ul class="list">' + unassigned.map(function (m) {
         return '<li class="row"><span class="grow"><span class="title">' + esc(m.display) +
-          '</span><span class="meta">' + plural(m.machine_count, 'machine') + '</span></span>' +
-          brandSelect(m, names) + '</li>';
+          '</span></span>' + brandSelect(m, names) + '</li>';
       }).join('') + '</ul>' : '<p class="muted small">All sorted.</p>';
 
       html += '<h3>Hidden rows (' + hidden.length + ')</h3>' +
-        '<p class="muted small">These came out of old invoice wording rather than ' +
-        'being real machines. Bring one back if it should be here.</p>';
+        '<p class="muted small">These didn\u2019t look like real machines. ' +
+        'Bring one back if it should be here.</p>';
       html += hidden.length ? '<ul class="list">' + hidden.map(function (m) {
         return '<li class="row"><span class="grow"><span class="title">' + esc(m.display) +
           '</span><span class="meta">' + esc(m.hidden_reason || '') + '</span></span>' +
@@ -669,9 +639,10 @@
         'that are the same machine.</p><ul class="list">';
       live.forEach(function (m) {
         html += '<li class="row"><span class="grow"><span class="title">' + esc(m.display) +
-          '</span><span class="meta">' + esc(m.brand) + ' · ' +
-          plural(m.machine_count, 'machine') + '</span></span>' +
-          '<button class="btn ghost" data-act="edit-model" data-model="' + m.id + '">Edit</button></li>';
+          '</span><span class="meta">' + esc(m.brand) + '</span></span>' +
+          '<button class="btn ghost" data-act="edit-model" data-model="' + m.id + '">Edit</button>' +
+          '<button class="iconbtn" data-act="del-model" data-model="' + m.id + '" ' +
+            'aria-label="Delete ' + esc(m.display) + '">&#128465;</button></li>';
       });
       html += '</ul>';
       render(html);
@@ -722,25 +693,115 @@
           }).join('') + '</select>' +
           '<div class="btnrow" style="margin-top:.75rem">' +
           '<button class="btn danger" data-act="merge-model" data-model="' + id + '">Merge</button></div>' +
-          '<h3>Remove</h3><div class="btnrow">' +
-          '<button class="btn danger" data-act="hide-model" data-model="' + id + '">Hide this machine</button></div>';
+          '<h3>Remove</h3>' +
+          '<p class="muted small">Hide keeps it, just out of the lists. Delete removes ' +
+          'it and its service kits for good \u2014 use it for a genuine duplicate.</p>' +
+          '<div class="btnrow">' +
+          '<button class="btn danger" data-act="hide-model" data-model="' + id + '">Hide this machine</button>' +
+          '<button class="btn danger" data-act="del-model" data-model="' + id + '">Delete this machine</button></div>';
         render(html);
       });
   }
 
+  // Copies a set of kit_line_parts links onto a different line, in order.
+  function copyAllLinks(links, toLineId) {
+    return links.reduce(function (chain, l, i) {
+      return chain.then(function () {
+        return DB.put('kit_line_parts', { kit_line_id: toLineId, part_id: l.part_id, sort: i });
+      });
+    }, Promise.resolve());
+  }
+
+  // Deletes a kit and everything hanging off it (its filter positions and
+  // whatever part numbers are attached to them).
+  function deleteKitCascade(kitId) {
+    return DB.byIndex('kit_lines', 'kit_id', kitId).then(function (lines) {
+      return lines.reduce(function (chain, l) {
+        return chain.then(function () {
+          return DB.byIndex('kit_line_parts', 'kit_line_id', l.id).then(function (links) {
+            return links.reduce(function (c, k) {
+              return c.then(function () { return DB.del('kit_line_parts', k.id); });
+            }, Promise.resolve());
+          }).then(function () { return DB.del('kit_lines', l.id); });
+        });
+      }, Promise.resolve());
+    }).then(function () { return DB.del('kits', kitId); });
+  }
+
+  function deleteModelCascade(modelId) {
+    return DB.byIndex('kits', 'model_id', modelId).then(function (kits) {
+      return kits.reduce(function (chain, kit) {
+        return chain.then(function () { return deleteKitCascade(kit.id); });
+      }, Promise.resolve());
+    }).then(function () { return DB.del('models', modelId); });
+  }
+
+  function countModelParts(modelId) {
+    return DB.byIndex('kits', 'model_id', modelId).then(function (kits) {
+      return Promise.all(kits.map(function (kit) {
+        return DB.byIndex('kit_lines', 'kit_id', kit.id).then(function (lines) {
+          return Promise.all(lines.map(function (l) {
+            return DB.byIndex('kit_line_parts', 'kit_line_id', l.id);
+          }));
+        });
+      }));
+    }).then(function (nested) {
+      var n = 0;
+      nested.forEach(function (lineSets) { lineSets.forEach(function (s) { n += s.length; }); });
+      return n;
+    });
+  }
+
+  /* Every machine has the same four fixed kits (250/500/750/1000 hours), so a
+     merge lines them up by interval and folds part numbers across the same
+     way "copy from another machine" does: fill what's empty, never touch
+     what's already filled. The source's kits are then deleted, not
+     reparented — reparenting would leave the target with eight kits. */
   function mergeModels(sourceId, targetId) {
     return Promise.all([DB.get('models', sourceId), DB.get('models', targetId)])
       .then(function (res) {
         var source = res[0], target = res[1];
         if (!source || !target) throw new Error('One of those machines is gone.');
-        return DB.byIndex('kits', 'model_id', sourceId).then(function (kits) {
-          return kits.reduce(function (chain, k) {
-            return chain.then(function () {
-              k.model_id = targetId;
-              k.label = k.label + ' (from ' + source.display + ')';
-              return DB.put('kits', k);
-            });
-          }, Promise.resolve());
+        return DB.byIndex('kits', 'model_id', sourceId).then(function (srcKits) {
+          return DB.byIndex('kits', 'model_id', targetId).then(function (dstKits) {
+            return srcKits.reduce(function (chain, srcKit) {
+              return chain.then(function () {
+                var dstKit = dstKits.filter(function (k) {
+                  return k.interval_hours === srcKit.interval_hours;
+                })[0];
+                if (!dstKit) {
+                  // Target is missing this interval outright — just move the
+                  // kit across rather than losing it.
+                  srcKit.model_id = targetId;
+                  return DB.put('kits', srcKit);
+                }
+                return DB.byIndex('kit_lines', 'kit_id', srcKit.id).then(function (srcLines) {
+                  return DB.byIndex('kit_lines', 'kit_id', dstKit.id).then(function (dstLines) {
+                    var bySlot = {};
+                    dstLines.forEach(function (l) { bySlot[l.slot] = l; });
+                    return srcLines.reduce(function (c, srcLine, i) {
+                      return c.then(function () {
+                        return DB.byIndex('kit_line_parts', 'kit_line_id', srcLine.id).then(function (srcLinks) {
+                          var dstLine = bySlot[srcLine.slot];
+                          if (!dstLine) {
+                            return DB.put('kit_lines', { kit_id: dstKit.id, slot: srcLine.slot,
+                                                         qty: srcLine.qty || 1, sort: dstLines.length + i,
+                                                         notes: null })
+                              .then(function (newLineId) { return copyAllLinks(srcLinks, newLineId); });
+                          }
+                          if (!srcLinks.length) return null;
+                          return DB.byIndex('kit_line_parts', 'kit_line_id', dstLine.id).then(function (existing) {
+                            if (existing.length) return null;
+                            return copyAllLinks(srcLinks, dstLine.id);
+                          });
+                        });
+                      });
+                    }, Promise.resolve());
+                  }).then(function () { return deleteKitCascade(srcKit.id); });
+                });
+              });
+            }, Promise.resolve());
+          });
         }).then(function () {
           target.aliases = (target.aliases || []).concat(source.aliases || [])
             .filter(function (v, i, a) { return a.indexOf(v) === i; });
@@ -782,8 +843,8 @@
         '<input type="file" id="restore" accept="application/json,.json">' +
         '<div class="btnrow" style="margin-top:.75rem">' +
         '<button class="btn danger" data-act="import">Restore from that file</button></div>' +
-        '<h3>Machine list</h3><p class="muted small">Seeded from the invoicing app' +
-        (seeded ? ' on ' + esc(new Date(seeded).toLocaleDateString()) : '') + '.</p>';
+        '<h3>Machine list</h3><p class="muted small">The brands and machines are ' +
+        'built into the app, so they are not affected by this backup.</p>';
       render(html);
     });
   }
@@ -879,10 +940,13 @@
             brand_locked: 1, source: 'manual'
           });
         }).then(function (modelId) {
-          // A blank kit so the model page has somewhere to hang filters,
-          // matching what a seeded machine looks like on day one.
-          return DB.put('kits', { model_id: modelId, label: 'Standard service',
-                                  interval_hours: null, sort: 0 });
+          // Every machine gets the same four kits, matching a seeded one.
+          return SERVICE_INTERVALS.reduce(function (chain, hours, i) {
+            return chain.then(function () {
+              return DB.put('kits', { model_id: modelId, label: hours + ' hours',
+                                      interval_hours: hours, sort: i });
+            });
+          }, Promise.resolve());
         }).then(function () {
           toast('Added ' + display);
           go('#/model/' + encodeURIComponent(key));
@@ -890,9 +954,7 @@
       }).catch(fail);
     },
     'pick-machine': function (el) {
-      var intent = el.getAttribute('data-intent');
       var modelId = Number(el.getAttribute('data-model'));
-      if (intent === 'kit') { addKitFlow(modelId); return; }
       DB.byIndex('kits', 'model_id', modelId).then(function (kits) {
         if (kits.length === 1) { go('#/kit/' + kits[0].id); return; }
         return DB.get('models', modelId).then(function (m) {
@@ -906,7 +968,7 @@
       if (!name) return;
       DB.byIndex('kit_lines', 'kit_id', kitId).then(function (lines) {
         return DB.put('kit_lines', { kit_id: kitId, slot: name.trim(), qty: 1,
-                                     sort: lines.length, use_count: 0, notes: null });
+                                     sort: lines.length, notes: null });
       }).then(function () { route(); }).catch(fail);
     },
     'del-slot': function (el) {
@@ -924,27 +986,7 @@
           .then(function () { toast('Removed'); route(); });
       }).catch(fail);
     },
-    'add-kit': function (el) { addKitFlow(Number(el.getAttribute('data-model'))); },
-    'del-kit': function (el) {
-      var kitId = Number(el.getAttribute('data-kit'));
-      if (!confirm('Delete this whole kit and its filter positions?')) return;
-      DB.get('kits', kitId).then(function (kit) {
-        return DB.byIndex('kit_lines', 'kit_id', kitId).then(function (lines) {
-          return lines.reduce(function (c, l) {
-            return c.then(function () {
-              return DB.byIndex('kit_line_parts', 'kit_line_id', l.id).then(function (links) {
-                return links.reduce(function (c2, k) {
-                  return c2.then(function () { return DB.del('kit_line_parts', k.id); });
-                }, Promise.resolve());
-              }).then(function () { return DB.del('kit_lines', l.id); });
-            });
-          }, Promise.resolve());
-        }).then(function () { return DB.del('kits', kitId); })
-          .then(function () { go('#/model/' + encodeURIComponent(kit ? kit.model_id : '')); })
-          .then(function () { return DB.get('models', kit.model_id); })
-          .then(function (m) { if (m) go('#/model/' + encodeURIComponent(m.key)); });
-      }).catch(fail);
-    },
+
     'copy-kit': function (el) {
       var kitId = Number(el.getAttribute('data-kit'));
       go('#/copy/' + kitId);
@@ -968,6 +1010,23 @@
       DB.get('models', id).then(function (m) {
         m.hidden = 1; m.hidden_reason = 'hidden by hand'; return DB.put('models', m);
       }).then(function () { toast('Hidden'); go('#/cleanup'); }).catch(fail);
+    },
+    'del-model': function (el) {
+      var id = Number(el.getAttribute('data-model'));
+      DB.get('models', id).then(function (m) {
+        if (!m) return;
+        return countModelParts(id).then(function (n) {
+          var warn = n
+            ? 'Delete ' + m.display + '? It holds ' + plural(n, 'part number') +
+              ' \u2014 they will be deleted too. This cannot be undone.'
+            : 'Delete ' + m.display + '? This cannot be undone.';
+          if (!confirm(warn)) return;
+          return deleteModelCascade(id).then(function () {
+            toast('Deleted ' + m.display);
+            go('#/cleanup');
+          });
+        });
+      }).catch(fail);
     },
     'edit-model': function (el) { go('#/editmodel/' + el.getAttribute('data-model')); },
     'save-model': function (el) {
@@ -1032,47 +1091,48 @@
   // ---------------------------------------------------- copy-from-another
   function screenCopy(kitId) {
     kitId = Number(kitId);
-    setHead('Copy filters', 'From another machine', true);
-    return DB.all('models').then(function (models) {
-      var live = models.filter(function (m) { return !m.hidden; })
-        .sort(function (a, b) { return b.invoice_count - a.invoice_count; });
-      render('<p class="muted">Pick a machine to copy its filter positions and part ' +
-        'numbers from. Positions you have already filled in are left alone.</p>' +
-        '<ul class="list">' + live.map(function (m) {
-          return '<li><button class="row" data-act="do-copy" data-kit="' + kitId +
-            '" data-model="' + m.id + '"><span class="grow"><span class="title">' +
-            esc(m.display) + '</span><span class="meta">' + esc(m.brand) + '</span></span>' +
-            '<span class="chev">&rsaquo;</span></button></li>';
-        }).join('') + '</ul>');
+    return DB.get('kits', kitId).then(function (destKit) {
+      setHead('Copy filters', 'From another machine', true);
+      return DB.all('models').then(function (models) {
+        var live = models.filter(function (m) { return !m.hidden; })
+          .sort(function (a, b) { return a.display.localeCompare(b.display); });
+        var interval = destKit && destKit.interval_hours
+          ? destKit.interval_hours + ' hours' : 'this';
+        render('<p class="muted">Pick a machine to copy its ' + esc(interval) +
+          ' filter positions and part numbers from \u2014 the same interval on ' +
+          'that machine. Positions you have already filled in are left alone.</p>' +
+          '<ul class="list">' + live.map(function (m) {
+            return '<li><button class="row" data-act="do-copy" data-kit="' + kitId +
+              '" data-model="' + m.id + '"><span class="grow"><span class="title">' +
+              esc(m.display) + '</span><span class="meta">' + esc(m.brand) + '</span></span>' +
+              '<span class="chev">&rsaquo;</span></button></li>';
+          }).join('') + '</ul>');
+      });
     });
   }
 
-  /* Copy filter positions AND their part numbers from another machine.
+  /* Copy filter positions AND their part numbers from another machine's
+     SAME-INTERVAL kit — a 500 hours kit only ever copies from another
+     machine's 500 hours kit, never a different interval.
 
-     Both machines are usually scaffolded with the same slots out of the invoice
-     history, so matching only on missing slots would copy nothing useful — the
-     numbers are the whole point. So: a slot the target doesn't have is created
-     with its numbers; a slot it has but hasn't filled in yet receives the
-     numbers; a slot that already holds numbers is left completely alone. */
+     Machines are usually scaffolded with the same slots, so matching only on
+     missing slots would copy nothing useful — the numbers are the whole
+     point. So: a slot the target doesn't have is created with its numbers; a
+     slot it has but hasn't filled in yet receives the numbers; a slot that
+     already holds numbers is left completely alone. */
   ACTIONS['do-copy'] = function (el) {
     var kitId = Number(el.getAttribute('data-kit'));
     var modelId = Number(el.getAttribute('data-model'));
     var made = 0, filled = 0;
 
-    function copyLinks(fromLineId, toLineId) {
-      return DB.byIndex('kit_line_parts', 'kit_line_id', fromLineId).then(function (links) {
-        return links.reduce(function (chain, k, j) {
-          return chain.then(function () {
-            return DB.put('kit_line_parts', { kit_line_id: toLineId,
-                                              part_id: k.part_id, sort: j });
-          });
-        }, Promise.resolve()).then(function () { return links.length; });
+    DB.get('kits', kitId).then(function (destKit) {
+      return DB.byIndex('kits', 'model_id', modelId).then(function (kits) {
+        if (!kits.length) throw new Error('That machine has no kits to copy.');
+        var srcKit = kits.filter(function (k) {
+          return k.interval_hours === (destKit && destKit.interval_hours);
+        })[0] || kits[0];
+        return DB.byIndex('kit_lines', 'kit_id', srcKit.id);
       });
-    }
-
-    DB.byIndex('kits', 'model_id', modelId).then(function (kits) {
-      if (!kits.length) throw new Error('That machine has no kits to copy.');
-      return DB.byIndex('kit_lines', 'kit_id', kits[0].id);
     }).then(function (srcLines) {
       return DB.byIndex('kit_lines', 'kit_id', kitId).then(function (mine) {
         var bySlot = {};
@@ -1084,17 +1144,17 @@
               var target = bySlot[l.slot];
               if (!target) {
                 return DB.put('kit_lines', { kit_id: kitId, slot: l.slot, qty: l.qty || 1,
-                                             sort: mine.length + i, use_count: 0, notes: null })
+                                             sort: mine.length + i, notes: null })
                   .then(function (newLineId) {
                     made += 1;
-                    return copyLinks(l.id, newLineId).then(function (n) { filled += n; });
+                    return copyAllLinks(srcLinks, newLineId).then(function () { filled += srcLinks.length; });
                   });
               }
               if (!srcLinks.length) return null;
               // Only fill a position that is still empty; never overwrite.
               return DB.byIndex('kit_line_parts', 'kit_line_id', target.id).then(function (existing) {
                 if (existing.length) return null;
-                return copyLinks(l.id, target.id).then(function (n) { filled += n; });
+                return copyAllLinks(srcLinks, target.id).then(function () { filled += srcLinks.length; });
               });
             });
           });
@@ -1127,7 +1187,7 @@
     else if (p[0] === 'quickadd')  run = screenQuickAdd();
     else if (p[0] === 'addbrand')  run = screenAddBrand();
     else if (p[0] === 'addmachine') run = screenAddMachine();
-    else if (p[0] === 'pickmachine') run = screenPickMachine(p[1]);
+    else if (p[0] === 'pickmachine') run = screenPickMachine();
     else                           run = UI.screenBrands();
     Promise.resolve(run).catch(fail);
   }

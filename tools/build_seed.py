@@ -32,6 +32,10 @@ HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEFAULT_DB = os.path.abspath(os.path.join(
     HERE, "..", "DMS invoicing", "app", "data", "dms.db"))
 
+# Kept in sync by hand with the identical SERVICE_INTERVALS constant in
+# js/ui.js — one is Python, the other JS, so they can't literally share code.
+SERVICE_INTERVALS = [250, 500, 750, 1000]
+
 
 def open_readonly(path):
     """Open dms.db in a way that cannot modify it.
@@ -81,14 +85,13 @@ def build(conn):
         if key in models and not hidden:
             models[key]["invoice_count"] += row["n"]
 
-    # --- scaffold one kit per model from the historical filter usage ------
+    # --- which filter positions each model has, from historical usage -----
     # model_part_usage is keyed by the invoicing app's model_key(), which does
     # not strip the brand word, so 'U554' and 'U554KUBOTA' are separate rows
     # there. Map them through the same folding before merging.
-    slots = collections.defaultdict(lambda: collections.defaultdict(int))
-    slot_last = collections.defaultdict(dict)
+    slots = collections.defaultdict(set)
     for row in conn.execute(
-            "SELECT u.machine_model, u.use_count, u.last_used_at, c.description "
+            "SELECT u.machine_model, c.description "
             "FROM model_part_usage u JOIN catalog_items c ON c.id = u.catalog_item_id "
             "WHERE c.item_group = 'Filters'"):
         slot = mr.filter_slot(row["description"])
@@ -99,30 +102,27 @@ def build(conn):
             _, _, key, _, _ = mr.clean_model(row["machine_model"])
         if key not in models:
             continue
-        slots[key][slot] += row["use_count"] or 0
-        prev = slot_last[key].get(slot) or ""
-        if (row["last_used_at"] or "") > prev:
-            slot_last[key][slot] = row["last_used_at"]
+        slots[key].add(slot)
 
     out_models = []
     for key, entry in models.items():
-        lines = []
-        for slot, count in slots.get(key, {}).items():
-            lines.append({
-                "slot": slot, "qty": 1, "use_count": count,
-                "last_used_at": slot_last[key].get(slot),
-            })
-        lines.sort(key=lambda l: (mr.slot_sort(l["slot"]), l["slot"]))
+        lines = [{"slot": slot, "qty": 1} for slot in
+                 sorted(slots.get(key, ()), key=lambda s: (mr.slot_sort(s), s))]
         entry = dict(entry)
-        entry["aliases"] = sorted(a for a in entry["aliases"] if a)
-        # Interval is deliberately unset: the invoice history never recorded
-        # which service interval a part was fitted at, and inventing '500 hour'
-        # would be a guess dressed up as data. The app offers a one-tap split
-        # into interval kits once dad tells it what the intervals are.
-        entry["kits"] = [{
-            "label": "Standard service", "interval_hours": None,
-            "sort": 0, "lines": lines,
-        }]
+        # Raw "Invoice for X" / "Fixing X" spellings are stripped lead-ins,
+        # not spellings anyone would search by, and needlessly surface old
+        # paperwork wording in the app.
+        entry["aliases"] = sorted(
+            a for a in entry["aliases"]
+            if a and not mr.LEAD_INS.match(a)
+        )
+        # Every machine gets the same four fixed kits — not something dad adds
+        # one at a time. Keep this in sync with SERVICE_INTERVALS in js/ui.js.
+        entry["kits"] = [
+            {"label": "%d hours" % hours, "interval_hours": hours, "sort": i,
+             "lines": lines}
+            for i, hours in enumerate(SERVICE_INTERVALS)
+        ]
         out_models.append(entry)
 
     out_models.sort(key=lambda m: (m["hidden"], -m["invoice_count"],

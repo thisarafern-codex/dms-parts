@@ -93,11 +93,10 @@
    "sort": 22
   }
  ],
- "generated_at": "2026-08-25T22:40:20",
+ "generated_at": "2026-08-26T20:04:19",
  "models": [
   {
    "aliases": [
-    "Invoice for U55-4",
     "U 55- 4",
     "U 55-4",
     "U55- 4",
@@ -113,66 +112,166 @@
    "key": "U554",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2026-08-24",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 82
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2026-08-24",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 81
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2025-09-20",
        "qty": 1,
-       "slot": "Air filter",
-       "use_count": 6
+       "slot": "Air filter"
       },
       {
-       "last_used_at": "2026-08-10",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 19
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2025-04-15",
        "qty": 1,
-       "slot": "Air filter \u2014 inner",
-       "use_count": 2
+       "slot": "Air filter \u2014 inner"
       },
       {
-       "last_used_at": "2026-08-10",
        "qty": 1,
-       "slot": "Cab / air-con filter",
-       "use_count": 19
+       "slot": "Cab / air-con filter"
       },
       {
-       "last_used_at": "2026-08-10",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 39
+       "slot": "Hydraulic return filter"
       },
       {
-       "last_used_at": "2026-08-10",
        "qty": 1,
-       "slot": "Pilot filter",
-       "use_count": 25
+       "slot": "Pilot filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 26
   },
   {
    "aliases": [
-    "Invoice for KXO18-4",
     "KXO18-4"
    ],
    "brand": "Kubota",
@@ -183,41 +282,112 @@
    "key": "KXO184",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-12-19",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 8
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2025-12-19",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 8
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2025-12-19",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 5
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2025-12-19",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 8
+       "slot": "Hydraulic return filter"
       },
       {
-       "last_used_at": "2023-06-25",
        "qty": 1,
-       "slot": "Hydraulic suction filter",
-       "use_count": 1
+       "slot": "Hydraulic suction filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic suction filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic suction filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic suction filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 10
@@ -235,53 +405,144 @@
    "key": "U354",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-12-18",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 8
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2025-12-18",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 8
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2023-07-01",
        "qty": 1,
-       "slot": "Fuel filter \u2014 inline",
-       "use_count": 1
+       "slot": "Fuel filter \u2014 inline"
       },
       {
-       "last_used_at": "2024-09-12",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 2
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2024-09-12",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 4
+       "slot": "Hydraulic return filter"
       },
       {
-       "last_used_at": "2022-06-23",
        "qty": 1,
-       "slot": "Hydraulic inline filter",
-       "use_count": 1
+       "slot": "Hydraulic inline filter"
       },
       {
-       "last_used_at": "2024-09-12",
        "qty": 1,
-       "slot": "Pilot filter",
-       "use_count": 2
+       "slot": "Pilot filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 inline"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic inline filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 inline"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic inline filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 inline"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic inline filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 4
@@ -299,35 +560,96 @@
    "key": "PC35MR5",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2026-07-16",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 13
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2026-07-16",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 13
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2026-07-16",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 4
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2026-07-16",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 8
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 3
@@ -344,53 +666,144 @@
    "key": "U484",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2026-07-22",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 7
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2026-07-22",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 7
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2026-07-22",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 3
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2026-07-22",
        "qty": 1,
-       "slot": "Air filter \u2014 inner",
-       "use_count": 1
+       "slot": "Air filter \u2014 inner"
       },
       {
-       "last_used_at": "2026-07-22",
        "qty": 1,
-       "slot": "Cab / air-con filter",
-       "use_count": 2
+       "slot": "Cab / air-con filter"
       },
       {
-       "last_used_at": "2026-07-22",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 6
+       "slot": "Hydraulic return filter"
       },
       {
-       "last_used_at": "2026-07-22",
        "qty": 1,
-       "slot": "Pilot filter",
-       "use_count": 3
+       "slot": "Pilot filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 3
@@ -407,41 +820,112 @@
    "key": "U173",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2026-02-09",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 10
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2026-02-09",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 9
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2026-02-09",
        "qty": 1,
-       "slot": "Air filter",
-       "use_count": 2
+       "slot": "Air filter"
       },
       {
-       "last_used_at": "2023-12-14",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 2
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2026-02-09",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 6
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 5
@@ -459,35 +943,96 @@
    "key": "SK20SR",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2026-07-08",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 10
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2026-07-08",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 10
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2026-05-04",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 3
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2026-05-04",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 5
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 3
@@ -505,41 +1050,112 @@
    "key": "U174",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-02-03",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 6
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2025-02-03",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 6
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2025-02-03",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2025-02-03",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 4
+       "slot": "Hydraulic return filter"
       },
       {
-       "last_used_at": "2025-02-03",
        "qty": 1,
-       "slot": "Pilot filter",
-       "use_count": 1
+       "slot": "Pilot filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 7
@@ -557,29 +1173,80 @@
    "key": "ZX55U5A",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2026-03-02",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 3
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2026-03-02",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 3
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2026-03-02",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 5
@@ -596,53 +1263,144 @@
    "key": "KXO803",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2026-03-02",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 3
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2026-03-02",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 3
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2026-03-02",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 2
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2024-05-28",
        "qty": 1,
-       "slot": "Air filter \u2014 inner",
-       "use_count": 1
+       "slot": "Air filter \u2014 inner"
       },
       {
-       "last_used_at": "2026-03-02",
        "qty": 1,
-       "slot": "Cab / air-con filter",
-       "use_count": 1
+       "slot": "Cab / air-con filter"
       },
       {
-       "last_used_at": "2026-03-02",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 4
+       "slot": "Hydraulic return filter"
       },
       {
-       "last_used_at": "2026-03-02",
        "qty": 1,
-       "slot": "Pilot filter",
-       "use_count": 2
+       "slot": "Pilot filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -661,59 +1419,160 @@
    "key": "ZX110",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2026-02-03",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 5
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2026-02-03",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 3
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2023-06-28",
        "qty": 1,
-       "slot": "Fuel filter \u2014 primary",
-       "use_count": 2
+       "slot": "Fuel filter \u2014 primary"
       },
       {
-       "last_used_at": "2026-02-03",
        "qty": 1,
-       "slot": "Fuel filter \u2014 secondary",
-       "use_count": 5
+       "slot": "Fuel filter \u2014 secondary"
       },
       {
-       "last_used_at": "2026-02-03",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 3
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2022-11-23",
        "qty": 1,
-       "slot": "Air filter \u2014 inner",
-       "use_count": 1
+       "slot": "Air filter \u2014 inner"
       },
       {
-       "last_used_at": "2026-02-03",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 5
+       "slot": "Hydraulic return filter"
       },
       {
-       "last_used_at": "2026-02-03",
        "qty": 1,
-       "slot": "Pilot filter",
-       "use_count": 2
+       "slot": "Pilot filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 5
@@ -730,35 +1589,96 @@
    "key": "VIO30",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-06-13",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 4
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2025-06-13",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 4
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2025-06-13",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 2
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2025-06-13",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 3
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 3
@@ -776,10 +1696,28 @@
    "key": "HBP530",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -796,29 +1734,80 @@
    "key": "U253",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2026-06-23",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 4
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2026-06-23",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 4
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-11-08",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 2
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -835,41 +1824,112 @@
    "key": "U274",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-08-12",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 4
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2025-08-12",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 4
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2023-12-05",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2023-12-05",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 2
+       "slot": "Hydraulic return filter"
       },
       {
-       "last_used_at": "2023-12-05",
        "qty": 1,
-       "slot": "Pilot filter",
-       "use_count": 1
+       "slot": "Pilot filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -889,47 +1949,128 @@
    "key": "DX225LC",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-11-08",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-11-08",
        "qty": 1,
-       "slot": "Fuel filter \u2014 primary",
-       "use_count": 2
+       "slot": "Fuel filter \u2014 primary"
       },
       {
-       "last_used_at": "2024-11-08",
        "qty": 1,
-       "slot": "Fuel filter \u2014 secondary",
-       "use_count": 2
+       "slot": "Fuel filter \u2014 secondary"
       },
       {
-       "last_used_at": "2024-11-08",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2024-11-08",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       },
       {
-       "last_used_at": "2024-11-08",
        "qty": 1,
-       "slot": "Pilot filter",
-       "use_count": 1
+       "slot": "Pilot filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 4
@@ -947,36 +2088,86 @@
    "key": "VIO206",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2023-12-10",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 4
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2023-12-10",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 4
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2023-11-29",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 2
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 3
   },
   {
    "aliases": [
-    "Fixing ZD1221",
     "ZD1221"
    ],
    "brand": "Kubota",
@@ -987,41 +2178,112 @@
    "key": "ZD1221",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2026-05-20",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 3
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2026-05-20",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 2
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2025-05-26",
        "qty": 1,
-       "slot": "Fuel filter \u2014 inline",
-       "use_count": 1
+       "slot": "Fuel filter \u2014 inline"
       },
       {
-       "last_used_at": "2025-05-26",
        "qty": 1,
-       "slot": "HST filter",
-       "use_count": 1
+       "slot": "HST filter"
       },
       {
-       "last_used_at": "2025-05-26",
        "qty": 1,
-       "slot": "Transmission filter",
-       "use_count": 1
+       "slot": "Transmission filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 inline"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Transmission filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 inline"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Transmission filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 inline"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Transmission filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 3
@@ -1039,41 +2301,112 @@
    "key": "F3690",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-10-29",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-10-29",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-10-29",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2024-10-29",
        "qty": 1,
-       "slot": "Air filter \u2014 inner",
-       "use_count": 1
+       "slot": "Air filter \u2014 inner"
       },
       {
-       "last_used_at": "2024-10-29",
        "qty": 1,
-       "slot": "HST filter",
-       "use_count": 2
+       "slot": "HST filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -1091,41 +2424,112 @@
    "key": "VIO20",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2022-08-30",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2023-07-18",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 2
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2022-08-30",
        "qty": 1,
-       "slot": "Air filter",
-       "use_count": 1
+       "slot": "Air filter"
       },
       {
-       "last_used_at": "2023-07-18",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2023-07-18",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 2
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -1143,23 +2547,64 @@
    "key": "VIO306",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-11-27",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-11-27",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 2
+       "slot": "Fuel filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -1176,41 +2621,112 @@
    "key": "3027",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2023-10-16",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2023-10-16",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2023-10-16",
        "qty": 1,
-       "slot": "Air filter",
-       "use_count": 1
+       "slot": "Air filter"
       },
       {
-       "last_used_at": "2022-04-07",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2023-10-16",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -1227,29 +2743,80 @@
    "key": "S130",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-06-23",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2025-07-01",
        "qty": 1,
-       "slot": "Hydraulic inline filter",
-       "use_count": 1
+       "slot": "Hydraulic inline filter"
       },
       {
-       "last_used_at": "2025-07-01",
        "qty": 1,
-       "slot": "Hydraulic filter",
-       "use_count": 1
+       "slot": "Hydraulic filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic inline filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic inline filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic inline filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -1266,23 +2833,64 @@
    "key": "T2290",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-04-19",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-04-19",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -1300,53 +2908,144 @@
    "key": "DX140LCR",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-09-03",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-09-03",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 2
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-02-07",
        "qty": 1,
-       "slot": "Fuel filter \u2014 secondary",
-       "use_count": 1
+       "slot": "Fuel filter \u2014 secondary"
       },
       {
-       "last_used_at": "2024-09-03",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2024-09-03",
        "qty": 1,
-       "slot": "Cab / air-con filter",
-       "use_count": 2
+       "slot": "Cab / air-con filter"
       },
       {
-       "last_used_at": "2024-09-03",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       },
       {
-       "last_used_at": "2024-09-03",
        "qty": 1,
-       "slot": "Pilot filter",
-       "use_count": 1
+       "slot": "Pilot filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 3
@@ -1363,35 +3062,96 @@
    "key": "30207",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2026-03-23",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 3
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2025-06-26",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 2
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2025-06-26",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2025-06-26",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -1409,23 +3169,64 @@
    "key": "PC35",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2026-05-06",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 3
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2026-05-06",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 3
+       "slot": "Fuel filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -1442,29 +3243,80 @@
    "key": "PC355",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-01-13",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2025-01-13",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2025-11-19",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 2
+       "slot": "Air filter \u2014 outer"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -1482,41 +3334,112 @@
    "key": "SH130LC5",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-02-12",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-02-12",
        "qty": 1,
-       "slot": "Fuel filter \u2014 primary",
-       "use_count": 1
+       "slot": "Fuel filter \u2014 primary"
       },
       {
-       "last_used_at": "2024-02-12",
        "qty": 1,
-       "slot": "Fuel filter \u2014 secondary",
-       "use_count": 1
+       "slot": "Fuel filter \u2014 secondary"
       },
       {
-       "last_used_at": "2024-02-12",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2024-02-12",
        "qty": 1,
-       "slot": "Air filter \u2014 inner",
-       "use_count": 1
+       "slot": "Air filter \u2014 inner"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -1533,35 +3456,96 @@
    "key": "U17",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-05-13",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-05-13",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 2
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-05-13",
        "qty": 1,
-       "slot": "Air filter",
-       "use_count": 1
+       "slot": "Air filter"
       },
       {
-       "last_used_at": "2024-05-13",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -1578,47 +3562,128 @@
    "key": "ZX38U5A",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-08-31",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-08-31",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-08-31",
        "qty": 1,
-       "slot": "Air filter",
-       "use_count": 1
+       "slot": "Air filter"
       },
       {
-       "last_used_at": "2024-08-31",
        "qty": 1,
-       "slot": "Cab / air-con filter",
-       "use_count": 1
+       "slot": "Cab / air-con filter"
       },
       {
-       "last_used_at": "2024-08-31",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       },
       {
-       "last_used_at": "2024-08-31",
        "qty": 1,
-       "slot": "Pilot filter",
-       "use_count": 1
+       "slot": "Pilot filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -1635,23 +3700,64 @@
    "key": "40UB",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2023-05-23",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2023-05-23",
        "qty": 1,
-       "slot": "Fuel filter \u2014 primary",
-       "use_count": 1
+       "slot": "Fuel filter \u2014 primary"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -1668,29 +3774,80 @@
    "key": "ES95TR",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-07-12",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-07-12",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-07-12",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -1707,35 +3864,96 @@
    "key": "KX413",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2022-04-08",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2022-04-08",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2022-04-08",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2022-04-08",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -1752,29 +3970,80 @@
    "key": "RTV500",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-07-22",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-02-09",
        "qty": 1,
-       "slot": "Hydraulic suction filter",
-       "use_count": 1
+       "slot": "Hydraulic suction filter"
       },
       {
-       "last_used_at": "2025-07-22",
        "qty": 1,
-       "slot": "HST filter",
-       "use_count": 2
+       "slot": "HST filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic suction filter"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic suction filter"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic suction filter"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -1791,35 +4060,96 @@
    "key": "SY18C",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-01-29",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2025-01-29",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2025-01-29",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2025-01-29",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -1836,17 +4166,48 @@
    "key": "TX1000",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2026-05-14",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -1864,35 +4225,96 @@
    "key": "305E2",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2026-01-24",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2026-01-24",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 2
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-05-13",
        "qty": 1,
-       "slot": "Air filter",
-       "use_count": 1
+       "slot": "Air filter"
       },
       {
-       "last_used_at": "2024-05-13",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -1910,43 +4332,103 @@
    "key": "BX2370",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-11-27",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2025-11-27",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2025-11-27",
        "qty": 1,
-       "slot": "Air filter",
-       "use_count": 1
+       "slot": "Air filter"
       },
       {
-       "last_used_at": "2025-11-27",
        "qty": 1,
-       "slot": "HST filter",
-       "use_count": 1
+       "slot": "HST filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
   },
   {
    "aliases": [
-    "ES18ZT",
-    "Model ES18ZT"
+    "ES18ZT"
    ],
    "brand": "Eurocomach",
    "display": "ES18ZT",
@@ -1956,35 +4438,96 @@
    "key": "ES18ZT",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2022-08-15",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2022-08-15",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2022-08-15",
        "qty": 1,
-       "slot": "Air filter",
-       "use_count": 1
+       "slot": "Air filter"
       },
       {
-       "last_used_at": "2022-08-15",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -2002,35 +4545,96 @@
    "key": "G5200H",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2022-04-12",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2022-04-12",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 4
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2022-04-12",
        "qty": 1,
-       "slot": "Air filter",
-       "use_count": 2
+       "slot": "Air filter"
       },
       {
-       "last_used_at": "2022-04-12",
        "qty": 1,
-       "slot": "HST filter",
-       "use_count": 2
+       "slot": "HST filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -2047,23 +4651,64 @@
    "key": "KXO18",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2023-10-28",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2023-10-28",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -2080,29 +4725,80 @@
    "key": "KXO80",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-01-05",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-01-05",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-01-05",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -2120,10 +4816,28 @@
    "key": "LWE40U",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -2140,29 +4854,80 @@
    "key": "PC35MR",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-10-18",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-10-18",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 2
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2023-01-15",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -2180,47 +4945,128 @@
    "key": "SK140",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-12-19",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2025-12-19",
        "qty": 1,
-       "slot": "Fuel filter \u2014 primary",
-       "use_count": 2
+       "slot": "Fuel filter \u2014 primary"
       },
       {
-       "last_used_at": "2025-12-19",
        "qty": 1,
-       "slot": "Fuel filter \u2014 secondary",
-       "use_count": 2
+       "slot": "Fuel filter \u2014 secondary"
       },
       {
-       "last_used_at": "2025-12-19",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 2
+       "slot": "Hydraulic return filter"
       },
       {
-       "last_used_at": "2024-09-19",
        "qty": 1,
-       "slot": "Pilot filter",
-       "use_count": 1
+       "slot": "Pilot filter"
       },
       {
-       "last_used_at": "2024-09-19",
        "qty": 1,
-       "slot": "Breather filter",
-       "use_count": 1
+       "slot": "Breather filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Breather filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Breather filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Breather filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -2238,35 +5084,96 @@
    "key": "SK20SR6",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-07-09",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-07-09",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 2
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-07-09",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2024-07-09",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -2283,29 +5190,80 @@
    "key": "TB016",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2022-09-09",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2022-09-09",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2022-09-09",
        "qty": 1,
-       "slot": "Air filter",
-       "use_count": 1
+       "slot": "Air filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -2323,53 +5281,144 @@
    "key": "ZX130LCN3",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2023-06-28",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2023-06-28",
        "qty": 1,
-       "slot": "Fuel filter \u2014 primary",
-       "use_count": 2
+       "slot": "Fuel filter \u2014 primary"
       },
       {
-       "last_used_at": "2023-06-28",
        "qty": 1,
-       "slot": "Fuel filter \u2014 secondary",
-       "use_count": 2
+       "slot": "Fuel filter \u2014 secondary"
       },
       {
-       "last_used_at": "2022-11-23",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2022-11-23",
        "qty": 1,
-       "slot": "Air filter \u2014 inner",
-       "use_count": 1
+       "slot": "Air filter \u2014 inner"
       },
       {
-       "last_used_at": "2023-06-28",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 2
+       "slot": "Hydraulic return filter"
       },
       {
-       "last_used_at": "2023-06-28",
        "qty": 1,
-       "slot": "Pilot filter",
-       "use_count": 2
+       "slot": "Pilot filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -2387,23 +5436,64 @@
    "key": "ZX17U",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-08-31",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-08-31",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 2
@@ -2420,41 +5510,112 @@
    "key": "313FL",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-05-10",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-05-10",
        "qty": 1,
-       "slot": "Fuel filter \u2014 primary",
-       "use_count": 2
+       "slot": "Fuel filter \u2014 primary"
       },
       {
-       "last_used_at": "2024-05-10",
        "qty": 1,
-       "slot": "Fuel filter \u2014 secondary",
-       "use_count": 2
+       "slot": "Fuel filter \u2014 secondary"
       },
       {
-       "last_used_at": "2023-08-17",
        "qty": 1,
-       "slot": "Hydraulic case-drain filter",
-       "use_count": 1
+       "slot": "Hydraulic case-drain filter"
       },
       {
-       "last_used_at": "2023-08-17",
        "qty": 1,
-       "slot": "Pilot filter",
-       "use_count": 1
+       "slot": "Pilot filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic case-drain filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic case-drain filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic case-drain filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2471,10 +5632,28 @@
    "key": "BS300HAS",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2491,10 +5670,28 @@
    "key": "COCCN",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2511,10 +5708,28 @@
    "key": "CS2610",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2531,41 +5746,112 @@
    "key": "DX140",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-03-19",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2026-02-03",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 2
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2026-02-03",
        "qty": 1,
-       "slot": "Fuel filter \u2014 water separator",
-       "use_count": 2
+       "slot": "Fuel filter \u2014 water separator"
       },
       {
-       "last_used_at": "2025-03-19",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2025-03-19",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 water separator"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 water separator"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 water separator"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2582,29 +5868,80 @@
    "key": "ES60TR",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-07-12",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-07-12",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-07-12",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2621,17 +5958,48 @@
    "key": "KXO404",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2023-04-05",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2648,29 +6016,80 @@
    "key": "L3800",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-07-22",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2025-07-22",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2025-07-22",
        "qty": 1,
-       "slot": "Transmission filter",
-       "use_count": 1
+       "slot": "Transmission filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Transmission filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Transmission filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Transmission filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2687,10 +6106,28 @@
    "key": "PC18MR3",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2707,35 +6144,96 @@
    "key": "PC55MR3",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2023-03-24",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2023-03-24",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2023-03-24",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2023-03-24",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2752,17 +6250,48 @@
    "key": "U55",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2023-01-07",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2779,29 +6308,80 @@
    "key": "VIO171",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-09-19",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2025-09-19",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-07-05",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2818,47 +6398,128 @@
    "key": "ZX130",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-10-21",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 2
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-02-03",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-10-21",
        "qty": 1,
-       "slot": "Fuel filter \u2014 primary",
-       "use_count": 1
+       "slot": "Fuel filter \u2014 primary"
       },
       {
-       "last_used_at": "2024-10-21",
        "qty": 1,
-       "slot": "Fuel filter \u2014 secondary",
-       "use_count": 2
+       "slot": "Fuel filter \u2014 secondary"
       },
       {
-       "last_used_at": "2024-02-03",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2024-02-03",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 primary"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter \u2014 secondary"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2875,10 +6536,28 @@
    "key": "17U5A",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2895,23 +6574,64 @@
    "key": "25",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2022-04-06",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2022-04-06",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2928,18 +6648,34 @@
    "key": "30",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
   },
   {
-   "aliases": [
-    "Model - CAT 302"
-   ],
+   "aliases": [],
    "brand": "Caterpillar",
    "display": "302",
    "hidden": false,
@@ -2948,10 +6684,28 @@
    "key": "302",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2968,10 +6722,28 @@
    "key": "304CR",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -2988,41 +6760,112 @@
    "key": "3055E",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-01-16",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-01-16",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-01-16",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2024-01-16",
        "qty": 1,
-       "slot": "Cab / air-con filter",
-       "use_count": 1
+       "slot": "Cab / air-con filter"
       },
       {
-       "last_used_at": "2024-01-16",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Cab / air-con filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3039,29 +6882,80 @@
    "key": "3055E2",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-05-10",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-05-10",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-05-10",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3078,10 +6972,28 @@
    "key": "55",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3098,35 +7010,96 @@
    "key": "55Z1",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-05-31",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-05-31",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       },
       {
-       "last_used_at": "2024-05-31",
        "qty": 1,
-       "slot": "Air filter \u2014 inner",
-       "use_count": 1
+       "slot": "Air filter \u2014 inner"
       },
       {
-       "last_used_at": "2024-05-31",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 inner"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3143,23 +7116,64 @@
    "key": "553",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2023-04-01",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2023-04-01",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3176,23 +7190,64 @@
    "key": "552",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-02-12",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-02-12",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3209,17 +7264,48 @@
    "key": "55Z",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-11-08",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3236,10 +7322,28 @@
    "key": "ASV30",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3256,29 +7360,80 @@
    "key": "B2601",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-05-22",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2025-05-22",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2025-05-22",
        "qty": 1,
-       "slot": "Hydraulic suction filter",
-       "use_count": 1
+       "slot": "Hydraulic suction filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic suction filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic suction filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic suction filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3295,10 +7450,28 @@
    "key": "BC24",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3315,29 +7488,80 @@
    "key": "DK40",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2026-08-10",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2026-08-10",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2026-08-10",
        "qty": 1,
-       "slot": "Transmission filter",
-       "use_count": 1
+       "slot": "Transmission filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Transmission filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Transmission filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Transmission filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3354,10 +7578,28 @@
    "key": "DX140LC3",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3374,10 +7616,28 @@
    "key": "ES18ZE",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3394,10 +7654,28 @@
    "key": "ES60",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3414,10 +7692,28 @@
    "key": "EX135USR5",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3434,17 +7730,48 @@
    "key": "FUSO",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2023-10-20",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3461,29 +7788,80 @@
    "key": "GR2120",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2026-06-18",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2026-06-18",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2026-06-18",
        "qty": 1,
-       "slot": "HST filter",
-       "use_count": 1
+       "slot": "HST filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3500,10 +7878,28 @@
    "key": "HYDR",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3520,17 +7916,48 @@
    "key": "KIOTIUNSPEC",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2023-11-08",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3547,29 +7974,80 @@
    "key": "KX913",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-09-02",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-09-02",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-09-02",
        "qty": 1,
-       "slot": "Pilot filter",
-       "use_count": 1
+       "slot": "Pilot filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3586,23 +8064,64 @@
    "key": "KXO183",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2023-10-07",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2023-10-07",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3619,10 +8138,28 @@
    "key": "KXO40",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3639,35 +8176,96 @@
    "key": "L5740",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-06-18",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-06-18",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-06-18",
        "qty": 1,
-       "slot": "HST filter",
-       "use_count": 1
+       "slot": "HST filter"
       },
       {
-       "last_used_at": "2024-06-18",
        "qty": 1,
-       "slot": "Transmission filter",
-       "use_count": 1
+       "slot": "Transmission filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Transmission filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Transmission filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "HST filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Transmission filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3684,10 +8282,28 @@
    "key": "MDCCOCCN",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3704,17 +8320,48 @@
    "key": "MDLSY18C",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2023-11-27",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3731,10 +8378,28 @@
    "key": "MEGAH400GA",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3751,29 +8416,80 @@
    "key": "PC355A",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2023-11-29",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2023-11-29",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2023-11-29",
        "qty": 1,
-       "slot": "Air filter \u2014 outer",
-       "use_count": 1
+       "slot": "Air filter \u2014 outer"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter \u2014 outer"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3790,23 +8506,64 @@
    "key": "PC553",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-01-30",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-01-30",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3823,10 +8580,28 @@
    "key": "PCMR355",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3843,23 +8618,64 @@
    "key": "PL35MR",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-08-13",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-08-13",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3876,10 +8692,28 @@
    "key": "SH1300",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3896,10 +8730,28 @@
    "key": "SH130",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3916,10 +8768,28 @@
    "key": "SK30SR",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3936,17 +8806,48 @@
    "key": "SR20SR",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-09-16",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3963,10 +8864,28 @@
    "key": "SWE40UB",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -3983,10 +8902,28 @@
    "key": "U35",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -4003,41 +8940,112 @@
    "key": "U25",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-05-13",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2025-05-13",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2025-05-13",
        "qty": 1,
-       "slot": "Air filter",
-       "use_count": 1
+       "slot": "Air filter"
       },
       {
-       "last_used_at": "2025-05-13",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       },
       {
-       "last_used_at": "2025-05-13",
        "qty": 1,
-       "slot": "Pilot filter",
-       "use_count": 1
+       "slot": "Pilot filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Pilot filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -4054,10 +9062,28 @@
    "key": "U40",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -4074,29 +9100,80 @@
    "key": "U48",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2022-07-10",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2022-07-10",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2022-07-10",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -4113,10 +9190,28 @@
    "key": "V107",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -4133,10 +9228,28 @@
    "key": "VIO152",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -4153,29 +9266,80 @@
    "key": "VIO256",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2025-07-12",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2025-07-12",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2025-07-12",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -4192,23 +9356,64 @@
    "key": "VIO256A",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-08-28",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-08-28",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -4225,10 +9430,28 @@
    "key": "XUV850D",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -4245,35 +9468,96 @@
    "key": "YANMARUNSPEC",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2024-11-22",
        "qty": 1,
-       "slot": "Engine oil filter",
-       "use_count": 1
+       "slot": "Engine oil filter"
       },
       {
-       "last_used_at": "2024-11-22",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       },
       {
-       "last_used_at": "2024-11-22",
        "qty": 1,
-       "slot": "Air filter",
-       "use_count": 1
+       "slot": "Air filter"
       },
       {
-       "last_used_at": "2024-11-22",
        "qty": 1,
-       "slot": "Hydraulic return filter",
-       "use_count": 1
+       "slot": "Hydraulic return filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Engine oil filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Air filter"
+      },
+      {
+       "qty": 1,
+       "slot": "Hydraulic return filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -4290,10 +9574,28 @@
    "key": "ZX17U5A",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -4310,17 +9612,48 @@
    "key": "ZX38U",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [
       {
-       "last_used_at": "2022-04-07",
        "qty": 1,
-       "slot": "Fuel filter",
-       "use_count": 1
+       "slot": "Fuel filter"
       }
      ],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [
+      {
+       "qty": 1,
+       "slot": "Fuel filter"
+      }
+     ],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -4332,15 +9665,33 @@
    "brand": "Unassigned",
    "display": "Assist to pulled out the engine",
    "hidden": true,
-   "hidden_reason": "looks like invoice wording, not a machine",
+   "hidden_reason": "looks like a note, not a machine",
    "invoice_count": 0,
    "key": "ASSISTTOPULLEDOUTTHEENGINE",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
@@ -4352,19 +9703,37 @@
    "brand": "Unassigned",
    "display": "Coolant leak on S130 Travel Issue KXO18-4",
    "hidden": true,
-   "hidden_reason": "looks like invoice wording, not a machine",
+   "hidden_reason": "looks like a note, not a machine",
    "invoice_count": 0,
    "key": "COOLANTLEAKONS130TRAVELISSUEKXO184",
    "kits": [
     {
-     "interval_hours": null,
-     "label": "Standard service",
+     "interval_hours": 250,
+     "label": "250 hours",
      "lines": [],
      "sort": 0
+    },
+    {
+     "interval_hours": 500,
+     "label": "500 hours",
+     "lines": [],
+     "sort": 1
+    },
+    {
+     "interval_hours": 750,
+     "label": "750 hours",
+     "lines": [],
+     "sort": 2
+    },
+    {
+     "interval_hours": 1000,
+     "label": "1000 hours",
+     "lines": [],
+     "sort": 3
     }
    ],
    "machine_count": 1
   }
  ],
- "seed_version": "20260825224020"
+ "seed_version": "20260826200419"
 }

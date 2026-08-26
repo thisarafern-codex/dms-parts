@@ -86,9 +86,9 @@ What the seed *does* give, and why each matters:
 1. **The model list** — 115 visible models, the machines he actually services,
    not a generic catalogue of every digger built.
 2. **Brand** — inferred, because only about a third of model strings name it.
-3. **Filter slots per model** — from `model_part_usage`, so each kit arrives
-   pre-scaffolded with the right empty positions (83 of 115 models) instead of
-   presenting a blank page 115 times.
+3. **Filter slots per model** — from `model_part_usage`, so each of a
+   model's four kits arrives pre-scaffolded with the right empty positions
+   (83 of 115 models) instead of presenting a blank page 115 times.
 
 ## Model folding — the part that is easy to get wrong
 
@@ -115,6 +115,21 @@ Wrong brand guesses are **expected and cheap** — the Tidy-up screen reassigns
 them, and setting a brand by hand sets `brand_locked` so a later re-seed won't
 overwrite the correction.
 
+## Every machine has exactly four kits — 250 / 500 / 750 / 1000 hours
+
+Not something dad adds one at a time — `tools/build_seed.py`'s
+`SERVICE_INTERVALS` (kept in sync by hand with the identical constant in
+`js/ui.js`) generates all four for every model, each carrying the same
+scaffolded slot list, since the source data has no way to say which filter
+belongs to which interval. `js/ui.js`'s `save-machine` action does the same
+for a machine dad adds by hand. There is no "add a kit" or "delete a kit" UI
+any more; `kit_lines` (filter positions within a kit) are still freely
+added/removed, just not the four kits themselves.
+
+This is also why `mergeModels` and `do-copy` (Copy from another machine) both
+match kits by `interval_hours` rather than by array position — a 500-hour kit
+must only ever fold in from another machine's 500-hour kit, never its 250.
+
 ## Things that will bite you
 
 **Part numbers must never wrap.** `.part .num` is `white-space: nowrap` with a
@@ -132,7 +147,8 @@ missing ones.** Both machines usually carry the same scaffolded slots from
 history, so matching only on *missing* slots copies nothing useful — and the
 numbers are the entire point. A slot the target lacks is created with its
 numbers; a slot it has but hasn't filled gets them; a slot already holding
-numbers is left alone.
+numbers is left alone. It also only ever copies the matching interval — see
+above.
 
 **The "+" in the header is global, on every screen, by design.** It opens
 `#/quickadd`, which fans out to add-machine, add-brand, add-kit and add-part

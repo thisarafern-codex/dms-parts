@@ -166,7 +166,7 @@ def clean_model(raw):
     if not text or not re.search(r"[A-Za-z0-9]", text):
         hidden, reason = True, "no model in the text"
     elif PROSE_MARKERS.search(original) and len(original.split()) > 3:
-        hidden, reason = True, "looks like invoice wording, not a machine"
+        hidden, reason = True, "looks like a note, not a machine"
     elif len(text.split()) > 3:
         hidden, reason = True, "too many words to be a model"
 
