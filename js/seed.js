@@ -103,6 +103,8 @@
           if (!found.brand_locked) found.brand = m.brand;
           added.updated += 1;
           return DB.put('models', found).then(function () {
+            return reconcileKits(found.id, m, added);
+          }).then(function () {
             return addMissingSlots(found.id, m, added);
           });
         });
@@ -127,6 +129,58 @@
           });
       });
     }, Promise.resolve());
+  }
+
+  /* A model already on the phone might predate the fixed four-interval kit
+     structure — it may still just have one open-ended "Standard service"
+     kit from before that change. Creates whichever of the seed's kits are
+     missing, matched by interval_hours. A leftover kit that matches none of
+     the seed's intervals is only ever removed if it holds no part numbers —
+     if dad already typed something into it, it's left exactly alone. */
+  function reconcileKits(modelId, m, added) {
+    var seedKits = m.kits || [];
+    if (!seedKits.length) return Promise.resolve();
+    return DB.byIndex('kits', 'model_id', modelId).then(function (existing) {
+      var seedIntervals = {};
+      seedKits.forEach(function (k) { seedIntervals[k.interval_hours] = true; });
+      var haveIntervals = {};
+      existing.forEach(function (k) { haveIntervals[k.interval_hours] = true; });
+
+      var missing = seedKits.filter(function (k) { return !haveIntervals[k.interval_hours]; });
+      var stray = existing.filter(function (k) { return !seedIntervals[k.interval_hours]; });
+
+      return missing.reduce(function (chain, k) {
+        return chain.then(function () {
+          added.kits += 1;
+          return DB.put('kits', { model_id: modelId, label: k.label,
+                                  interval_hours: k.interval_hours, sort: k.sort || 0 })
+            .then(function (kitId) {
+              return (k.lines || []).reduce(function (c2, l, j) {
+                return c2.then(function () {
+                  added.lines += 1;
+                  return DB.put('kit_lines', { kit_id: kitId, slot: l.slot, qty: l.qty || 1,
+                                               sort: j, notes: null });
+                });
+              }, Promise.resolve());
+            });
+        });
+      }, Promise.resolve()).then(function () {
+        return stray.reduce(function (chain, kit) {
+          return chain.then(function () {
+            return DB.byIndex('kit_lines', 'kit_id', kit.id).then(function (lines) {
+              return Promise.all(lines.map(function (l) {
+                return DB.byIndex('kit_line_parts', 'kit_line_id', l.id);
+              })).then(function (linkSets) {
+                if (linkSets.some(function (s) { return s.length; })) return null;
+                return lines.reduce(function (c, l) {
+                  return c.then(function () { return DB.del('kit_lines', l.id); });
+                }, Promise.resolve()).then(function () { return DB.del('kits', kit.id); });
+              });
+            });
+          });
+        }, Promise.resolve());
+      });
+    });
   }
 
   /* New history can reveal a filter position we didn't know about. Every
