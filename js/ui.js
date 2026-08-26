@@ -539,6 +539,48 @@
   // adds one at a time. Mirrors the intervals tools/build_seed.py seeds with.
   var SERVICE_INTERVALS = [250, 500, 750, 1000];
 
+  /* The normal update path is passive: the service worker serves whatever
+     is cached, then quietly re-fetches each file in the background for NEXT
+     time — so an update only shows up after a full close and reopen, and
+     sometimes needs that twice. This forces the same re-fetch immediately,
+     on demand, then reloads once the fresh copies are actually in place.
+
+     Deliberately does NOT rely on navigator.serviceWorker.register()/
+     .update() — sw.js's own bytes rarely change between app updates (it's
+     the files it lists that change), so that path would almost always
+     report "no update" even when there genuinely is one. Talking straight
+     to the Cache Storage API is what the fetch handler itself does, so it's
+     the only check that actually reflects reality. Still degrades cleanly
+     with no service worker at all (e.g. this dev sandbox) — the fetches
+     with cache:'reload' refresh the browser's own HTTP cache regardless. */
+  function checkForUpdate() {
+    toast('Checking for updates…');
+    var urls = ['index.html', 'css/app.css', 'js/db.js', 'js/seed.js',
+                'js/backup.js', 'js/ui.js', 'manifest.webmanifest', 'seed/models.json'];
+    var cachesReady = ('caches' in window)
+      ? caches.keys().then(function (names) { return names[0]; })
+      : Promise.resolve(null);
+
+    cachesReady.then(function (cacheName) {
+      var okCount = 0;
+      return Promise.all(urls.map(function (u) {
+        return fetch(u, { cache: 'reload' }).then(function (res) {
+          if (!res.ok) return null;
+          okCount += 1;
+          return cacheName
+            ? caches.open(cacheName).then(function (c) { return c.put(u, res.clone()); })
+            : null;
+        }).catch(function () { return null; });
+      })).then(function () { return okCount; });
+    }).then(function (okCount) {
+      if (!okCount) { toast('No signal — try again once you’re connected.'); return; }
+      toast('Up to date — reloading…');
+      setTimeout(function () { location.reload(); }, 500);
+    }).catch(function () {
+      toast('Could not check for updates.');
+    });
+  }
+
   function findBrand(name) {
     var key = name.trim().toLowerCase();
     return DB.all('brands').then(function (brands) {
@@ -902,7 +944,13 @@
       row('#/search', 'Find a part number', 'Search everything saved') +
       row('#/cleanup', 'Tidy up', 'Fix names, brands and duplicates') +
       row('#/backup', 'Backup', 'Save or restore your part numbers') +
-      '</ul>');
+      '</ul>' +
+      '<h3>Updates</h3><ul class="list"><li>' +
+      '<button class="row" data-act="check-update"><span class="grow">' +
+      '<span class="title">Check for updates</span>' +
+      '<span class="meta">Get the latest version right now, instead of ' +
+      'waiting for it to catch up on its own</span></span>' +
+      '<span class="chev">&rsaquo;</span></button></li></ul>');
     function row(href, title, meta) {
       return '<li><a class="row" href="' + href + '"><span class="grow">' +
         '<span class="title">' + title + '</span><span class="meta">' + meta + '</span></span>' +
@@ -920,6 +968,7 @@
       } else { toast(text); }
     },
     cancel: function () { history.back(); },
+    'check-update': function () { checkForUpdate(); },
     'add-part': function (el) { go('#/part/' + el.getAttribute('data-line')); },
     'edit-part': function (el) {
       go('#/part/' + el.getAttribute('data-line') + '/' + el.getAttribute('data-part'));

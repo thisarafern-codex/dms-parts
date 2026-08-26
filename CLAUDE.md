@@ -205,6 +205,19 @@ never deletes.
 stdlib server hung, then reset connections mid-page-load. Dev convenience only —
 production is static hosting.
 
+**An update doesn't show up until a full close and reopen — normally.**
+`sw.js` serves cache-first and only refreshes each file in the background for
+*next* time, so the open right after a push still shows the old version.
+Menu → **Check for updates** (`checkForUpdate()` in `js/ui.js`) skips the wait:
+it re-fetches the shell files with `cache: 'reload'`, writes them straight
+into Cache Storage itself, then reloads. It deliberately does **not** use
+`registration.update()` — `sw.js`'s own bytes rarely change between updates
+(it's the files it *lists* that change), so that check would almost always
+report "nothing to update" even when there genuinely is something. Also why
+`reconcileKits` in `js/seed.js` exists: an already-installed phone can be
+sitting on months-old *data* structure, not just old code, and a plain
+re-seed alone won't retroactively fix that — see the four-kits section above.
+
 ## Backups are not optional
 
 The phone's IndexedDB is the **only** copy of every part number he types. A lost
