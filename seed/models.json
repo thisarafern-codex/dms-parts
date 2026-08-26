@@ -70,7 +70,7 @@
    "name": "Yanmar"
   }
  ],
- "generated_at": "2026-08-26T20:29:20",
+ "generated_at": "2026-08-27T08:08:13",
  "models": [
   {
    "aliases": [
@@ -9712,5 +9712,5 @@
    "machine_count": 1
   }
  ],
- "seed_version": "20260826202920"
+ "seed_version": "20260827080813"
 }
