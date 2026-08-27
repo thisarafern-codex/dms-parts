@@ -235,6 +235,20 @@ input, select, textarea {
   border: 2px solid var(--border); border-radius: var(--radius);
 }
 input.pn { font-size: 1.7rem; }
+
+/* $ / L style unit tags beside a numeric field — persistent, not a
+   placeholder that vanishes once he starts typing. */
+.unit-input { position: relative; }
+.unit-input input { width: 100%; }
+.unit-input.unit-prefix input { padding-left: 2.5rem; }
+.unit-input.unit-suffix input { padding-right: 2.5rem; }
+.unit-input .unit {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  font-weight: 700; font-size: 1.15rem; color: var(--muted); pointer-events: none;
+}
+.unit-input.unit-prefix .unit { left: 0.85rem; }
+.unit-input.unit-suffix .unit { right: 0.85rem; }
+
 .seg { display: flex; gap: 0.5rem; }
 .seg button {
   flex: 1; min-height: var(--tap); border-radius: var(--radius);

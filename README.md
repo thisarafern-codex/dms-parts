@@ -33,7 +33,15 @@ together, big enough to read in a badly-lit shed.
   don't pick that. Aftermarket is a pick list (Sakura, Donaldson, HIFI to
   start); *+ Add a new brand* saves it for every future part, not just this
   one. Genuine and aftermarket can both sit on the same position: that *is*
-  the cross-reference.
+  the cross-reference. There's a search underneath for reusing a number
+  already saved — only ones already used on another machine of the same
+  brand show up, since a Kubota filter reusing a Hitachi number would be
+  wrong far more often than right.
+- **It copies forward automatically** — save a number on the 250 hour kit
+  and it's added to 500, 750 and 1000 too, on that same position (a 500 hour
+  service already covers everything the 250 hour one does). Save it at 500
+  and it only reaches 750/1000. Save it at 1000 and it stays right there —
+  nothing copies backward.
 - **A position with a few options?** Once a filter position has more than a
   handful of part numbers on it, a filter box appears so you can narrow it
   down by number, brand, or supplier.

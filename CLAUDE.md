@@ -125,6 +125,59 @@ Wrong brand guesses are **expected and cheap** — the Tidy-up screen reassigns
 them, and setting a brand by hand sets `brand_locked` so a later re-seed won't
 overwrite the correction.
 
+## A part added at one interval cascades forward, never back
+
+`cascadeForward()` in `js/ui.js`: dad's rule is that a 500-hour service
+already includes everything a 250-hour one does, so a part confirmed at 250
+is needed at every later interval too — saving it at 250 auto-adds it to
+the *same slot* in 500/750/1000. Saving at 500 only reaches 750/1000. Saving
+at 1000 reaches nothing; there's nothing later to cascade into. It walks
+forward from wherever the kit being edited sits, matched purely by
+`interval_hours`, never backward.
+
+It only touches a kit that already has a `kit_line` with the same `slot`
+name — it does not create new filter positions in kits that don't have that
+slot, since that would be a bigger structural change than "copy the part
+number" and wasn't asked for. Reuses `link()`, so cascading is idempotent —
+running twice never double-links. Wired into both `saveParticular` (typing a
+new number) and the `link-existing` action (reusing a saved one), since both
+are "a part is now attached to this line" from dad's point of view.
+
+## No placeholder hints — a real value or nothing
+
+Every `placeholder="e.g. …"` is gone. Dad's eyesight made the greyed-out
+example text easy to mistake for an already-filled value. Labels above each
+field still say what it's for; placeholders were only ever the *example*,
+not the explanation, so removing them costs nothing. Numeric fields with a
+unit (price, oil litres) get a persistent `$`/`L` tag instead via
+`.unit-input` in `css/app.css` — unlike a placeholder it doesn't disappear
+the moment he starts typing, which is the point.
+
+## The part-number input shrinks to fit, never wraps or overflows
+
+`fitPartNumberFont()` in `js/ui.js`: the box's own CSS font-size is cached
+once (`dataset.baseSize`) the first time it's needed, then on every
+keystroke the font resets to that size and steps down 1px at a time while
+`scrollWidth > clientWidth`, floored at 15px so it never gets illegibly
+small. Deleting characters lets it grow back, because the cached base size
+is the ceiling it always resets to, not a one-way ratchet. This is the
+input-side counterpart to `.part .num`'s `min(2rem, 8.5vw)` — that one is
+CSS-only because it's read-only text of a known final length; a live input
+needs JS because the length changes as he types.
+
+## Reuse search is scoped to the machine's own brand
+
+The "reuse a number you already have" list on the add-part form used to
+search every part ever saved. `partsUsedByBrand()` walks
+models → kits → kit_lines → kit_line_parts to build the set of part IDs
+already used on *some other machine of the same brand*, and the reuse list
+is filtered down to that set before the search box ever runs. A Sakura
+filter already used on another Kubota is a realistic reuse; one only ever
+used on a Hitachi essentially never is, and showing it just buries the
+numbers he actually wants. If the filtered set is empty, the whole "reuse"
+section doesn't render at all — no point showing a search box with nothing
+to search.
+
 ## Oil litres — a fixed field on the model, not a kit thing
 
 `OIL_FIELDS` in `js/ui.js` (`oil_engine`/`oil_hydraulic`/`oil_gear`) lives
@@ -344,35 +397,67 @@ for this project specifically; don't assume it generalises.
 
 ## Where things stand
 
-Everything below is shipped and live, not just committed. Built in one long
-session; dad has the app installed and has been testing it live throughout.
+Everything below is shipped and live, not just committed. Built across
+several sessions; dad has the app installed and has been testing it live
+throughout, and most of these changes are direct feedback from him using it
+for real, relayed by the user.
 
-- Core app: brand → machine → four fixed kits (250/500/750/1000 hours) → part
-  numbers, genuine/aftermarket side by side. Fully offline after first load.
-- Global add ("+" in the header, and Home/Search/Add in the fixed bottom tab
-  bar) for a new machine, brand, or part number. Kits are no longer something
-  dad adds — every machine gets all four automatically.
+- Core app: brand → machine → four fixed kits (250/500/750/1000 hours) →
+  filter positions → part numbers, genuine/aftermarket side by side. Fully
+  offline after first load. A part saved at one interval auto-cascades
+  **forward** to later intervals on the same slot (250→500/750/1000,
+  500→750/1000, 750→1000, 1000→nothing) — never backward.
+- A kit is a plain list of filter positions now, not one long page — tap a
+  position ("Engine oil filter") to reach its own page with just that
+  position's numbers, a filter box once there are more than a handful, and
+  its own add/remove controls.
+- Genuine parts never ask for a brand — it's always derived from the
+  machine, shown read-only. Aftermarket brand is a picker
+  (`aftermarket_brands` store: Sakura/Donaldson/HIFI to start) with
+  "+ Add a new brand" that persists app-wide, not just for that one part.
+  The "reuse a saved number" search on the add-part form is scoped to
+  numbers already used on another machine of the **same brand** only.
+- Oil litres (Engine/Hydraulic/Gear, free text) live at the top of every
+  machine page, above the kits — same "copy from another machine, fill only
+  what's empty" rule as filter numbers.
+- No placeholder ("e.g. …") hints anywhere — dad found them easy to mistake
+  for real values. Price and oil-litre fields get a persistent `$`/`L` tag
+  instead. The part-number input shrinks its font to fit long numbers
+  rather than wrapping or overflowing.
+- Global add ("+" in the header, and Home/Add in the fixed bottom tab bar —
+  Search was removed entirely at dad's request, he said flat out he'd never
+  use the reverse part-number lookup) for a new machine, brand, or part
+  number. Kits are no longer something dad adds — every machine gets all
+  four automatically.
 - Delete a machine (Tidy Up list, and the Edit Machine screen) for genuine
   duplicates, alongside the existing hide/merge.
 - Brand tiles: real, WebSearch-sourced manufacturer colours for the ~14
   brands we could confirm one for (computed to a verified 7:1 pair for both
   themes via `tools/brand_colors.py`), alphabetical, with a brand-name-only
-  search box. No icon/photo on the tiles — tried a generic digger silhouette,
-  dad asked for it gone; real manufacturer photos were ruled out entirely as
-  a copyright risk on a public repo. Dad's own job-site photos would still be
-  fine to add later; none supplied yet.
+  search box on the home screen. No icon/photo on the tiles — tried a
+  generic digger silhouette, dad asked for it gone; real manufacturer
+  photos were ruled out entirely as a copyright risk on a public repo.
+  Dad's own job-site photos would still be fine to add later; none
+  supplied yet. Manuals/troubleshooting-guide idea was raised and then
+  dropped by the user — not built, not pursued.
 - Every mention of the invoicing system, and every invoice/machine-count
   display, is gone from the UI — it's all internal bookkeeping now, never
   shown. The underlying data (aliases, sort weighting) still exists and is
   still used, just not displayed.
+- Text size: the three Menu tiers were shifted down a notch (was
+  100/115/132%, now 88/100/115%) — dad's default felt too big once he was
+  actually using it day to day.
 - "Check for updates" in the Menu forces an immediate refresh instead of
-  waiting on the passive close-reopen-(sometimes-twice) mechanism.
+  waiting on the passive close-reopen-(sometimes-twice) mechanism — this
+  landed *after* the fix below, which is why that fix needed its own
+  separate re-seed to actually take effect on an already-installed phone.
 - Fixed a real bug where a phone that installed before the four-kit change
-  would never retroactively get the new kits on re-seed (`reconcileKits` in
-  `js/seed.js`) — confirmed dad's phone needed this, but hasn't been
-  confirmed fixed on his actual device yet as of the last session.
+  never retroactively got the new kits on re-seed (`reconcileKits` in
+  `js/seed.js`) — confirmed fixed on dad's actual phone.
 
 **Not done / explicitly deferred:** bulk-importing dad's existing part
 numbers from Samsung Notes (Phase 5 in the original plan) — manual one-at-a-
-time entry is the path for now. No confirmation yet that dad has made an
-actual backup of anything he's typed in.
+time entry is the path for now, and the cascade-forward behaviour above
+makes that less repetitive than it sounds. No confirmation yet that dad has
+made an actual backup of anything he's typed in — worth checking next
+session, since the amount of hand-typed data is only growing.

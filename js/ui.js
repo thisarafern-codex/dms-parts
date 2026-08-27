@@ -111,7 +111,7 @@
           return render('<p class="empty">No machines yet.</p>');
         }
         render('<label for="bfilter">Find a brand</label>' +
-          '<input id="bfilter" type="search" placeholder="e.g. Kubota" autocomplete="off" ' +
+          '<input id="bfilter" type="search" autocomplete="off" ' +
           'autocapitalize="words" enterkeyhint="search">' +
           '<div class="grid" id="bgrid" style="margin-top:.75rem">' + known.map(brandTile).join('') + '</div>');
 
@@ -136,7 +136,7 @@
       if (!live.length) return render('<p class="empty">No machines under ' + esc(name) + '.</p>');
 
       var html = '<label for="mfilter">Find a machine</label>' +
-        '<input id="mfilter" type="search" placeholder="e.g. U55" autocomplete="off" ' +
+        '<input id="mfilter" type="search" autocomplete="off" ' +
         'autocapitalize="characters" enterkeyhint="search">' +
         '<ul class="list" id="mlist">';
       live.forEach(function (m) {
@@ -241,9 +241,10 @@
       if (!model) return render('<p class="empty">That machine is not on file.</p>');
       setHead(model.display, 'Oil litres', true);
       var html = OIL_FIELDS.map(function (f) {
-        return '<label for="' + f.key + '">' + esc(f.label) + ' <span class="muted small">(litres)</span></label>' +
+        return '<label for="' + f.key + '">' + esc(f.label) + '</label>' +
+          '<div class="unit-input unit-suffix">' +
           '<input id="' + f.key + '" type="text" inputmode="decimal" autocomplete="off" ' +
-          'value="' + esc(model[f.key] || '') + '" placeholder="e.g. 5.5">';
+          'value="' + esc(model[f.key] || '') + '"><span class="unit">L</span></div>';
       }).join('');
       html += '<div class="btnrow" style="margin-top:1.25rem">' +
         '<button class="btn" data-act="save-oil" data-model="' + modelId + '">Save</button>' +
@@ -360,7 +361,7 @@
             if (parts.length > 4) {
               html += '<label for="pfilter">Filter these part numbers</label>' +
                 '<input id="pfilter" type="search" autocomplete="off" ' +
-                'autocapitalize="characters" placeholder="Number, brand or supplier">';
+                'autocapitalize="characters">';
             }
             html += '<div id="partlist">' + partsListHtml(line, parts, false) + '</div>' +
               '<div class="btnrow" style="margin-top:.6rem">' +
@@ -449,6 +450,43 @@
   }
 
   // ------------------------------------------------------------ part form
+  /* Every part ever saved, but keyed down to just the ones already used on
+     a same-brand machine — a Sakura filter used on another Kubota is a
+     realistic reuse; one only ever used on a Hitachi almost never is, and
+     showing it just buries the numbers he actually wants. */
+  function partsUsedByBrand(brand) {
+    return Promise.all([DB.all('models'), DB.all('kits'), DB.all('kit_lines'), DB.all('kit_line_parts')])
+      .then(function (res) {
+        var models = res[0], kits = res[1], lines = res[2], links = res[3];
+        var modelIds = {};
+        models.forEach(function (m) { if (m.brand === brand) modelIds[m.id] = true; });
+        var kitIds = {};
+        kits.forEach(function (k) { if (modelIds[k.model_id]) kitIds[k.id] = true; });
+        var lineIds = {};
+        lines.forEach(function (l) { if (kitIds[l.kit_id]) lineIds[l.id] = true; });
+        var partIds = {};
+        links.forEach(function (kl) { if (lineIds[kl.kit_line_id]) partIds[kl.part_id] = true; });
+        return partIds;
+      });
+  }
+
+  /* Shrinks the part-number input's text to fit rather than letting it
+     overflow the box — the box's normal size is cached once so it can grow
+     back when he deletes characters, not just ratchet smaller forever. */
+  function fitPartNumberFont(input) {
+    if (!input.dataset.baseSize) {
+      input.dataset.baseSize = String(parseFloat(getComputedStyle(input).fontSize));
+    }
+    var base = parseFloat(input.dataset.baseSize);
+    var minPx = 15;
+    var size = base;
+    input.style.fontSize = size + 'px';
+    while (input.scrollWidth > input.clientWidth && size > minPx) {
+      size -= 1;
+      input.style.fontSize = size + 'px';
+    }
+  }
+
   function screenPart(lineId, partId) {
     lineId = Number(lineId);
     return DB.get('kit_lines', lineId).then(function (line) {
@@ -456,13 +494,15 @@
       return DB.get('kits', line.kit_id).then(function (kit) {
         return DB.get('models', kit ? kit.model_id : null).then(function (model) {
           var loadPart = partId ? DB.get('parts', Number(partId)) : Promise.resolve(null);
-          return Promise.all([loadPart, DB.all('parts'), DB.all('aftermarket_brands')])
+          var machineBrand = model ? model.brand : 'this machine';
+          return Promise.all([loadPart, DB.all('parts'), DB.all('aftermarket_brands'),
+                              partsUsedByBrand(machineBrand)])
               .then(function (res) {
-            var part = res[0], allParts = res[1], aftBrands = res[2];
+            var part = res[0], allParts = res[1], aftBrands = res[2], brandPartIds = res[3];
             setHead(line.slot, part ? 'Edit part number' : 'Add a part number', true);
 
             var kind = part ? part.kind : 'oem';
-            var machineBrand = model ? model.brand : 'this machine';
+            var reusable = allParts.filter(function (p) { return brandPartIds[p.id]; });
 
             aftBrands.sort(function (a, b) { return a.name.localeCompare(b.name); });
             var aftNames = aftBrands.map(function (b) { return b.name; });
@@ -474,9 +514,11 @@
             var html = '<label for="num">Part number</label>' +
               '<input id="num" class="pn" type="text" autocomplete="off" ' +
               'autocapitalize="characters" spellcheck="false" enterkeyhint="done" ' +
-              'value="' + esc(part ? part.number_display : '') + '" ' +
-              'placeholder="e.g. HH164-32430">' +
+              'value="' + esc(part ? part.number_display : '') + '">' +
               '<div id="dupe"></div>' +
+              '<div class="btnrow" style="margin-top:.6rem">' +
+              '<button class="btn" data-act="save-part" data-line="' + lineId + '" ' +
+                'data-part="' + (part ? part.id : '') + '">Save</button></div>' +
               '<label>Genuine or aftermarket?</label>' +
               '<div class="seg" id="kind">' +
                 '<button type="button" data-kind="oem" aria-pressed="' + (kind === 'oem') + '">Genuine</button>' +
@@ -496,9 +538,10 @@
                 '</select>' +
               '</div>' +
               '<label for="sup">Where from <span class="muted small">(optional)</span></label>' +
-              '<input id="sup" type="text" autocomplete="off" value="' + esc(part ? part.supplier : '') + '" placeholder="Norwood, Repco…">' +
+              '<input id="sup" type="text" autocomplete="off" value="' + esc(part ? part.supplier : '') + '">' +
               '<label for="price">Price each <span class="muted small">(optional)</span></label>' +
-              '<input id="price" type="text" inputmode="decimal" value="' + esc(part ? money(part.price_cents) : '') + '" placeholder="$0.00">' +
+              '<div class="unit-input unit-prefix"><span class="unit">$</span>' +
+              '<input id="price" type="text" inputmode="decimal" value="' + esc(part ? money(part.price_cents) : '') + '"></div>' +
               '<label for="notes">Notes <span class="muted small">(optional)</span></label>' +
               '<textarea id="notes" rows="2">' + esc(part ? part.notes : '') + '</textarea>';
 
@@ -511,20 +554,24 @@
                 'data-part="' + (part ? part.id : '') + '">Save</button>' +
               '<button class="btn ghost" data-act="cancel">Cancel</button></div>';
 
-            if (!part && allParts.length) {
+            if (!part && reusable.length) {
               html += '<h3>Or reuse a number you already have</h3>' +
-                '<p class="muted small">The same filter often fits several machines &mdash; ' +
-                'no need to type it twice.</p>' +
+                '<p class="muted small">Only numbers already used on another ' +
+                esc(machineBrand) + ' machine &mdash; no need to type it twice.</p>' +
                 '<label for="reuse" class="small">Search saved numbers</label>' +
-                '<input id="reuse" type="search" autocomplete="off" placeholder="Type any part of a number">' +
+                '<input id="reuse" type="search" autocomplete="off">' +
                 '<ul class="list" id="reuselist"></ul>';
             }
             render(html);
 
             var num = document.getElementById('num');
-            num.addEventListener('input', function () { checkDupe(num.value, part); });
+            num.addEventListener('input', function () {
+              checkDupe(num.value, part);
+              fitPartNumberFont(num);
+            });
             if (!part) num.focus();
             checkDupe(num.value, part);
+            fitPartNumberFont(num);
 
             document.getElementById('kind').addEventListener('click', function (e) {
               var btn = e.target.closest('button');
@@ -557,12 +604,12 @@
 
             var reuse = document.getElementById('reuse');
             if (reuse) {
-              allParts.sort(function (a, b) { return a.number_key.localeCompare(b.number_key); });
+              reusable.sort(function (a, b) { return a.number_key.localeCompare(b.number_key); });
               reuse.addEventListener('input', function () {
                 var q = Seed.partKey(reuse.value);
                 var list = document.getElementById('reuselist');
                 if (!q) { list.innerHTML = ''; return; }
-                var hits = allParts.filter(function (p) {
+                var hits = reusable.filter(function (p) {
                   return p.number_key.indexOf(q) !== -1;
                 }).slice(0, 12);
                 list.innerHTML = hits.length ? hits.map(function (p) {
@@ -649,7 +696,9 @@
       });
     }).then(function (pid) {
       return link(lineId, pid).then(function () {
-        toast('Saved ' + display);
+        return cascadeForward(lineId, pid);
+      }).then(function (addedTo) {
+        toast('Saved ' + display + (addedTo.length ? ' — also added to ' + addedTo.join(', ') : ''));
         history.back();
       });
     });
@@ -663,8 +712,37 @@
     });
   }
 
+  /* Dad's rule: a part confirmed at one interval is needed at every LATER
+     interval too — a 500hr service already covers everything a 250hr one
+     does — but never backwards. Adding it at 1000hr says nothing about
+     250/500/750, so this only ever walks forward from wherever he is. */
+  function cascadeForward(lineId, partId) {
+    return DB.get('kit_lines', Number(lineId)).then(function (line) {
+      return DB.get('kits', line.kit_id).then(function (kit) {
+        if (!kit || !kit.interval_hours) return [];
+        return DB.byIndex('kits', 'model_id', kit.model_id).then(function (siblingKits) {
+          var later = siblingKits.filter(function (k) {
+            return k.interval_hours && k.interval_hours > kit.interval_hours;
+          }).sort(function (a, b) { return a.interval_hours - b.interval_hours; });
+          var addedTo = [];
+          return later.reduce(function (chain, laterKit) {
+            return chain.then(function () {
+              return DB.byIndex('kit_lines', 'kit_id', laterKit.id).then(function (lines) {
+                var match = lines.filter(function (l) { return l.slot === line.slot; })[0];
+                if (!match) return null;
+                return link(match.id, partId).then(function (result) {
+                  if (result) addedTo.push(UI.kitName(laterKit));
+                });
+              });
+            });
+          }, Promise.resolve()).then(function () { return addedTo; });
+        });
+      });
+    });
+  }
+
   window.UI2 = { screenPart: screenPart, saveParticular: saveParticular,
-                 link: link, money: money, toCents: toCents,
+                 link: link, cascadeForward: cascadeForward, money: money, toCents: toCents,
                  ensureDefaultAftermarketBrands: ensureDefaultAftermarketBrands };
 })();
 
@@ -761,7 +839,7 @@
     setHead('Add a brand', 'New brand', true);
     render('<label for="brandname">Brand name</label>' +
       '<input id="brandname" type="text" autocomplete="off" autocapitalize="words" ' +
-      'enterkeyhint="done" placeholder="e.g. Kubota">' +
+      'enterkeyhint="done">' +
       '<div class="btnrow" style="margin-top:1.25rem">' +
       '<button class="btn" data-act="save-brand">Save</button>' +
       '<button class="btn ghost" data-act="cancel">Cancel</button></div>');
@@ -779,12 +857,12 @@
       }).join('');
       render('<label for="mbrand">Brand</label>' +
         '<input id="mbrand" list="brandlist" type="text" autocomplete="off" ' +
-        'autocapitalize="words" placeholder="e.g. Kubota" value="' + esc(prefill) + '">' +
+        'autocapitalize="words" value="' + esc(prefill) + '">' +
         '<datalist id="brandlist">' + options + '</datalist>' +
         '<p class="muted small">Pick an existing brand, or type a new one.</p>' +
         '<label for="mname">Machine model</label>' +
         '<input id="mname" type="text" autocomplete="off" autocapitalize="characters" ' +
-        'enterkeyhint="done" placeholder="e.g. U55-4">' +
+        'enterkeyhint="done">' +
         '<div class="btnrow" style="margin-top:1.25rem">' +
         '<button class="btn" data-act="save-machine">Save</button>' +
         '<button class="btn ghost" data-act="cancel">Cancel</button></div>');
@@ -809,7 +887,7 @@
       }
 
       render('<label for="pmfilter">Find a machine</label>' +
-        '<input id="pmfilter" type="search" placeholder="e.g. U55" autocomplete="off" ' +
+        '<input id="pmfilter" type="search" autocomplete="off" ' +
         'autocapitalize="characters" enterkeyhint="search">' +
         '<ul class="list" id="pmlist">' + live.map(pickRow).join('') + '</ul>' +
         '<p class="muted small">Machine not listed? ' +
@@ -1122,8 +1200,13 @@
       UI2.saveParticular(el.getAttribute('data-line'), el.getAttribute('data-part')).catch(fail);
     },
     'link-existing': function (el) {
-      UI2.link(el.getAttribute('data-line'), Number(el.getAttribute('data-part')))
-        .then(function () { toast('Added'); history.back(); }).catch(fail);
+      var lineId = el.getAttribute('data-line'), partId = Number(el.getAttribute('data-part'));
+      UI2.link(lineId, partId).then(function () {
+        return UI2.cascadeForward(lineId, partId);
+      }).then(function (addedTo) {
+        toast('Added' + (addedTo.length ? ' — also to ' + addedTo.join(', ') : ''));
+        history.back();
+      }).catch(fail);
     },
     unlink: function (el) {
       DB.del('kit_line_parts', Number(el.getAttribute('data-link')))
