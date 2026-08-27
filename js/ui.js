@@ -338,6 +338,28 @@
       '</div></div>';
   }
 
+  /* Read-only saved numbers shrink to fit too — dad specifically doesn't
+     want to have to slide sideways to read one. Same idea as the add-part
+     input's auto-shrink: cache each button's normal CSS size once, then
+     step its own font down until it fits its own box, floored so it never
+     gets illegibly small. .part .num's own overflow-x:auto stays as a
+     backstop for the rare number too long even at the floor. */
+  function fitPartNumbers(root) {
+    var els = (root || document).querySelectorAll('.part .num');
+    Array.prototype.forEach.call(els, function (el) {
+      if (!el.dataset.baseSize) {
+        el.dataset.baseSize = String(parseFloat(getComputedStyle(el).fontSize));
+      }
+      var minPx = 15;
+      var size = parseFloat(el.dataset.baseSize);
+      el.style.fontSize = size + 'px';
+      while (el.scrollWidth > el.clientWidth && size > minPx) {
+        size -= 1;
+        el.style.fontSize = size + 'px';
+      }
+    });
+  }
+
   function partsListHtml(line, parts, hasAny) {
     if (!parts.length) {
       return '<p class="muted small">' +
@@ -370,6 +392,7 @@
               '<button class="btn danger" data-act="del-slot" data-line="' + lineId + '">' +
               'Remove this filter position</button></div>';
             render(html);
+            fitPartNumbers();
 
             var input = document.getElementById('pfilter');
             if (input) {
@@ -383,6 +406,7 @@
                     (p.kind === 'oem' ? 'genuine' : 'aftermarket').indexOf(q) !== -1;
                 });
                 document.getElementById('partlist').innerHTML = partsListHtml(line, filtered, true);
+                fitPartNumbers();
               });
             }
           });

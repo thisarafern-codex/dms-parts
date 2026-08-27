@@ -153,17 +153,29 @@ unit (price, oil litres) get a persistent `$`/`L` tag instead via
 `.unit-input` in `css/app.css` — unlike a placeholder it doesn't disappear
 the moment he starts typing, which is the point.
 
-## The part-number input shrinks to fit, never wraps or overflows
+## Part numbers shrink to fit, never wrap, and never need a slide
 
-`fitPartNumberFont()` in `js/ui.js`: the box's own CSS font-size is cached
-once (`dataset.baseSize`) the first time it's needed, then on every
-keystroke the font resets to that size and steps down 1px at a time while
-`scrollWidth > clientWidth`, floored at 15px so it never gets illegibly
-small. Deleting characters lets it grow back, because the cached base size
-is the ceiling it always resets to, not a one-way ratchet. This is the
-input-side counterpart to `.part .num`'s `min(2rem, 8.5vw)` — that one is
-CSS-only because it's read-only text of a known final length; a live input
-needs JS because the length changes as he types.
+Both the add-part input and every saved number shown read-only shrink their
+own font rather than wrapping or (dad's specific complaint about the
+read-only case) needing a horizontal slide to read the rest. Same pattern
+in two places because one is a single live `<input>` and the other can be
+several `<button>`s on one page, re-rendered whenever the slot's filter box
+runs:
+
+- `fitPartNumberFont()` (IIFE 2) — the add-part `#num` input, re-run on
+  every keystroke.
+- `fitPartNumbers()` (IIFE 1) — every `.part .num` button on `screenSlot`,
+  re-run after the initial render and after the filter box re-renders
+  `#partlist`.
+
+Both cache the element's own normal CSS font-size once
+(`dataset.baseSize`) the first time they touch it, then step down 1px at a
+time while `scrollWidth > clientWidth`, floored at 15px so nothing gets
+illegibly small. The cached base size is what they always reset to first,
+not a one-way ratchet, so text shrinks back down for a long number and
+grows back up for a short one. `.part .num`'s CSS `overflow-x: auto` stays
+as a backstop for the rare number still too long even at the floor — the
+15px floor exists specifically so this hopefully never has to fire.
 
 ## Reuse search is scoped to the machine's own brand
 
