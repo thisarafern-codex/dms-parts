@@ -125,6 +125,22 @@ Wrong brand guesses are **expected and cheap** — the Tidy-up screen reassigns
 them, and setting a brand by hand sets `brand_locked` so a later re-seed won't
 overwrite the correction.
 
+## Oil litres — a fixed field on the model, not a kit thing
+
+`OIL_FIELDS` in `js/ui.js` (`oil_engine`/`oil_hydraulic`/`oil_gear`) lives
+directly on the `models` record, since how much oil a machine takes doesn't
+change per service interval the way filter part numbers do. Free text, not
+a parsed number — nothing does arithmetic on it the way price does, so
+"5.5", "~5" or a note are all fine. No schema change needed to add it (new
+fields on an existing store, not a new store), unlike aftermarket brands
+below.
+
+"Copy from another machine" here follows the same rule as kit copying: it
+only fills fields that are currently empty, never overwrites one he's
+already typed in. Verified directly — filled Engine oil on one machine,
+copied from a source with a *different* engine value, confirmed the
+existing value survived while the two empty fields picked up the source's.
+
 ## No part-number search — removed at dad's request
 
 He said flat out he'd never use it, so the reverse lookup (type a number,

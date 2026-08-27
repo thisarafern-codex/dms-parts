@@ -21,6 +21,10 @@ together, big enough to read in a badly-lit shed.
   brand names. Brands and machines are both listed alphabetically throughout.
 - **Find a machine** — tap the brand, then the machine. The search box also
   matches old spellings, so typing `u 55` finds `U55-4`.
+- **Oil litres** — at the top of every machine, before the service kits.
+  Three fields: Engine oil, Hydraulic oil, Gear oil. *Copy from another
+  machine* fills in whichever of the three are still blank, same rule as
+  copying filter numbers — it never overwrites one already filled in.
 - **See the filters** — each machine has four service kits (250, 500, 750,
   1000 hours). A kit is a list of positions — Engine oil filter, Air filter,
   and so on. Tap a position to see its part numbers, or add one.

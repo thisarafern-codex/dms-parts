@@ -191,7 +191,8 @@
             });
           });
         })).then(function (rows) {
-          var html = '<h3>Service kits</h3><ul class="list">';
+          var html = '<ul class="list">' + oilRowHtml(model) + '</ul>' +
+            '<h3>Service kits</h3><ul class="list">';
           rows.forEach(function (r) {
             var state = r.lines === 0 ? 'No filters listed yet'
               : r.filled === r.lines ? 'All ' + r.lines + ' part numbers filled in'
@@ -211,6 +212,63 @@
   function kitName(kit) {
     if (kit.interval_hours) return kit.interval_hours + ' hours';
     return kit.label || 'Service';
+  }
+
+  // Fixed fields on the model, not a per-kit thing — the same machine takes
+  // the same oil regardless of which service interval he's doing.
+  var OIL_FIELDS = [
+    { key: 'oil_engine', label: 'Engine oil' },
+    { key: 'oil_hydraulic', label: 'Hydraulic oil' },
+    { key: 'oil_gear', label: 'Gear oil' }
+  ];
+
+  function oilRowHtml(model) {
+    var filled = OIL_FIELDS.filter(function (f) { return model[f.key]; });
+    var state = filled.length === 0 ? 'Not filled in yet'
+      : filled.map(function (f) { return f.label + ' ' + model[f.key] + 'L'; }).join(' · ');
+    return '<li><a class="row" href="#/oil/' + model.id + '">' +
+      '<span class="grow"><span class="title">Oil litres</span>' +
+      '<span class="meta">' + esc(state) + '</span></span>' +
+      '<span class="chev">&rsaquo;</span></a></li>';
+  }
+
+  /* How much of each oil this machine takes — fixed per model, not per kit.
+     Free text, not a strict number: dad might write "5.5" or "~5", and
+     nothing here does arithmetic on it the way price does. */
+  function screenOil(modelId) {
+    modelId = Number(modelId);
+    return DB.get('models', modelId).then(function (model) {
+      if (!model) return render('<p class="empty">That machine is not on file.</p>');
+      setHead(model.display, 'Oil litres', true);
+      var html = OIL_FIELDS.map(function (f) {
+        return '<label for="' + f.key + '">' + esc(f.label) + ' <span class="muted small">(litres)</span></label>' +
+          '<input id="' + f.key + '" type="text" inputmode="decimal" autocomplete="off" ' +
+          'value="' + esc(model[f.key] || '') + '" placeholder="e.g. 5.5">';
+      }).join('');
+      html += '<div class="btnrow" style="margin-top:1.25rem">' +
+        '<button class="btn" data-act="save-oil" data-model="' + modelId + '">Save</button>' +
+        '<button class="btn ghost" data-act="cancel">Cancel</button></div>' +
+        '<div class="btnrow"><button class="btn ghost" data-act="copy-oil" data-model="' + modelId +
+        '">Copy from another machine</button></div>';
+      render(html);
+    });
+  }
+
+  function screenCopyOil(modelId) {
+    modelId = Number(modelId);
+    return DB.all('models').then(function (models) {
+      setHead('Oil litres', 'Pick a machine', true);
+      var live = models.filter(function (m) { return !m.hidden && m.id !== modelId; })
+        .sort(function (a, b) { return a.display.localeCompare(b.display); });
+      render('<p class="muted">Pick a machine to copy its oil litres from. ' +
+        'Anything you’ve already filled in here is left alone.</p>' +
+        '<ul class="list">' + live.map(function (m) {
+          return '<li><button class="row" data-act="do-copy-oil" data-model="' + modelId +
+            '" data-source="' + m.id + '"><span class="grow"><span class="title">' +
+            esc(m.display) + '</span><span class="meta">' + esc(m.brand) + '</span></span>' +
+            '<span class="chev">&rsaquo;</span></button></li>';
+        }).join('') + '</ul>');
+    });
   }
 
   // ------------------------------------------------------------- kit screen
@@ -336,7 +394,9 @@
                 fail: fail, plural: plural, partsForLine: partsForLine,
                 kitName: kitName, screenKit: screenKit, screenSlot: screenSlot,
                 screenBrands: screenBrands, screenBrand: screenBrand,
-                screenModel: screenModel, modelRow: modelRow };
+                screenModel: screenModel, modelRow: modelRow,
+                screenOil: screenOil, screenCopyOil: screenCopyOil,
+                OIL_FIELDS: OIL_FIELDS };
 })();
 
 /* ---- part entry, search, cleanup, backup, routing ---------------------- */
@@ -1164,6 +1224,38 @@
       var kitId = Number(el.getAttribute('data-kit'));
       go('#/copy/' + kitId);
     },
+    'save-oil': function (el) {
+      var id = Number(el.getAttribute('data-model'));
+      DB.get('models', id).then(function (m) {
+        UI.OIL_FIELDS.forEach(function (f) {
+          var input = document.getElementById(f.key);
+          m[f.key] = input ? input.value.trim() : m[f.key];
+        });
+        return DB.put('models', m).then(function () { return m.key; });
+      }).then(function (key) {
+        toast('Saved');
+        go('#/model/' + encodeURIComponent(key));
+      }).catch(fail);
+    },
+    'copy-oil': function (el) {
+      go('#/copyoil/' + el.getAttribute('data-model'));
+    },
+    'do-copy-oil': function (el) {
+      var modelId = Number(el.getAttribute('data-model'));
+      var sourceId = Number(el.getAttribute('data-source'));
+      Promise.all([DB.get('models', modelId), DB.get('models', sourceId)]).then(function (res) {
+        var target = res[0], source = res[1];
+        var filled = 0;
+        UI.OIL_FIELDS.forEach(function (f) {
+          if (!target[f.key] && source[f.key]) { target[f.key] = source[f.key]; filled += 1; }
+        });
+        if (!filled) { toast('Nothing new to copy.'); go('#/oil/' + modelId); return; }
+        return DB.put('models', target).then(function () {
+          toast('Copied ' + plural(filled, 'value'));
+          go('#/oil/' + modelId);
+        });
+      }).catch(fail);
+    },
     'set-brand': function (el) {
       var id = Number(el.getAttribute('data-model'));
       DB.get('models', id).then(function (m) {
@@ -1349,7 +1441,7 @@
   // behaves elsewhere (e.g. a video reached from Home keeps Home lit up).
   var TAB_ROUTES = {
     '': 'home', brand: 'home', model: 'home', kit: 'home', slot: 'home',
-    part: 'home', copy: 'home',
+    part: 'home', copy: 'home', oil: 'home', copyoil: 'home',
     quickadd: 'add', addbrand: 'add', addmachine: 'add', pickmachine: 'add'
   };
 
@@ -1371,6 +1463,8 @@
     else if (p[0] === 'kit')       run = UI.screenKit(p[1]);
     else if (p[0] === 'slot')      run = UI.screenSlot(p[1]);
     else if (p[0] === 'part')      run = UI2.screenPart(p[1], p[2]);
+    else if (p[0] === 'oil')       run = UI.screenOil(p[1]);
+    else if (p[0] === 'copyoil')   run = UI.screenCopyOil(p[1]);
     else if (p[0] === 'cleanup')   run = screenCleanup();
     else if (p[0] === 'editmodel') run = screenEditModel(p[1]);
     else if (p[0] === 'backup')    run = screenBackup();
