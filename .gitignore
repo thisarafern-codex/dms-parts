@@ -2,6 +2,11 @@
 # Machine models are fine to commit; client names and serials are not.
 seed/owners.json
 
+# Dad's scanned notes/invoices (supplier pricing, business-internal) and the
+# staging file transcribed from them. Never public-repo material.
+documents/
+imports/
+
 # Never bring the production database into this repo.
 *.db
 *.db-wal

@@ -1174,6 +1174,64 @@
     });
   }
 
+  // --------------------------------------------------------------- import
+  function screenImport() {
+    setHead('Import parts', 'Load numbers from scanned notes', true);
+    render(
+      '<div class="note">Pick a staging file prepared from dad’s scanned ' +
+      'notes. Checking it writes nothing — it only reports what would ' +
+      'happen. Nothing is saved until you tap Import.</div>' +
+      '<input type="file" id="importfile" accept="application/json,.json">' +
+      '<div class="btnrow" style="margin-top:.75rem">' +
+      '<button class="btn wide" data-act="preview-import">Check the file</button></div>' +
+      '<div id="importreport"></div>'
+    );
+  }
+
+  function importReportHtml(report, committed) {
+    var s = report.summary;
+    var lines = [];
+    // plural() pluralizes by appending 's' to the noun, so the noun and any
+    // trailing verb phrase must stay separate — 'to add' must never be
+    // inside the pluralized label or it becomes 'to adds'.
+    function line(n, noun, suffix) {
+      if (!n) return;
+      lines.push('<li>' + plural(n, noun) + (suffix ? ' ' + suffix : '') + '</li>');
+    }
+    if (committed) {
+      line(s.added, 'part number', 'added');
+      line(s.models_created, 'new machine', 'created');
+      line(s.slots_created, 'new filter position', 'created');
+    } else {
+      line((s.would_add_new_part || 0) + (s.would_link_existing_part || 0), 'part number', 'to add');
+      line(s.models_created, 'new machine', 'to create');
+      line(s.slots_created, 'new filter position', 'to create');
+    }
+    line(s.already_linked, 'part number', 'already saved — left alone');
+    line(s.unmatched_model, 'row', 'skipped — machine not found');
+    line(s.bad_row, 'row', 'skipped — missing model, slot or part number');
+    var html = '<div class="note"><b>' + plural(s.total, 'row') + ' in the file.</b>' +
+      (lines.length ? '<ul class="list">' + lines.join('') + '</ul>' : '') + '</div>';
+
+    var conflicts = report.results.filter(function (r) { return r.status === 'genuine_conflict'; });
+    if (conflicts.length) {
+      html += '<h3>Needs a look</h3><div class="note warn">' +
+        plural(conflicts.length, 'position') + ' already ' +
+        (conflicts.length === 1 ? 'has' : 'have') + ' a different genuine number saved — ' +
+        'these were left alone rather than guessed at.<ul class="list">' +
+        conflicts.map(function (r) {
+          return '<li>' + esc(r.model) + ' — ' + esc(r.row.slot) + ': has ' +
+            esc(r.existing) + ', file says ' + esc(r.row.part_number) + '</li>';
+        }).join('') + '</ul></div>';
+    }
+
+    if (!committed && s.total) {
+      html += '<div class="btnrow" style="margin-top:.75rem">' +
+        '<button class="btn wide" data-act="commit-import">Import</button></div>';
+    }
+    return html;
+  }
+
   function screenMenu() {
     setHead('Menu', '', true);
     var size = currentSize();
@@ -1191,6 +1249,7 @@
       row('#/quickadd', 'Add', 'New machine, brand, kit or part number') +
       row('#/cleanup', 'Tidy up', 'Fix names, brands and duplicates') +
       row('#/backup', 'Backup', 'Save or restore your part numbers') +
+      row('#/import', 'Import parts', 'Load part numbers from scanned notes') +
       '</ul>' +
       '<h3>Updates</h3><ul class="list"><li>' +
       '<button class="row" data-act="check-update"><span class="grow">' +
@@ -1437,6 +1496,26 @@
         .then(Backup.importAll)
         .then(function (r) { toast('Restored ' + plural(r.rows, 'row')); go('#/'); })
         .catch(function (e) { toast(e.message); });
+    },
+    'preview-import': function () {
+      var input = document.getElementById('importfile');
+      if (!input.files || !input.files[0]) { toast('Choose a file first.'); return; }
+      Backup.readFile(input.files[0]).then(function (payload) {
+        var rows = Array.isArray(payload) ? payload : (payload.rows || []);
+        window.__importRows = rows;
+        return Importer.run(rows, { commit: false });
+      }).then(function (r) {
+        document.getElementById('importreport').innerHTML = importReportHtml(r, false);
+      }).catch(function (e) { toast(e.message); });
+    },
+    'commit-import': function () {
+      var rows = window.__importRows || [];
+      if (!rows.length) { toast('Check the file first.'); return; }
+      if (!confirm('Write ' + plural(rows.length, 'row') + ' into the app? This cannot be undone.')) return;
+      Importer.run(rows, { commit: true }).then(function (r) {
+        document.getElementById('importreport').innerHTML = importReportHtml(r, true);
+        toast('Import complete');
+      }).catch(function (e) { toast(e.message); });
     }
   };
 
@@ -1575,6 +1654,7 @@
     else if (p[0] === 'cleanup')   run = screenCleanup();
     else if (p[0] === 'editmodel') run = screenEditModel(p[1]);
     else if (p[0] === 'backup')    run = screenBackup();
+    else if (p[0] === 'import')    run = screenImport();
     else if (p[0] === 'menu')      run = screenMenu();
     else if (p[0] === 'copy')      run = screenCopy(p[1]);
     else if (p[0] === 'quickadd')  run = screenQuickAdd();
