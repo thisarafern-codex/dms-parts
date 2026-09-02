@@ -1162,9 +1162,18 @@
       }
       html += '<div class="btnrow">' +
         '<button class="btn wide" data-act="export">Save a backup file</button></div>' +
+        '<h3>Working from two devices?</h3>' +
+        '<p class="muted small">Save a backup on whichever device was used most ' +
+        'recently, then merge that file into the other one. Adds anything new and ' +
+        'updates a part number if the file’s copy is newer — never deletes ' +
+        'anything, so it’s safe to merge either direction, either order.</p>' +
+        '<input type="file" id="mergefile" accept="application/json,.json">' +
+        '<div class="btnrow" style="margin-top:.75rem">' +
+        '<button class="btn wide" data-act="merge-restore">Merge that file in</button></div>' +
         '<h3>Restore</h3>' +
         '<p class="muted small">Loading a backup <b>replaces everything</b> on this ' +
-        'phone with what is in the file.</p>' +
+        'phone with what is in the file — use this to set up a new phone from ' +
+        'an old backup, not for keeping two devices in sync.</p>' +
         '<input type="file" id="restore" accept="application/json,.json">' +
         '<div class="btnrow" style="margin-top:.75rem">' +
         '<button class="btn danger" data-act="import">Restore from that file</button></div>' +
@@ -1496,6 +1505,22 @@
         .then(Backup.importAll)
         .then(function (r) { toast('Restored ' + plural(r.rows, 'row')); go('#/'); })
         .catch(function (e) { toast(e.message); });
+    },
+    'merge-restore': function () {
+      var input = document.getElementById('mergefile');
+      if (!input.files || !input.files[0]) { toast('Choose a backup file first.'); return; }
+      Backup.readFile(input.files[0]).then(Backup.mergeAll).then(function (s) {
+        var bits = [];
+        function bit(n, label) { if (n) bits.push(plural(n, label)); }
+        bit(s.models_added, 'new machine');
+        bit(s.kits_added, 'new kit');
+        bit(s.slots_added, 'new filter position');
+        bit(s.parts_added, 'new part number');
+        bit(s.parts_updated, 'part number updated');
+        bit(s.links_added, 'number linked');
+        toast(bits.length ? 'Merged: ' + bits.join(', ') : 'Nothing new to merge.');
+        go('#/');
+      }).catch(function (e) { toast(e.message); });
     },
     'preview-import': function () {
       var input = document.getElementById('importfile');
